@@ -1,0 +1,6 @@
+task_id: "earth_001_bd_crs_area"
+title: "Topology Repair & Planar UTM Area Calculation in GeoPandas"
+domain: "earth"
+difficulty: "medium"
+silent_failure_trap: "computing_area_in_epsg_4326_degrees_or_using_buffer0"
+data_license: "CC-BY-4.0"
