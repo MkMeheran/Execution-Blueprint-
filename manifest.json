@@ -1,0 +1,78 @@
+{
+  "id": "./?source=pwa",
+  "name": "6-Month Research & Technical Profile Blueprint — Meheran",
+  "short_name": "Execution Blueprint",
+  "description": "Mobile-first 6-Month Research, Technical Writing & AI Evaluation Portfolio Execution Blueprint (Nov 2026 – May 2027) for Md. Mokammel Morshed (Meheran).",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#FEF3E2",
+  "theme_color": "#2A1A0E",
+  "categories": ["productivity", "education", "utilities"],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Daily Plan & Timer",
+      "short_name": "Daily Plan",
+      "description": "Open today's 115-minute 5-stage focus timer and checklist",
+      "url": "./index.html#daily",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "24-Week Schedule",
+      "short_name": "Weekly Plan",
+      "description": "Track W1–W24 deliverables and evidence proof links",
+      "url": "./index.html#weekly",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Projects Hub",
+      "short_name": "Projects",
+      "description": "Inspect P0–P5 flagship repositories and file trees",
+      "url": "./index.html#projects",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "100-Pt Rubric & Backup",
+      "short_name": "Rubric & QA",
+      "description": "Score portfolio artifacts and export/import JSON state",
+      "url": "./index.html#rubric",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}

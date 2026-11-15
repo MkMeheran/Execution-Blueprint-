@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2A1A0E">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Execution Blueprint">
+  <title>6-Month Research &amp; Technical Profile Transformation Blueprint | Meheran (KUET URP)</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <!-- Synchronous Theme Initialization to Prevent Flicker (#Section 8) -->
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem("verisci_theme_pref");
+        if (saved === "dark" || saved === "light") {
+          document.documentElement.setAttribute("data-theme", saved);
+        } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <!-- Preconnect to Fontshare API & Asset CDN (#Section 8) -->
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=tanker@400&amp;f[]=author@400,500,600,700&amp;f[]=supreme@400,500,700&amp;f[]=nippo@400,500,700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#mainContent" class="skip-link">Skip to main content</a>
+  <div id="timerStatusAnnouncer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ========================================================================
+       CLEAN, DYNAMIC TOP HEADER (Brand on Overview, Section Name on Subviews)
+       ======================================================================== -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div style="display:flex; align-items:center; gap:6px; min-width:0;">
+        <button type="button" class="brand-cluster" data-nav-target="overview" aria-label="Execution Blueprint Overview">
+          <div class="brand-icon-box" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
+          </div>
+          <span class="brand-title">Execution Blueprint</span>
+        </button>
+        <span class="top-section-indicator" id="topBarSectionTitle">Overview</span>
+      </div>
+
+      <div class="header-actions">
+        <span id="networkStatusBadge" class="badge badge-warn" style="display:none;" role="status" aria-live="polite">Offline</span>
+        <button type="button" class="icon-btn pwa-install-btn" id="pwaInstallBtn" style="display:none; background:var(--accent-orange); color:#FFFFFF; border-color:var(--accent-orange);" aria-label="Install Android Application" title="Install App on Android">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Install</span>
+        </button>
+        <button type="button" class="icon-btn icon-only-btn" id="openSearchModalBtn" aria-label="Search Projects, Weeks &amp; Glossary" title="Global Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button type="button" class="icon-btn icon-only-btn" id="openReadingMenuBtn" aria-label="Reading Size &amp; Language Controls" title="Reading Mode (A- / A+ / EN-BN)">
+          <span style="font-family:var(--font-mono); font-weight:700; font-size:0.82rem;">Aa</span>
+        </button>
+        <button type="button" class="icon-btn theme-icon-btn" id="themeToggleBtn" aria-label="Switch to dark theme" title="Switch to dark theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button type="button" class="icon-btn mobile-menu-toggle" id="mobileMenuBtn" aria-label="Open All Navigation Views" title="Open All Views">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <span>Views</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Reading Mode Controls Popover Bar (#Section 2: A- / A+ & Optional EN ⇄ বাংলা Aid) -->
+  <div class="reading-prefs-bar" id="readingPrefsBar" role="region" aria-label="Reading Preferences">
+    <div class="reading-prefs-inner">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <span class="mono-label" style="font-weight:700;">Text Size:</span>
+        <button type="button" class="icon-btn" id="fontDecreaseBtn" aria-label="Decrease font size">A&minus;</button>
+        <span class="mono-label" id="readingScaleReadout" style="min-width:44px; text-align:center;">100%</span>
+        <button type="button" class="icon-btn" id="fontIncreaseBtn" aria-label="Increase font size">A+</button>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px;">
+        <button type="button" class="icon-btn" id="toggleBanglaAidBtn" aria-pressed="false">EN ⇄ বাংলা: OFF</button>
+        <span class="mono-label" style="color:var(--text-muted);">Tap dashed terms (<button type="button" class="glossary-term" data-open-glossary="CRS">CRS</button>, <button type="button" class="glossary-term" data-open-glossary="Diataxis">Diátaxis</button>, <button type="button" class="glossary-term" data-open-glossary="JOSS">JOSS</button>) for definitions.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- All Views Bottom Sheet Backdrop & Drawer (#14: Grouped into Foundation, Timeframes, Core Tracks + Rings) -->
+  <div class="bottom-sheet-backdrop" id="drawerBackdrop"></div>
+  <div class="mobile-nav-drawer" id="mobileNavDrawer" role="navigation" aria-label="All Application Views">
+    <div class="sheet-handle" aria-hidden="true"></div>
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; padding-bottom:8px; border-bottom:1px solid var(--border-subtle);">
+      <strong style="font-family:var(--font-heading); font-size:1.05rem;">All Application Views</strong>
+      <span class="mono-label" style="color:var(--text-muted);">11 Destinations</span>
+    </div>
+
+    <div class="drawer-group-title">Foundation</div>
+    <div class="mobile-drawer-grid">
+      <button type="button" class="nav-btn active" data-nav-target="overview">
+        <span class="nav-btn-left">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Overview &amp; Audit</span>
+        </span>
+      </button>
+    </div>
+
+    <div class="drawer-group-title">Timeframes</div>
+    <div class="mobile-drawer-grid">
+      <button type="button" class="nav-btn" data-nav-target="daily">
+        <span class="nav-btn-left">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+          <span>Daily Plan</span>
+        </span>
+        <span data-nav-ring="daily"></span>
+      </button>
+      <button type="button" class="nav-btn" data-nav-target="weekly">
+        <span class="nav-btn-left">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span>Weekly Plan (24 Wks)</span>
+        </span>
+        <span data-nav-ring="weekly"></span>
+      </button>
+      <button type="button" class="nav-btn" data-nav-target="monthly">
+        <span class="nav-btn-left">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          <span>Monthly Plan (M1–M6)</span>
+        </span>
+        <span data-nav-ring="monthly"></span>
+      </button>
+      <button type="button" class="nav-btn" data-nav-target="roadmap">
+        <span class="nav-btn-left">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <span>6-Month Roadmap</span>
+        </span>
+      </button>
+    </div>
+
+    <div class="drawer-group-title">Core Tracks</div>
+    <div class="mobile-drawer-grid">
+      <button type="button" class="nav-btn" data-nav-target="projects">
+        <span class="nav-btn-left">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          <span>Projects Hub</span>
+        </span>
+      </button>
+      <button type="button" class="nav-btn" data-nav-target="research">
+        <span class="nav-btn-left">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <span>Research Track</span>
+        </span>
+      </button>
+      <button type="button" class="nav-btn" data-nav-target="writing">
+        <span class="nav-btn-left">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          <span>Technical Writing</span>
+        </span>
+        <span data-nav-ring="writing"></span>
+      </button>
+      <button type="button" class="nav-btn" data-nav-target="prep">
+        <span class="nav-btn-left">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span>Technical Prep</span>
+        </span>
+      </button>
+      <button type="button" class="nav-btn" data-nav-target="career">
+        <span class="nav-btn-left">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+          <span>Career &amp; Profiles</span>
+        </span>
+        <span data-nav-ring="career"></span>
+      </button>
+      <button type="button" class="nav-btn" data-nav-target="rubric">
+        <span class="nav-btn-left">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <span>Progress &amp; 100-Pt QA</span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       APP SHELL: PERSISTENT LEFT SIDEBAR + INDEPENDENT VIEWPORT
+       ======================================================================== -->
+  <div class="app-shell">
+    <aside class="app-sidebar" aria-label="Desktop Application Navigation">
+      <div>
+        <div class="nav-group">
+          <span class="nav-group-label">Foundation</span>
+          <ul class="side-nav-list">
+            <li>
+              <button type="button" class="nav-btn active" data-nav-target="overview">
+                <span class="nav-btn-left">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                  <span>Overview &amp; Audit</span>
+                </span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-group">
+          <span class="nav-group-label">Timeframes</span>
+          <ul class="side-nav-list">
+            <li>
+              <button type="button" class="nav-btn" data-nav-target="daily">
+                <span class="nav-btn-left">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+                  <span>Daily Plan</span>
+                </span>
+                <span data-nav-ring="daily"></span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="nav-btn" data-nav-target="weekly">
+                <span class="nav-btn-left">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  <span>Weekly Plan (24 Wks)</span>
+                </span>
+                <span data-nav-ring="weekly"></span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="nav-btn" data-nav-target="monthly">
+                <span class="nav-btn-left">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+                  <span>Monthly Plan (M1–M6)</span>
+                </span>
+                <span data-nav-ring="monthly"></span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="nav-btn" data-nav-target="roadmap">
+                <span class="nav-btn-left">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                  <span>6-Month Roadmap</span>
+                </span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-group">
+          <span class="nav-group-label">Core Tracks</span>
+          <ul class="side-nav-list">
+            <li>
+              <button type="button" class="nav-btn" data-nav-target="projects">
+                <span class="nav-btn-left">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                  <span>Projects Hub</span>
+                </span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="nav-btn" data-nav-target="research">
+                <span class="nav-btn-left">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                  <span>Research Track</span>
+                </span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="nav-btn" data-nav-target="writing">
+                <span class="nav-btn-left">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                  <span>Technical Writing</span>
+                </span>
+                <span data-nav-ring="writing"></span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="nav-btn" data-nav-target="prep">
+                <span class="nav-btn-left">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                  <span>Technical Prep</span>
+                </span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="nav-btn" data-nav-target="career">
+                <span class="nav-btn-left">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+                  <span>Career &amp; Profiles</span>
+                </span>
+                <span data-nav-ring="career"></span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="nav-btn" data-nav-target="rubric">
+                <span class="nav-btn-left">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                  <span>Progress &amp; QA</span>
+                </span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Compact Progress Telemetry in Sidebar Footer -->
+      <div class="sidebar-footer-card">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span class="mono-label" style="font-weight:600;">Verified</span>
+          <span class="mono-label" id="headerProgressText" style="color:var(--accent-orange);">0%</span>
+        </div>
+        <div class="mini-progress-track" aria-hidden="true">
+          <div class="mini-progress-fill" id="headerProgressFill"></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ======================================================================
+         MAIN APPLICATION VIEWPORT (11 SEPARATE, DEDICATED VIEWS)
+         ====================================================================== -->
+    <main id="mainContent" class="main-container">
+
+      <!-- ====================================================================
+           VIEW 1: HOME / OVERVIEW, "TODAY" VIEW & 4-CARD PROFILE AUDIT
+           ==================================================================== -->
+      <section id="sec-overview" class="view-section active" aria-labelledby="heading-overview">
+        <div class="page-header">
+          <h1 id="heading-overview" class="page-title">Overview &amp; Current Profile Audit</h1>
+          <div class="page-header-controls">
+            <span class="badge badge-dark">Nov 15, 2026 – May 15, 2027</span>
+          </div>
+        </div>
+
+        <div class="section-tldr-bar">
+          <div class="tldr-text">
+            <strong>TL;DR:</strong> Turn your KUET BURP, SERC, and GeoAI experience into <span class="metric-chip">6 Flagship Repos</span>, <span class="metric-chip">24–30 verisci Tasks</span>, and <span class="metric-chip">4–5 Zenodo DOIs</span> with zero certificate bloat.
+            <div class="bn-explain-block">মূল লক্ষ্য: আগামী ৬ মাসে আপনার KUET URP, SERC ও GeoAI অভিজ্ঞতাকে ৬টি reproducible GitHub repository, ২৪–৩০টি Inspect AI benchmark task এবং ৪–৫টি Zenodo DOI-তে রূপান্তর করা।</div>
+          </div>
+          <span class="reading-time-chip">~2 min read</span>
+        </div>
+
+        <!-- "Today" Home Command View (#16: Active Stage, Current Week Deliverable & Timer in One Screen) -->
+        <div class="today-command-card" id="todayCommandContainer" aria-label="Today Command View"></div>
+
+        <!-- Concise Hero Banner: 1-Line Slogan + 3 Bullets + Scroll-Snap 6-Stage Loop Stepper (#Overview) -->
+        <div class="hero-banner">
+          <div class="hero-grid">
+            <div>
+              <h2 class="hero-title">
+                No &ldquo;Trust Me&rdquo; &mdash; Only <span>&ldquo;Verify Me&rdquo;</span>
+              </h2>
+              <p class="hero-slogan-line">
+                Every technical and research claim maps directly to a reproducible script, a ground-truth metric, or a permanent DOI.
+              </p>
+              <ul class="hero-bullets">
+                <li><strong>Geospatial &amp; Climate Rigor:</strong> Headless open-source pipelines (<button type="button" class="glossary-term" style="color:var(--surface-gold);" data-open-glossary="CRS">EPSG:32646</button>, <button type="button" class="glossary-term" style="color:var(--surface-gold);" data-open-glossary="IoU">IoU</button>, <button type="button" class="glossary-term" style="color:var(--surface-gold);" data-open-glossary="MCLP">MCLP</button>) replacing GUI steps.</li>
+                <li><strong>Verifiable AI Evaluation:</strong> Dual-pass <button type="button" class="glossary-term" style="color:var(--surface-gold);" data-open-glossary="InspectAI">Inspect AI</button> benchmark tasks with <button type="button" class="glossary-term" style="color:var(--surface-gold);" data-open-glossary="Kappa">Cohen's kappa</button> reliability.</li>
+                <li><strong>Docs-as-Code &amp; Open Science:</strong> <button type="button" class="glossary-term" style="color:var(--surface-gold);" data-open-glossary="Diataxis">Diátaxis</button> portals linted via <button type="button" class="glossary-term" style="color:var(--surface-gold);" data-open-glossary="Vale">Vale</button> and archived on Zenodo/OSF toward <button type="button" class="glossary-term" style="color:var(--surface-gold);" data-open-glossary="JOSS">JOSS</button>.</li>
+              </ul>
+
+              <!-- Horizontally Scrollable Scroll-Snap 6-Stage Loop Stepper + Inline SVG Flow (#Overview & #24) -->
+              <div class="loop-stepper-scroll" aria-label="Six-Stage Execution Loop Stepper">
+                <div class="loop-step-card">
+                  <span class="loop-step-num">STAGE 01</span>
+                  <div class="loop-step-title">1. LEARN</div>
+                  <div class="loop-step-sub">Primary docs &amp; Three-Pass papers</div>
+                </div>
+                <div class="loop-step-card">
+                  <span class="loop-step-num">STAGE 02</span>
+                  <div class="loop-step-title">2. BUILD</div>
+                  <div class="loop-step-sub">Headless CLI + uv.lock + Docker</div>
+                </div>
+                <div class="loop-step-card">
+                  <span class="loop-step-num">STAGE 03</span>
+                  <div class="loop-step-title">3. EVALUATE</div>
+                  <div class="loop-step-sub">Ground truth &amp; dual-pass pytest</div>
+                </div>
+                <div class="loop-step-card">
+                  <span class="loop-step-num">STAGE 04</span>
+                  <div class="loop-step-title">4. DOCUMENT</div>
+                  <div class="loop-step-sub">Diátaxis + doctest + Vale CI</div>
+                </div>
+                <div class="loop-step-card">
+                  <span class="loop-step-num">STAGE 05</span>
+                  <div class="loop-step-title">5. PUBLISH</div>
+                  <div class="loop-step-sub">Zenodo DOI, OSF &amp; ORCID sync</div>
+                </div>
+                <div class="loop-step-card">
+                  <span class="loop-step-num">STAGE 06</span>
+                  <div class="loop-step-title">6. DEMONSTRATE</div>
+                  <div class="loop-step-sub">meheran.dev/proof &amp; 1-page CV</div>
+                </div>
+              </div>
+
+              <div class="hero-cta-row">
+                <button type="button" class="btn btn-primary" data-nav-target="projects">Open Projects Hub</button>
+                <button type="button" class="btn btn-gold" data-nav-target="daily">Start Daily Plan</button>
+                <button type="button" class="btn btn-secondary" data-nav-target="weekly">24-Week Schedule</button>
+              </div>
+            </div>
+
+            <!-- Candidate Profile Summary -->
+            <aside class="identity-card" aria-label="Candidate Profile Summary">
+              <div class="identity-header">
+                <div>
+                  <div class="identity-name">Md. Mokammel Morshed (Meheran)</div>
+                  <div class="identity-role">Geospatial Data Science · AI Evaluation · Docs-as-Code</div>
+                </div>
+                <span class="badge badge-gold">KUET 2K24</span>
+              </div>
+              <ul class="identity-meta-list">
+                <li>
+                  <span class="identity-meta-label">Academic</span>
+                  <span class="identity-meta-val">BURP 2nd Yr (CGPA 3.09) · HSC 5.0 (544/600)</span>
+                </li>
+                <li>
+                  <span class="identity-meta-label">Research</span>
+                  <span class="identity-meta-val">Program Exec (SERC) · Precision Ag UAV Lab</span>
+                </li>
+                <li>
+                  <span class="identity-meta-label">AI Eval</span>
+                  <span class="identity-meta-val">Outlier AI (Aether) · Turing Math Assessment</span>
+                </li>
+                <li>
+                  <span class="identity-meta-label">Time Budget</span>
+                  <span class="identity-meta-val">12–15 hrs/wk (10–12h in M4/M6 for SAT/IELTS)</span>
+                </li>
+              </ul>
+              <div class="identity-links">
+                <a href="https://meheran.dev/" target="_blank" rel="noopener noreferrer" class="chip-link">meheran.dev ↗</a>
+                <a href="https://meheran.dev/proof" target="_blank" rel="noopener noreferrer" class="chip-link">meheran.dev/proof ↗</a>
+                <a href="https://meheran.dev/docs" target="_blank" rel="noopener noreferrer" class="chip-link">meheran.dev/docs ↗</a>
+                <a href="https://github.com/MkMeheran" target="_blank" rel="noopener noreferrer" class="chip-link">GitHub ↗</a>
+                <a href="https://orcid.org/" target="_blank" rel="noopener noreferrer" class="chip-link">ORCID ↗</a>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+        <!-- KPI Strip -->
+        <div class="kpi-strip" aria-label="Six-Month Target Metrics">
+          <div class="kpi-card">
+            <div class="kpi-num">6 + 4</div>
+            <div class="kpi-label">Flagships &amp; Lanes</div>
+            <div class="kpi-sub">P0–P5 Repos + L1–L4 Lanes</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-num">24–30</div>
+            <div class="kpi-label">verisci Tasks</div>
+            <div class="kpi-sub">Dual-pass pytest + Inspect AI</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-num">&ge; 80/100</div>
+            <div class="kpi-label">Quality Gate</div>
+            <div class="kpi-sub">85+/100 for M6 Flagships</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-num">4–5 DOIs</div>
+            <div class="kpi-label">Zenodo &amp; OSF</div>
+            <div class="kpi-sub">Synced with ORCID</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-num">2–3 PRs</div>
+            <div class="kpi-label">Merged OSS</div>
+            <div class="kpi-sub">GeoPandas, OSMnx, xarray</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-num" id="overviewProgressPct">0%</div>
+            <div class="kpi-label">Verified</div>
+            <div class="kpi-sub" id="overviewProgressCount">0 of 48 permanent milestones</div>
+          </div>
+        </div>
+
+        <!-- Strategy Decisions with Concise Mobile Paragraphs & Expandable Read More (#Section 2) -->
+        <div class="grid-2" style="margin-bottom: 18px;">
+          <div class="card-dark">
+            <span class="badge badge-gold" style="margin-bottom:8px;">STRATEGY DECISION 1</span>
+            <h3 style="font-size:1.15rem; margin-bottom:8px;">Unifying v3/v4's Verifiable Harness with Mission PDF's Geospatial/URP Moat</h3>
+            <p style="font-size:0.9375rem; color:#E8D5BC;">
+              <strong>Every flagship project follows the strict pipeline <code>Project &rarr; Ground-Truth Validation &rarr; 3 Benchmark Tasks in verisci</code> while preserving your KUET URP + SERC + Precision Agriculture domain moat.</strong>
+            </p>
+            <details class="read-more-block">
+              <summary style="color:var(--surface-gold);">Read more on the 5 Ground-Truth Types</summary>
+              <p style="font-size:0.9rem; color:#E8D5BC; margin-top:6px;">
+                We validate every model against 5 ground-truth types: (1) Known Optimum (<a href="https://developers.google.com/optimization/routing" target="_blank" rel="noopener noreferrer" style="color:var(--surface-gold);">TSPLIB</a> / Exact MIP), (2) Closed-Form Analytic Solution, (3) Field/Station Observation (BMD Rain Gauges, Copernicus EMS, CAMELS), (4) Established Benchmark Models (ERA5, CHIRPS), and (5) Seeded <span class="metric-chip" style="color:#2A1A0E;">10,000 rep</span> Monte Carlo Simulation.
+              </p>
+            </details>
+            <div class="key-takeaway" style="background:rgba(255,255,255,0.06); color:#FEF3E2;">
+              <strong>Key Takeaway:</strong> Combine domain authenticity (Bangladesh floods, UHI, park MCLP) with automated numeric verifiers.
+            </div>
+          </div>
+
+          <div class="card">
+            <span class="badge badge-orange" style="margin-bottom:8px;">STRATEGY DECISION 2</span>
+            <h3 style="font-size:1.15rem; margin-bottom:8px;">The Single-Pass Multi-Artifact Multiplication Engine</h3>
+            <p style="font-size:0.9375rem; color:var(--text-secondary);">
+              <strong>Each flagship project is engineered once to produce 6 simultaneous verifiable proofs across Research, Technical Writing, and AI Evaluation within <span class="metric-chip">12–15 hrs/wk</span>.</strong>
+            </p>
+            <details class="read-more-block">
+              <summary>Read more on the 6 simultaneous outputs</summary>
+              <ol style="padding-left:18px; font-size:0.9rem; display:grid; gap:4px; margin-top:6px;">
+                <li><strong>Headless CLI Python Package:</strong> <code>uv.lock</code>, <code>Dockerfile</code>, and green <code>pytest</code> CI.</li>
+                <li><strong>Ground-Truth Report:</strong> <button type="button" class="glossary-term" data-open-glossary="IoU">IoU</button>, Macro-F1, Optimality Gap %, and Limitations.</li>
+                <li><strong>3–6 Benchmark Tasks:</strong> Added to <code>verisci</code> in <a href="https://inspect.aisi.org.uk/" target="_blank" rel="noopener noreferrer">Inspect AI</a> format.</li>
+                <li><strong>Developer Docs:</strong> <a href="https://diataxis.fr/" target="_blank" rel="noopener noreferrer">Diátaxis</a> guides linted with <a href="https://docs.vale.sh/" target="_blank" rel="noopener noreferrer">Vale</a> (<a href="https://developers.google.com/style" target="_blank" rel="noopener noreferrer">Google Style</a>).</li>
+                <li><strong>Permanent PID:</strong> GitHub Release synced to <a href="https://zenodo.org/records/7716153/files/Open%20Science%20Guide%201.0.pdf?download=1" target="_blank" rel="noopener noreferrer">Zenodo DOI</a>, <a href="https://grsgroup.org/researcher-resources" target="_blank" rel="noopener noreferrer">OSF</a>, and <a href="https://orcid.org/" target="_blank" rel="noopener noreferrer">ORCID</a>.</li>
+                <li><strong>Evidence-Linked CV Bullet:</strong> Verified on <code>meheran.dev/proof</code>.</li>
+              </ol>
+            </details>
+            <div class="key-takeaway">
+              <strong>Key Takeaway:</strong> Never build isolated throwaway scripts; package every study into 6 career proofs at once.
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Color-Coded Audit Cards (Strength=Green, Gap=Red, Target=Orange) (#Overview) -->
+        <h2 style="font-size:1.22rem; margin-bottom:10px;">4-Domain Profile Audit: Strengths, Critical Gaps &amp; May 2027 Targets</h2>
+        <div class="grid-2" id="auditCardsContainer"></div>
+
+        <!-- Section-End Previous / Next Navigation (#15) -->
+        <div class="section-QuickNav-footer">
+          <span class="mono-label" style="color:var(--text-muted);">Section 1 of 11 · Overview</span>
+          <button type="button" class="btn btn-primary" data-nav-target="daily">Daily Plan →</button>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 2: DAILY PLAN (STICKY TIMER BAR, 115M PROPORTIONAL BAR & STAGES)
+           ==================================================================== -->
+      <section id="sec-daily" class="view-section" aria-labelledby="heading-daily">
+        <div class="page-header">
+          <h1 id="heading-daily" class="page-title">Daily Plan: 90–120 Min Atomic Commit Protocol</h1>
+          <div class="page-header-controls">
+            <button type="button" class="icon-btn" data-nav-target="prep">7-Day Practice Matrix</button>
+          </div>
+        </div>
+
+        <div class="section-tldr-bar">
+          <div class="tldr-text">
+            <strong>TL;DR:</strong> Complete the 5-stage <span class="metric-chip">115 min</span> focus loop (`10 + 35 + 40 + 20 + 10m`). Checkboxes reset automatically each new calendar day while preserving your daily streak.
+            <div class="bn-explain-block">দৈনিক পরিকল্পনা: প্রতিদিন ১১৫ মিনিটের ৫-ধাপের (১০+৩৫+৪০+২০+১০ মিনিট) রুটিন অনুসরণ করুন। প্রতিটি নতুন ক্যালেন্ডার দিনে এই চেকলিস্ট স্বয়ংক্রিয়ভাবে নতুন করে শুরু হবে এবং আগের দিনের রেকর্ড সংরক্ষিত থাকবে।</div>
+          </div>
+          <span class="reading-time-chip">~1.5 min read</span>
+        </div>
+
+        <!-- Compact Sticky Timer Bar + Proportional 115-Minute Progress Bar (#Daily) -->
+        <div class="daily-sticky-timer" id="dailyStickyTimerBar" role="region" aria-label="Sticky Focus Timer and Proportional Progress">
+          <div class="daily-timer-top">
+            <div style="display:flex; align-items:center; gap:10px; min-width:0;">
+              <span class="display-title" id="stickyTimerReadout" style="font-size:1.65rem; color:var(--surface-gold);">10:00</span>
+              <div style="min-width:0;">
+                <div id="stickyTimerStageLabel" style="font-family:var(--font-heading); font-weight:700; font-size:0.95rem; color:#FEF3E2; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Stage 1 (10m): Scope the Daily Objective</div>
+                <div class="mono-label" id="dailyMinutesSummary" style="color:#C7AD8C;">0 / 115 mins completed today</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:6px;">
+              <button type="button" class="btn btn-primary" style="min-height:40px; padding:6px 12px;" id="stickyTimerStartBtn">Start</button>
+              <button type="button" class="icon-btn" style="min-height:40px; padding:0 10px;" id="stickyTimerResetBtn">Reset</button>
+            </div>
+          </div>
+          <!-- Proportional 5-Stage Bar: 10 + 35 + 40 + 20 + 10 = 115 mins -->
+          <div class="daily-proportional-bar" aria-label="Proportional 115-minute stage progress (10m, 35m, 40m, 20m, 10m)">
+            <div class="prop-seg" id="prop-seg-0" title="Stage 1: 10 mins"><div class="prop-seg-fill" id="prop-fill-0"></div></div>
+            <div class="prop-seg" id="prop-seg-1" title="Stage 2: 35 mins"><div class="prop-seg-fill" id="prop-fill-1"></div></div>
+            <div class="prop-seg" id="prop-seg-2" title="Stage 3: 40 mins"><div class="prop-seg-fill" id="prop-fill-2"></div></div>
+            <div class="prop-seg" id="prop-seg-3" title="Stage 4: 20 mins"><div class="prop-seg-fill" id="prop-fill-3"></div></div>
+            <div class="prop-seg" id="prop-seg-4" title="Stage 5: 10 mins"><div class="prop-seg-fill" id="prop-fill-4"></div></div>
+          </div>
+        </div>
+
+        <div id="time-view-daily" class="time-subview">
+          <div class="grid-2" style="align-items: start;">
+            <div class="card-dark">
+              <span class="badge badge-gold" style="margin-bottom:8px;">WAKE-LOCK FOCUS TIMER</span>
+              <h2 id="timerStageLabel" style="font-size:1.12rem; color:var(--surface-gold); margin-bottom:6px;">Stage 1: Scope the Daily Objective &amp; Audience Contract (10 mins)</h2>
+              <div class="display-title" id="timerReadout" style="font-size:3rem; color:var(--surface-gold); margin:6px 0;">10:00</div>
+              <p style="font-size:0.9rem; color:#E8D5BC; margin-bottom:12px;">
+                Uses <code>Date.now()</code> elapsed-time tracking and the Screen Wake Lock API so your timer stays accurate even if your phone screen locks or the browser tab is backgrounded.
+              </p>
+              <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;">
+                <button type="button" class="btn btn-primary" id="timerStartPauseBtn">Start Focus Timer</button>
+                <button type="button" class="btn btn-secondary" id="timerResetBtn">Reset Stage</button>
+              </div>
+              <div style="border-top:1px solid rgba(254,243,226,0.14); padding-top:10px;">
+                <span class="mono-label" style="color:var(--surface-gold); display:block; margin-bottom:6px;">Recent Daily Completion History:</span>
+                <div id="dailyHistoryStrip" style="display:flex; flex-wrap:wrap; gap:6px;"></div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <h2 style="font-size:1.15rem;">5-Stage Daily Checklist (Active Stage Expanded)</h2>
+                <span class="badge badge-dark">115m Total</span>
+              </div>
+              <div id="dailyStagesContainer"></div>
+              <div class="key-takeaway">
+                <strong>Key Takeaway:</strong> Finish every daily session with an atomic Git commit (`Stage 5`) to sustain your ≥3 days/week JOSS commit history.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-QuickNav-footer">
+          <button type="button" class="btn btn-secondary" data-nav-target="overview">&larr; Overview</button>
+          <button type="button" class="btn btn-primary" data-time-tab="weekly">Weekly Plan →</button>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 3: WEEKLY PLAN (M1-M6 CHIPS, SVG DONUT, GITHUB API, .ICS & PROOF)
+           ==================================================================== -->
+      <section id="sec-weekly" class="view-section" aria-labelledby="heading-weekly">
+        <div class="page-header">
+          <h1 id="heading-weekly" class="page-title">Weekly Plan: 24-Week Schedule (W1–W24)</h1>
+          <div class="page-header-controls">
+            <span class="badge badge-dark" id="weeklyFilterCount">24 / 24 Weeks</span>
+            <button type="button" class="icon-btn" id="exportIcsBtn">Export 24-Wk .ics Calendar</button>
+          </div>
+        </div>
+
+        <div class="section-tldr-bar">
+          <div class="tldr-text">
+            <strong>TL;DR:</strong> Execute a balanced <span class="metric-chip">12 hr/wk</span> schedule (`6h Build / 3h Read / 2h Lane / 1h Hygiene`). A week receives <strong>VERIFIED</strong> status only when a valid GitHub commit, repo URL, or DOI proof link is saved.
+            <div class="bn-explain-block">সাপ্তাহিক পরিকল্পনা: সপ্তাহে ১২ ঘণ্টার রুটিন (৬ ঘণ্টা Build, ৩ ঘণ্টা Read, ২ ঘণ্টা Lane, ১ ঘণ্টা Hygiene)। কোনো সপ্তাহের কাজ কেবল তখনই VERIFIED হবে যখন আপনি চেকবক্সের পাশাপাশি একটি বৈধ GitHub commit বা DOI প্রুফ লিংক যুক্ত করবেন।</div>
+          </div>
+          <span class="reading-time-chip">~3 min read</span>
+        </div>
+
+        <div id="time-view-weekly" class="time-subview">
+          <!-- Weekly Hours Donut SVG + GitHub Commit Verifier + Scope-Cut Guardrail -->
+          <div class="grid-2" style="margin-bottom: 14px;">
+            <div class="card" style="display:flex; flex-wrap:wrap; align-items:center; gap:14px;">
+              <!-- Inline SVG Donut Chart (6/3/2/1 = 12 Hours) (#23) -->
+              <svg width="92" height="92" viewBox="0 0 42 42" role="img" aria-label="Weekly 12-Hour Allocation Donut Chart: 6h Build, 3h Read, 2h Lane, 1h Hygiene" style="flex-shrink:0;">
+                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="var(--bg-tertiary)" stroke-width="5"/>
+                <!-- 6h Build = 50% -->
+                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="var(--accent-orange)" stroke-width="5" stroke-dasharray="50 50" stroke-dashoffset="25"/>
+                <!-- 3h Read = 25% -->
+                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="var(--surface-gold)" stroke-width="5" stroke-dasharray="25 75" stroke-dashoffset="75"/>
+                <!-- 2h Lane = 16.7% -->
+                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="var(--status-pass)" stroke-width="5" stroke-dasharray="16.7 83.3" stroke-dashoffset="50"/>
+                <!-- 1h Hygiene = 8.3% -->
+                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="var(--surface-dark)" stroke-width="5" stroke-dasharray="8.3 91.7" stroke-dashoffset="33.3"/>
+                <text x="21" y="22.5" text-anchor="middle" font-family="var(--font-mono)" font-size="7" font-weight="700" fill="var(--text-primary)">12h/wk</text>
+              </svg>
+              <div style="flex:1; min-width:190px;">
+                <h2 style="font-size:1.05rem; color:var(--accent-orange); margin-bottom:4px;">Weekly 12-Hour Rhythm (10–12h in M4 &amp; M6)</h2>
+                <p style="font-size:0.88rem;">
+                  <span class="badge badge-orange">6h Build</span> Flagship code &amp; <code>verisci</code> &middot;
+                  <span class="badge badge-gold">3h Read</span> 1 doc + 2 papers &middot;
+                  <span class="badge badge-pass">2h Lane</span> Kaggle/OSS/Eval &middot;
+                  <span class="badge badge-dark">1h Hygiene</span> &ge;3 commit days/wk.
+                </p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; margin-bottom:6px;">
+                <h2 style="font-size:1.02rem;">GitHub Hygiene Verifier (<code>MkMeheran/verisci</code>)</h2>
+                <button type="button" class="icon-btn" style="min-height:38px;" id="verifyGithubBtn">Verify ≥3 Commit Days/Wk</button>
+              </div>
+              <div id="githubVerifyStatus" style="margin-bottom:8px;">
+                <span class="badge badge-neutral">NOT CHECKED</span>
+                <span class="mono-label" style="color:var(--text-muted);">Tap to query public GitHub API (cached 30m, never fakes verification).</span>
+              </div>
+              <div class="nested-callout" style="font-size:0.84rem;">
+                <strong>2-Week Scope-Cut Guardrail:</strong> If behind for 2 consecutive weeks, never cut verification quality—trim task counts in order: Earth 20&rarr;15 (&minus;12h), Math 12&rarr;8 (&minus;10h), ML 8&rarr;5 (&minus;8h), Report 8&rarr;4p (&minus;4h).
+              </div>
+            </div>
+          </div>
+
+          <!-- Horizontally Scrollable M1-M6 Chips (#Weekly & #19) -->
+          <div class="jump-chips-bar" id="weekMonthChips" role="tablist" aria-label="Filter Weeks by Month Chip">
+            <button type="button" class="jump-chip active" data-week-month-chip="ALL">All 24 Weeks</button>
+            <button type="button" class="jump-chip" data-week-month-chip="M1">M1 (W1–W4)</button>
+            <button type="button" class="jump-chip" data-week-month-chip="M2">M2 (W5–W8)</button>
+            <button type="button" class="jump-chip" data-week-month-chip="M3">M3 (W9–W12)</button>
+            <button type="button" class="jump-chip" data-week-month-chip="M4">M4 (W13–W16)</button>
+            <button type="button" class="jump-chip" data-week-month-chip="M5">M5 (W17–W20)</button>
+            <button type="button" class="jump-chip" data-week-month-chip="M6">M6 (W21–W24)</button>
+          </div>
+
+          <div class="filter-toolbar">
+            <input type="search" id="weekSearchInput" class="search-input" placeholder="Search 24 weeks by project, tool, or deliverable...">
+            <select id="weekMonthFilter" class="select-input" aria-label="Filter Weeks by Month">
+              <option value="ALL">All 6 Months (W1–W24)</option>
+              <option value="M1">Month 1 (W1–W4)</option>
+              <option value="M2">Month 2 (W5–W8)</option>
+              <option value="M3">Month 3 (W9–W12)</option>
+              <option value="M4">Month 4 (W13–W16)</option>
+              <option value="M5">Month 5 (W17–W20)</option>
+              <option value="M6">Month 6 (W21–W24)</option>
+            </select>
+            <select id="weekStatusFilter" class="select-input" aria-label="Filter Weeks by Completion Status">
+              <option value="ALL">All Statuses</option>
+              <option value="PENDING">Pending / Unverified</option>
+              <option value="DONE">Verified with Proof Only</option>
+            </select>
+          </div>
+
+          <div class="table-wrap">
+            <table class="data-table" aria-label="24-Week Execution Schedule">
+              <thead>
+                <tr>
+                  <th>Week</th>
+                  <th>Month &amp; Dates</th>
+                  <th>Core Build, Research &amp; Preparation Focus</th>
+                  <th>Mandatory Verifiable Public Deliverable &amp; Proof Link</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="weeklyScheduleBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="section-QuickNav-footer">
+          <button type="button" class="btn btn-secondary" data-time-tab="daily">← Daily</button>
+          <button type="button" class="btn btn-primary" data-time-tab="monthly">Monthly →</button>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 4: MONTHLY PLAN (SWIPEABLE MONTH SELECTOR & SEPARATED TABS)
+           ==================================================================== -->
+      <section id="sec-monthly" class="view-section" aria-labelledby="heading-monthly">
+        <div class="page-header">
+          <h1 id="heading-monthly" class="page-title">Monthly Plan: Objectives &amp; KPIs (M1–M6)</h1>
+        </div>
+
+        <div class="section-tldr-bar">
+          <div class="tldr-text">
+            <strong>TL;DR:</strong> Inspect one month at a time using the swipeable <code>M1–M6</code> selector, toggle between <strong>Research Targets</strong> and <strong>Technical &amp; Docs Targets</strong>, and verify all 4 monthly KPIs.
+            <div class="bn-explain-block">মাসিক লক্ষ্যমাত্রা: মাস ১ থেকে মাস ৬-এর Research Targets এবং Technical Targets আলাদা ট্যাবে দেখুন এবং মাস শেষে ৪টি করে মূল KPI যাচাই করুন।</div>
+          </div>
+          <span class="reading-time-chip">~2.5 min read</span>
+        </div>
+
+        <div id="time-view-monthly" class="time-subview">
+          <div id="monthlyCardsContainer"></div>
+        </div>
+
+        <div class="section-QuickNav-footer">
+          <button type="button" class="btn btn-secondary" data-time-tab="weekly">← Weekly</button>
+          <button type="button" class="btn btn-primary" data-time-tab="roadmap">6-Month Roadmap →</button>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 5: SIX-MONTH MASTER ROADMAP & PROGRESSIVE STAIRCASE PROOF LADDER
+           ==================================================================== -->
+      <section id="sec-roadmap" class="view-section" aria-labelledby="heading-roadmap">
+        <div class="page-header">
+          <h1 id="heading-roadmap" class="page-title">Six-Month Roadmap &amp; 7-Tier Proof Ladder</h1>
+        </div>
+
+        <div class="section-tldr-bar">
+          <div class="tldr-text">
+            <strong>TL;DR:</strong> Climb the 7-Tier Verifiable Proof Staircase from self-published docs (Rank 6) to <button type="button" class="glossary-term" data-open-glossary="JOSS">JOSS</button> peer review (Rank 1). Rank 7 (Online Certificates) carries <span class="metric-chip">Weight: 0</span>.
+            <div class="bn-explain-block">প্রুফ ল্যাডার ও রোডম্যাপ: সাধারণ অনলাইন সার্টিফিকেটের ওজন শূন্য (Weight: 0)। তাই সর্বোচ্চ গুরুত্ব দিন CI-green GitHub কোড, Zenodo DOI, ওপেন-সোর্স PR এবং JOSS পেপারের ওপর।</div>
+          </div>
+          <span class="reading-time-chip">~2 min read</span>
+        </div>
+
+        <div id="time-view-roadmap" class="time-subview">
+          <h2 style="font-size:1.18rem; margin-bottom:10px;">7-Tier Verifiable Proof Ladder (Progressive Staircase)</h2>
+          <div class="staircase-list" id="proofStaircaseContainer" aria-label="Progressive Proof Ladder Staircase"></div>
+
+          <!-- Hidden semantic table backup for scripts/accessibility -->
+          <div class="sr-only">
+            <table><tbody id="proofLadderBody"></tbody></table>
+          </div>
+
+          <h2 style="font-size:1.18rem; margin-bottom:10px;">Collapsible Chronological Progression (Tap Any Month to Expand/Collapse)</h2>
+          <div class="timeline-track">
+            <details class="timeline-node" open>
+              <summary style="cursor:pointer; font-family:var(--font-heading); font-weight:700; font-size:1.05rem;">
+                <span class="badge badge-orange">MONTH 1 · NOV 15 – DEC 15, 2026</span> Docs-as-Code Infrastructure, verisci v0.1 &amp; SAR Flood Validation
+              </summary>
+              <p style="font-size:0.92rem; margin-top:8px;">Deploy Quarto hub on <code>meheran.dev/docs</code> &amp; <code>/proof</code>, configure ORCID + Zotero BibTeX, launch public <code>verisci</code> repo (starting the 6-month JOSS clock), complete headless <code>sar-flood-eval</code> v2 with independent observation metrics (<span class="metric-chip">332.64 km²</span> cropland impact), and publish 6 Diátaxis guides + 4 paper dissections.</p>
+            </details>
+
+            <details class="timeline-node">
+              <summary style="cursor:pointer; font-family:var(--font-heading); font-weight:700; font-size:1.05rem;">
+                <span class="badge badge-orange">MONTH 2 · DEC 15, 2026 – JAN 15, 2027</span> Read the Docs Portal, Spatial Leakage, Rain Extremes &amp; Zenodo Review
+              </summary>
+              <p style="font-size:0.92rem; margin-top:8px;">Host multi-version Python documentation on Read the Docs (100% doctest pass), quantify Random vs. Spatial-Block CV leakage on Sentinel-2, validate ERA5/CHIRPS against BMD rain gauges, release <code>verisci v0.2</code> (10 tasks), archive a 2,500-word SAR literature review on Zenodo, and submit your 1st OSS PR.</p>
+            </details>
+
+            <details class="timeline-node">
+              <summary style="cursor:pointer; font-family:var(--font-heading); font-weight:700; font-size:1.05rem;">
+                <span class="badge badge-orange">MONTH 3 · JAN 15 – FEB 15, 2027</span> OpenAPI 3.1 Spec, Exact MIP vs. Heuristic MCLP &amp; Monte Carlo Validation
+              </summary>
+              <p style="font-size:0.92rem; margin-top:8px;">Replace ArcGIS Pro park selection with open-source <code>Pyomo</code>/<code>HiGHS</code> Exact MIP vs. Teitz-Bart optimality gap analysis, run <span class="metric-chip">10,000 rep</span> statistical simulations (<code>stat-validation-sims</code>), publish the OpenAPI 3.1 + Swagger UI suite, register the UAV Multispectral protocol on OSF, and audit Month 3 paid AI-training hours.</p>
+            </details>
+
+            <details class="timeline-node">
+              <summary style="cursor:pointer; font-family:var(--font-heading); font-weight:700; font-size:1.05rem;">
+                <span class="badge badge-orange">MONTH 4 · FEB 15 – MAR 15, 2027</span> ML Pitfalls Lab, PyTorch Determinism, Multi-LLM Run &amp; verisci v1.0
+              </summary>
+              <p style="font-size:0.92rem; margin-top:8px;">Execute 6 ML leakage experiments and 10-seed PyTorch determinism tests, benchmark GeoPandas vs. PostGIS vs. DuckDB Spatial joins, evaluate 3–4 LLMs across 24–28 <code>verisci</code> tasks, compute <code>Cohen's kappa</code> rubric reliability, build 1 Docker sandbox agent task, and release <code>verisci v1.0</code> with a Zenodo DOI &amp; Hugging Face Dataset Card.</p>
+            </details>
+
+            <details class="timeline-node">
+              <summary style="cursor:pointer; font-family:var(--font-heading); font-weight:700; font-size:1.05rem;">
+                <span class="badge badge-orange">MONTH 5 · MAR 15 – APR 15, 2027</span> Interpretable GeoAI (SHAP/ALE), PRISMA Scoping Review &amp; Wave 1 Apply
+              </summary>
+              <p style="font-size:0.92rem; margin-top:8px;">Complete the Khulna Urban Heat Island <code>SHAP</code> vs. <code>ALE</code> case study &amp; Model Card, register a 3,000-word PRISMA Scoping Review &amp; Research Proposal on OSF, publish a 6–8 page human-written Technical Report on EarthArXiv/Zenodo, secure &ge;2 merged upstream OSS PRs + 5 public reviews, and launch Wave 1 applications.</p>
+            </details>
+
+            <details class="timeline-node">
+              <summary style="cursor:pointer; font-family:var(--font-heading); font-weight:700; font-size:1.05rem;">
+                <span class="badge badge-orange">MONTH 6 · APR 15 – MAY 15, 2027</span> Wave 2 Hydrology/Physics, JOSS Submission Gate, 85+ Audit &amp; Outreach
+              </summary>
+              <p style="font-size:0.92rem; margin-top:8px;">Add Khulna stormwater pipe sizing &amp; numerical physics conservation tasks (<code>verisci v1.1</code>), submit software paper to JOSS upon completing 6 months of public Git history, audit all portfolio artifacts to <span class="metric-chip">&ge;85/100</span> with 3-line Decision Context headers, and send tailored 160-word outreach emails with 1-page Evidence-Linked CVs.</p>
+            </details>
+          </div>
+        </div>
+
+        <div class="section-QuickNav-footer">
+          <button type="button" class="btn btn-secondary" data-time-tab="monthly">← Monthly</button>
+          <button type="button" class="btn btn-primary" data-nav-target="projects">Projects Hub →</button>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 6: DEDICATED PROJECT MANAGEMENT HUB (COLLAPSED LIST + 4 TABS)
+           ==================================================================== -->
+      <section id="sec-projects" class="view-section" aria-labelledby="heading-projects">
+        <div class="page-header">
+          <h1 id="heading-projects" class="page-title">Projects &amp; File Structure Hub</h1>
+          <div class="page-header-controls">
+            <select id="projectCategorySelect" class="select-input" aria-label="Filter Projects by Domain Category">
+              <option value="ALL">All Projects (6 Core + Lanes)</option>
+              <option value="Core Benchmark Harness">P0: Benchmark Harness</option>
+              <option value="Geospatial & Earth">P1: Geospatial &amp; SAR</option>
+              <option value="Spatial ML & GeoAI">P2 &amp; P5: Spatial ML &amp; GeoAI</option>
+              <option value="Math, Stats & Optimization">P3: Math, Stats &amp; MCLP</option>
+              <option value="API & Docs Engineering">P4: OpenAPI 3.1 Suite</option>
+              <option value="Wave 2 & 3 Extensions">Wave 2/3 &amp; Proof Lanes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="section-tldr-bar">
+          <div class="tldr-text">
+            <strong>TL;DR:</strong> Projects are collapsed by default for fast mobile scanning. Tap any project to inspect its 4 structured tabs: <strong>Problem</strong>, <strong>Plan &amp; Verify</strong>, <strong>Outputs</strong>, and interactive <strong>Files</strong>.
+            <div class="bn-explain-block">প্রজেক্ট হাব: প্রতিটি প্রজেক্টে ৪টি ট্যাব রয়েছে—Problem, Plan, Outputs এবং Files। এখানে প্রতিটি ফোল্ডার ও ফাইল ক্লিক করে বিস্তারিত কাঠামো ও ভেরিফিকেশন কমান্ড কপি করা যাবে।</div>
+          </div>
+          <span class="reading-time-chip">~4 min read</span>
+        </div>
+
+        <div class="project-selector-grid" id="projectQuickJumpBar" aria-label="Quick Jump to Project Cards"></div>
+
+        <!-- Flagship verisci Architecture & Specification Inspector -->
+        <div class="card" style="margin-bottom: 16px;">
+          <div style="margin-bottom:10px;">
+            <span class="badge badge-orange" style="margin-bottom:4px;">MOTHER BENCHMARK SPECIFICATION</span>
+            <h2 style="font-size:1.18rem;">verisci (GeoEval-BD) Architecture, Task Contract &amp; Dual-Pass CI</h2>
+          </div>
+
+          <div class="subtab-bar" role="tablist" aria-label="verisci Specification Tabs">
+            <button type="button" role="tab" aria-selected="true" class="subtab-btn active" data-starter-tab="structure">1. Repo Layout</button>
+            <button type="button" role="tab" aria-selected="false" class="subtab-btn" data-starter-tab="pyproject">2. Task Contract</button>
+            <button type="button" role="tab" aria-selected="false" class="subtab-btn" data-starter-tab="harness">3. Inspect AI Spec</button>
+            <button type="button" role="tab" aria-selected="false" class="subtab-btn" data-starter-tab="exampleTask">4. Failure Taxonomy</button>
+            <button type="button" role="tab" aria-selected="false" class="subtab-btn" data-starter-tab="ciWorkflow">5. Dual-Pass CI</button>
+          </div>
+
+          <div class="code-panel" style="margin:0;">
+            <div class="code-panel-header">
+              <span class="code-filename" id="verisciStarterFilename">verisci/ — Complete Repository Directory Architecture</span>
+              <button type="button" class="icon-btn" style="min-height:38px; background:var(--surface-gold); color:#2A1A0E;" data-copy-target="verisciStarterCodePre" data-copy-label="verisci architecture spec">
+                Copy
+              </button>
+            </div>
+            <pre class="code-pre" id="verisciStarterCodePre"></pre>
+          </div>
+        </div>
+
+        <div id="projectsCatalogContainer"></div>
+
+        <div class="section-QuickNav-footer">
+          <button type="button" class="btn btn-secondary" data-nav-target="roadmap">&larr; 6-Month Roadmap</button>
+          <button type="button" class="btn btn-primary" data-nav-target="research">Research Track &rarr;</button>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 7: RESEARCH TRACK (THREE-PASS TIMELINE, TOGGLE CARDS & 12-STEP STEPPER)
+           ==================================================================== -->
+      <section id="sec-research" class="view-section" aria-labelledby="heading-research">
+        <div class="page-header">
+          <h1 id="heading-research" class="page-title">Research Identity &amp; 12-Step Methodology</h1>
+          <div class="page-header-controls">
+            <button type="button" class="icon-btn" data-nav-target="projects">Projects Hub</button>
+          </div>
+        </div>
+
+        <div class="section-tldr-bar">
+          <div class="tldr-text">
+            <strong>TL;DR:</strong> Anchor your research identity in reproducible Bangladesh hazard/urban modeling, use the Three-Pass timeline (`10m / 45m / 90m`), and step through the 12-stage compendium methodology.
+            <div class="bn-explain-block">রিসার্চ মেথডোলজি: পেপার পড়ার জন্য Three-Pass প্রোটোকল এবং ১২-ধাপের স্বাধীন গবেষণা পদ্ধতি অনুসরণ করুন, যাতে প্রতিটি ফলাফল গ্রাউন্ড-ট্রুথ ডেটার সাথে যাচাইকৃত থাকে।</div>
+          </div>
+          <span class="reading-time-chip">~3 min read</span>
+        </div>
+
+        <!-- Research Specialization & 4 Core Problems -->
+        <div class="grid-2" style="margin-bottom: 16px;">
+          <div class="card">
+            <span class="badge badge-orange" style="margin-bottom:6px;">RESEARCH SPECIALIZATION</span>
+            <h2 style="font-size:1.15rem; margin-bottom:8px;">Reproducible Geospatial Data Science, Climate-Hydrological Hazard Modeling &amp; Verifiable GeoAI Evaluation</h2>
+            <p style="font-size:0.9375rem; color:var(--text-secondary);">
+              <strong>University labs (<a href="https://zenodo.org/records/7716153/files/Open%20Science%20Guide%201.0.pdf?download=1" target="_blank" rel="noopener noreferrer">Open Science Guide</a>) judge undergraduate RA applicants on one question: <em>&ldquo;Will this student save supervision time or consume it?&rdquo;</em></strong>
+            </p>
+            <details class="read-more-block">
+              <summary>Read more on unifying the 4 research domains</summary>
+              <p style="font-size:0.9rem; color:var(--text-secondary); margin-top:6px;">
+                In geospatial labs, 70% of RA work is cleaning, reprojecting, and validating messy vector/raster datasets without spatial target leakage. Anchoring in <strong>Environmental Transport, Deltaic Hydrology &amp; Spatial Optimization</strong> unifies Earth Science (SAR flood &amp; extreme rainfall), Math &amp; Statistics (Monte Carlo coverage &amp; <button type="button" class="glossary-term" data-open-glossary="MCLP">MCLP</button> gaps), Physical/Engineering Sciences (PDE diffusion &amp; stormwater sizing), and ML (Spatial Block CV &amp; <button type="button" class="glossary-term" data-open-glossary="SHAP">SHAP</button>/<button type="button" class="glossary-term" data-open-glossary="ALE">ALE</button>).
+              </p>
+            </details>
+            <div class="key-takeaway">
+              <strong>Key Takeaway:</strong> Prove you eliminate lab onboarding friction via clean data provenance and leak-free pipelines.
+            </div>
+          </div>
+
+          <div class="card">
+            <span class="badge badge-gold" style="margin-bottom:6px;">2026–2029 TARGET PROBLEMS</span>
+            <h2 style="font-size:1.15rem; margin-bottom:8px;">4 High-Opportunity Research Problems</h2>
+            <ol style="padding-left:18px; font-size:0.92rem; display:grid; gap:6px;">
+              <li><strong>Spatial Target Leakage in GeoAI:</strong> Quantifying accuracy drop across spatial block sizes (<span class="metric-chip">0.5–5 km</span>) and Khulna &rarr; Chattogram transfers.</li>
+              <li><strong>Multi-Sensor SAR &amp; Precipitation Uncertainty:</strong> Benchmarking <code>Sentinel-1 SAR</code> (Fixed dB vs. Otsu) and <code>CHIRPS</code>/<code>ERA5</code> (UTC+6) against BMD gauges.</li>
+              <li><strong>Silent Analytical Failures in LLM Code:</strong> Deterministic verifiers for <button type="button" class="glossary-term" data-open-glossary="CRS">CRS</button> distortion and unmasked <code>NoData</code> (<a href="https://github.com/GeoDS/GeoAnalystBench" target="_blank" rel="noopener noreferrer">GeoAnalystBench</a>).</li>
+              <li><strong>Exact MIP vs. Heuristic Allocation:</strong> Measuring <code>Teitz-Bart</code> optimality gaps against <code>Pyomo</code>/<code>HiGHS</code> in Khulna wards.</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Three-Pass Reading Protocol Timeline with Proportional Time Bars (#Research) -->
+        <div class="card" style="margin-bottom: 16px;">
+          <h2 style="font-size:1.18rem; margin-bottom:10px;">Multi-Database Discovery (<a href="https://openalex.org/" target="_blank" rel="noopener noreferrer">OpenAlex</a> &amp; <a href="https://www.semanticscholar.org/" target="_blank" rel="noopener noreferrer">Semantic Scholar</a>) &amp; Three-Pass Timeline</h2>
+          <div class="timeline-track" style="margin-bottom:0;">
+            <div class="timeline-node">
+              <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:4px;">
+                <strong>Pass 1: Triage &amp; Five-Cs</strong>
+                <span class="badge badge-dark">5–10 Mins (~10% Time)</span>
+              </div>
+              <div class="mini-progress-track" style="height:6px; margin-bottom:6px;"><div class="mini-progress-fill" style="width:12%; background:var(--surface-gold);"></div></div>
+              <p style="font-size:0.9rem; color:var(--text-secondary);">Read Title, Abstract, Intro final paragraph, headings, and Conclusion. Identify Category, Context, Correctness, Contributions, and Clarity before deciding on Pass 2.</p>
+            </div>
+
+            <div class="timeline-node">
+              <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:4px;">
+                <strong>Pass 2: Methodological Extraction in Zotero</strong>
+                <span class="badge badge-orange">30–45 Mins (~33% Time)</span>
+              </div>
+              <div class="mini-progress-track" style="height:6px; margin-bottom:6px;"><div class="mini-progress-fill" style="width:45%; background:var(--accent-orange);"></div></div>
+              <p style="font-size:0.9rem; color:var(--text-secondary);">Inspect every figure, table, CRS, resolution, sample size ($N$), and baseline. Log in <a href="https://grsgroup.org/researcher-resources" target="_blank" rel="noopener noreferrer">Zotero</a>: Question, Scale, Method, Quantitative Finding, and Limitation.</p>
+            </div>
+
+            <div class="timeline-node">
+              <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:4px;">
+                <strong>Pass 3: Equation Critique &amp; Micro-Replication</strong>
+                <span class="badge badge-pass">60–90 Mins (~57% Time)</span>
+              </div>
+              <div class="mini-progress-track" style="height:6px; margin-bottom:6px;"><div class="mini-progress-fill" style="width:100%; background:var(--status-pass);"></div></div>
+              <p style="font-size:0.9rem; color:var(--text-secondary);">Re-derive key equations, trace preprocessing assumptions (cloud masks, spatial autocorrelation), and identify what breaks in data-scarce Bangladesh delta conditions.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weak vs Professional Literature Review Toggleable Cards (#Research) -->
+        <div class="card" style="margin-bottom: 16px;">
+          <h2 style="font-size:1.18rem; margin-bottom:10px;">Weak &ldquo;Paper Summary Dump&rdquo; vs. Professional Literature Review (Toggle by Dimension)</h2>
+          <div id="litReviewContrastContainer"></div>
+        </div>
+
+        <!-- 12-Step Independent Research Workflow Interactive Stepper (#Research) -->
+        <div class="card">
+          <h2 style="font-size:1.18rem; margin-bottom:10px;">12-Step Independent Research Roadmap &amp; 5-Component Compendium Stepper</h2>
+          <div id="researchStepperContainer"></div>
+        </div>
+
+        <div class="section-QuickNav-footer">
+          <button type="button" class="btn btn-secondary" data-nav-target="projects">&larr; Projects Hub</button>
+          <button type="button" class="btn btn-primary" data-nav-target="writing">Technical Writing →</button>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 8: TECHNICAL WRITING (DIATAXIS 2x2 SVG, 10-PT CHECKLIST & 10 ACCORDIONS)
+           ==================================================================== -->
+      <section id="sec-writing" class="view-section" aria-labelledby="heading-writing">
+        <div class="page-header">
+          <h1 id="heading-writing" class="page-title">Technical Writing &amp; Day 1 Specification</h1>
+          <div class="page-header-controls">
+            <button type="button" class="icon-btn" data-copy-target="day1GuideMarkdownPre" data-copy-label="Day 1 Assignment 10-Point Specification">
+              Copy Day 1 Contract
+            </button>
+          </div>
+        </div>
+
+        <div class="section-tldr-bar">
+          <div class="tldr-text">
+            <strong>TL;DR:</strong> Separate every piece into the <button type="button" class="glossary-term" data-open-glossary="Diataxis">Diátaxis</button> 2&times;2 grid, check off the 10-Point Artifact Contract, and use the 10 individual accordions below to execute your Day 1 GeoPandas guide.
+            <div class="bn-explain-block">টেকনিক্যাল রাইটিং: Diátaxis 2×2 ফ্রেমওয়ার্ক (Tutorial, How-To, Reference, Explanation) এবং ১০-পয়েন্ট চুক্তি অনুসরণ করে প্রথম দিনেই GeoPandas CRS ও Topology গাইডটি সম্পন্ন করুন।</div>
+          </div>
+          <span class="reading-time-chip">~3 min read</span>
+        </div>
+
+        <!-- Diataxis 2x2 Grid + SVG Diagram & Interactive 10-Point Contract Checklist (#Writing & #24) -->
+        <div class="grid-2" style="margin-bottom: 16px;">
+          <div class="card">
+            <span class="badge badge-orange" style="margin-bottom:6px;">DIÁTAXIS 2&times;2 ARCHITECTURE</span>
+            <h2 style="font-size:1.15rem; margin-bottom:8px;">4 Documentation Quadrants + 2 Research Genres</h2>
+            <!-- Inline SVG Diataxis 2x2 Matrix (#24) -->
+            <svg width="100%" height="150" viewBox="0 0 360 140" role="img" aria-label="Diataxis 2x2 Framework Diagram: Tutorials, How-To Guides, Reference, Explanation" style="margin-bottom:10px; border-radius:8px; background:var(--surface-dark);">
+              <line x1="180" y1="10" x2="180" y2="130" stroke="rgba(244,174,82,0.35)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <line x1="15" y1="70" x2="345" y2="70" stroke="rgba(244,174,82,0.35)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <text x="95" y="34" fill="#F4AE52" font-family="var(--font-heading)" font-size="12" font-weight="700" text-anchor="middle">1. TUTORIALS</text>
+              <text x="95" y="52" fill="#FEF3E2" font-family="var(--font-mono)" font-size="9.5" text-anchor="middle">Learning · Action</text>
+              <text x="265" y="34" fill="#F4AE52" font-family="var(--font-heading)" font-size="12" font-weight="700" text-anchor="middle">2. HOW-TO GUIDES</text>
+              <text x="265" y="52" fill="#FEF3E2" font-family="var(--font-mono)" font-size="9.5" text-anchor="middle">Goal · Imperative Verbs</text>
+              <text x="95" y="96" fill="#6EE7A8" font-family="var(--font-heading)" font-size="12" font-weight="700" text-anchor="middle">4. EXPLANATIONS</text>
+              <text x="95" y="114" fill="#FEF3E2" font-family="var(--font-mono)" font-size="9.5" text-anchor="middle">Understanding · Trade-offs</text>
+              <text x="265" y="96" fill="#6EE7A8" font-family="var(--font-heading)" font-size="12" font-weight="700" text-anchor="middle">3. REFERENCE</text>
+              <text x="265" y="114" fill="#FEF3E2" font-family="var(--font-mono)" font-size="9.5" text-anchor="middle">OpenAPI 3.1 · numpydoc</text>
+            </svg>
+            <div class="grid-2" style="gap:8px;">
+              <div style="padding:8px; background:var(--bg-secondary); border-radius:6px; font-size:0.86rem;">
+                <strong>1. Tutorials (<a href="https://diataxis.fr/" target="_blank" rel="noopener noreferrer">Learning</a>):</strong> Guided, zero-assumption lessons with reproducible outputs.
+              </div>
+              <div style="padding:8px; background:var(--bg-secondary); border-radius:6px; font-size:0.86rem;">
+                <strong>2. How-To Guides (Goal):</strong> Headings start with imperative verbs (<em>Diagnose, Repair, Reproject, Verify</em>).
+              </div>
+              <div style="padding:8px; background:var(--bg-secondary); border-radius:6px; font-size:0.86rem;">
+                <strong>3. Reference (<a href="https://spec.openapis.org/oas/v3.2.0.html" target="_blank" rel="noopener noreferrer">OpenAPI 3.1</a>):</strong> Exact signatures, schemas, HTTP error codes &amp; <code>doctest</code>.
+              </div>
+              <div style="padding:8px; background:var(--bg-secondary); border-radius:6px; font-size:0.86rem;">
+                <strong>4. Explanations + PRISMA/OSF:</strong> Architectural trade-offs, derivations, and scoping matrices.
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive 10-Point Contract Checklist (#Writing) -->
+          <div class="card" id="contractChecklistContainer"></div>
+        </div>
+
+        <!-- Responsible AI Policy Separated into Permitted (Green) vs Prohibited (Red) (#Writing) -->
+        <div class="card" style="margin-bottom: 16px;">
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; margin-bottom:10px;">
+            <h2 style="font-size:1.15rem;">Responsible AI Anti-Dependency Protocol &amp; 3-Line Context Header</h2>
+            <span class="badge badge-dark">100% Human-Authored Prose</span>
+          </div>
+          <div class="grid-2">
+            <div class="audit-block audit-strength">
+              <span class="audit-block-label">✓ Permitted AI Assistance (Green)</span>
+              <p style="font-size:0.9rem;">Brainstorming edge cases, diagnosing Python stack traces, generating synthetic test JSON payloads, and auditing finished human drafts against <a href="https://developers.google.com/style" target="_blank" rel="noopener noreferrer">Google Developer Style Guide</a> and <button type="button" class="glossary-term" data-open-glossary="Vale">Vale</button> rules.</p>
+            </div>
+            <div class="audit-block audit-gap">
+              <span class="audit-block-label">✕ Strictly Prohibited (Red)</span>
+              <p style="font-size:0.9rem;">Generating first drafts of articles or literature reviews, summarizing unread papers, or guessing DOIs. Precede every published piece with a <strong>3-Line Context Header</strong> (<em>Audience</em>, <em>Problem Solved</em>, <em>Verification Links</em>).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAY 1 ASSIGNMENT SPECIFICATION: 10 Separate Accordions + Full Copy Pre (#Writing & #29) -->
+        <div class="card">
+          <div style="margin-bottom:12px;">
+            <span class="badge badge-orange" style="margin-bottom:4px;">DAY 1 ASSIGNMENT — 10 INTERACTIVE ACCORDIONS</span>
+            <h2 style="font-size:1.2rem;">How to Validate Polygon Topologies and Standardize Coordinate Reference Systems for Subnational Boundary Analysis in GeoPandas</h2>
+          </div>
+
+          <div class="grid-3" style="margin-bottom:14px;">
+            <div class="card-subtle">
+              <h3 style="font-size:0.95rem; color:var(--accent-orange); margin-bottom:4px;">1. EPSG:4326 vs. EPSG:32646</h3>
+              <p style="font-size:0.88rem;"><code>EPSG:4326</code> uses angular decimal degrees. For Bangladesh ($88^\circ\text{E}$ to $92.7^\circ\text{E}$), reproject to <strong>UTM Zone 46N (<code>EPSG:32646</code>)</strong> (or <code>EPSG:32645</code> west of $90^\circ\text{E}$) before computing $\text{km}^2$.</p>
+            </div>
+            <div class="card-subtle">
+              <h3 style="font-size:0.95rem; color:var(--accent-orange); margin-bottom:4px;">2. Ring Self-Intersections</h3>
+              <p style="font-size:0.88rem;">Digitized union/upazila shapefiles frequently contain self-intersecting rings that cause <code>gpd.sjoin</code> or <code>gpd.overlay</code> to fail with <code>TopologyException</code>.</p>
+            </div>
+            <div class="card-subtle">
+              <h3 style="font-size:0.95rem; color:var(--accent-orange); margin-bottom:4px;">3. .make_valid() vs. .buffer(0)</h3>
+              <p style="font-size:0.88rem;">While <code>.buffer(0)</code> can silently invert interior holes, modern GeoPandas (&ge;1.0 with Shapely 2.0) provides <code>.make_valid()</code>, repairing rings safely.</p>
+            </div>
+          </div>
+
+          <!-- 10 Separate Accordions with Individual Copy Buttons -->
+          <div id="day1AccordionsContainer" style="margin-bottom:12px;"></div>
+
+          <details class="read-more-block">
+            <summary>View Full Raw Day 1 Specification Block</summary>
+            <div class="code-panel" style="margin-top:8px;">
+              <div class="code-panel-header">
+                <span class="code-filename">Day 1 Assignment Specification (Complete 10-Point Contract)</span>
+                <button type="button" class="icon-btn" style="min-height:36px; background:var(--surface-gold); color:#2A1A0E;" data-copy-target="day1GuideMarkdownPre" data-copy-label="Day 1 Specification">
+                  Copy
+                </button>
+              </div>
+              <pre class="code-pre" id="day1GuideMarkdownPre">1. Topic and Objective:
+   How to Validate Polygon Topologies and Standardize Coordinate Reference Systems for Subnational Boundary Analysis in GeoPandas.
+   Enable a reader to ingest a raw administrative boundary file, diagnose and repair invalid geometries, reproject accurately for metric area calculation, and export a clean GeoPackage/GeoJSON.
+
+2. Intended Audience:
+   Junior geospatial data analysts and urban planning researchers who know basic Python and pandas but make common projection and topology errors in geopandas.
+
+3. Research Requirements:
+   Run a verification script on a real or representative Bangladesh district/union boundary layer (e.g., from HDX COD-AB / geoBoundaries or a synthetic self-intersecting polygon test case) and record exact before-and-after .is_valid counts and area calculations.
+
+4. Primary Sources to Consult:
+   - GeoPandas Projections and Coordinate Reference Systems Documentation (https://geopandas.org/en/stable/docs.html)
+   - Google Developer Documentation Style Guide: Procedures &amp; Code Samples (https://developers.google.com/style/procedures)
+   - Diátaxis How-To Guide Principles (https://diataxis.fr/how-to-guides/)
+
+5. Expected Structure:
+   - Context Header (3 lines: Audience, Problem Solved, Environment/Prerequisites: python &gt;= 3.10, geopandas &gt;= 1.0, shapely &gt;= 2.0).
+   - Section 1: Diagnose Invalid Geometries and Missing CRS Metadata (Code + expected diagnostic output).
+   - Section 2: Repair Ring Self-Intersections with make_valid() (Explaining briefly why .make_valid() is safer than .buffer(0)).
+   - Section 3: Reproject from EPSG:4326 to EPSG:32646 for Metric Area Calculation (Including a warning note on UTM zone boundaries at 90°E in Bangladesh).
+   - Section 4: Verify Area Integrity and Export Standardized Boundaries (Assertion check: assert gdf.is_valid.all()).
+   - References &amp; Data Provenance (BibTeX-ready citations for GeoPandas and boundary data source).
+
+6. Technical Concepts to Understand:
+   Ellipsoidal vs. planar Cartesian coordinates, OGC Simple Feature validity rules, UTM Zone 45N vs. 46N meridian boundary (90°E), and idempotent data validation assertions.
+
+7. Writing Task:
+   Write a 500–750 word Diátaxis How-To Guide in Markdown (.md or .qmd), containing 4 concise, runnable code blocks and 1 diagnostic comparison table (Operation | EPSG:4326 Output | EPSG:32646 Output | Analytical Risk).
+
+8. Verification Requirements:
+   Every code block must run without error, include explicit import statements, and show sample printed output beneath the code.
+
+9. Editing Checklist:
+   - Do all procedural headings start with an imperative verb (Diagnose, Repair, Reproject, Verify)?
+   - Is there zero throat-clearing in the introduction (do not start with "In recent years, GIS has become very important...")?
+   - Are CRS codes, function names, and filenames wrapped in inline code backticks?
+
+10. Final Publication Destination:
+    Draft in your local repository (docs/guides/geopandas-topology-crs-standardization.md), pass Vale linting + 100-point rubric (&gt;=80/100), and publish to meheran.dev/docs.</pre>
+            </div>
+          </details>
+        </div>
+
+        <div class="section-QuickNav-footer">
+          <button type="button" class="btn btn-secondary" data-nav-target="research">&larr; Research Track</button>
+          <button type="button" class="btn btn-primary" data-nav-target="prep">Technical Prep &rarr;</button>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 9: TECHNICAL PREPARATION (SEGMENTED TIERS, AUTO-DAY & LEITNER DECK)
+           ==================================================================== -->
+      <section id="sec-prep" class="view-section" aria-labelledby="heading-prep">
+        <div class="page-header">
+          <h1 id="heading-prep" class="page-title">Technical Preparation &amp; Oral Drills</h1>
+        </div>
+
+        <div class="section-tldr-bar">
+          <div class="tldr-text">
+            <strong>TL;DR:</strong> Prioritize Tier 1–3 high-ROI skills, execute today's automatically selected weekday practice drill, and train with the <span class="metric-chip">90 sec</span> Leitner oral flashcard deck.
+            <div class="bn-explain-block">টেকনিক্যাল প্রস্তুতি: সপ্তাহের বারের সাথে মিলিয়ে আজকের ডকুমেন্টেশন ও কোডিং অনুশীলন করুন এবং ৯০ সেকেন্ডের টাইমারসহ Leitner ফ্ল্যাশকার্ড ডেকে মৌখিক ইন্টারভিউয়ের প্রস্তুতি নিন।</div>
+          </div>
+          <span class="reading-time-chip">~3 min read</span>
+        </div>
+
+        <!-- 3 Segmented Tabs: Tier 1, Tier 2, Tier 3 & Exclusions (#Prep) -->
+        <div class="card" style="margin-bottom: 16px;">
+          <div class="subtab-bar" role="tablist" aria-label="Technical Preparation Priority Tiers">
+            <button type="button" role="tab" aria-selected="true" class="subtab-btn active" data-prep-tier-tab="tier1">Tier 1: Essential (M1–M3)</button>
+            <button type="button" role="tab" aria-selected="false" class="subtab-btn" data-prep-tier-tab="tier2">Tier 2: High Value (M2–M5)</button>
+            <button type="button" role="tab" aria-selected="false" class="subtab-btn" data-prep-tier-tab="tier3">Tier 3 &amp; Strict Exclusions</button>
+          </div>
+
+          <div data-prep-tier-pane="tier1" style="display:block;">
+            <span class="badge badge-orange" style="margin-bottom:6px;">TIER 1 — CORE 20% COVERING 80% OF ROLE GATES</span>
+            <ul style="padding-left:18px; font-size:0.9375rem; display:grid; gap:6px; margin-top:6px;">
+              <li><strong>Reproducible Python:</strong> Git, <code>uv</code>/<code>conda</code> lockfiles, <code>pytest</code>, GitHub Actions CI, and <code>Dockerfile</code>.</li>
+              <li><strong>Task + Verifier Authoring:</strong> <a href="https://inspect.aisi.org.uk/" target="_blank" rel="noopener noreferrer">Inspect AI</a> task format with dual-pass numeric tolerance verifiers.</li>
+              <li><strong>Geospatial &amp; Statistical Correctness:</strong> <button type="button" class="glossary-term" data-open-glossary="CRS">CRS</button> projections (<code>UTM 45N/46N</code>), raster <code>NoData</code>, Spatial Block CV, and <button type="button" class="glossary-term" data-open-glossary="BCa">BCa</button> bootstrap intervals.</li>
+              <li><strong>Release Hygiene &amp; Paid Hours:</strong> <code>LICENSE</code>, <code>CITATION.cff</code>, tagged releases, and accumulating paid STEM evaluation hours.</li>
+            </ul>
+          </div>
+
+          <div data-prep-tier-pane="tier2" style="display:none;">
+            <span class="badge badge-gold" style="margin-bottom:6px;">TIER 2 — DOMAIN DEPTH &amp; EXTERNAL REVIEW (M2–M5)</span>
+            <ul style="padding-left:18px; font-size:0.9375rem; display:grid; gap:6px; margin-top:6px;">
+              <li><strong>Climate &amp; Raster Arrays:</strong> <a href="https://tutorial.xarray.dev/" target="_blank" rel="noopener noreferrer">Xarray</a>, <code>NetCDF</code>, <code>ERA5</code>/<code>CHIRPS</code> UTC+6 alignment, and latitude weighting.</li>
+              <li><strong>Optimization &amp; Simulation:</strong> <a href="https://pyomo.readthedocs.io" target="_blank" rel="noopener noreferrer">Pyomo</a> / <a href="https://developers.google.com/optimization" target="_blank" rel="noopener noreferrer">OR-Tools</a> + <code>HiGHS</code> exact MIP solvers and <code>SymPy</code>/<code>SciPy</code> Monte Carlo validation.</li>
+              <li><strong>ML &amp; Deep Learning Rigor:</strong> <code>scikit-learn</code> pipelines, <code>XGBoost</code>/<code>LightGBM</code>, <a href="https://pytorch.org/docs/stable/notes/randomness.html" target="_blank" rel="noopener noreferrer">PyTorch seed determinism</a>, and <button type="button" class="glossary-term" data-open-glossary="SHAP">SHAP</button>/<button type="button" class="glossary-term" data-open-glossary="ALE">ALE</button>.</li>
+              <li><strong>External Review Lanes:</strong> Kaggle dataset/notebook, 2–3 upstream Open-Source PRs, and 5 public code/PR reviews.</li>
+            </ul>
+          </div>
+
+          <div data-prep-tier-pane="tier3" style="display:none;">
+            <div class="grid-2">
+              <div class="audit-block audit-strength">
+                <span class="audit-block-label">✓ Tier 3 Differentiators (M5–M6)</span>
+                <p style="font-size:0.9rem;">Wave 2 Numerical Physics &amp; Khulna Stormwater Sizing packs (<code>B1</code> &amp; <code>B2</code>), <a href="https://joss.readthedocs.io/en/latest/submitting.html" target="_blank" rel="noopener noreferrer">JOSS submission</a>, and optional Wave 3 mini-packs (<code>C1</code> Ecology, <code>C2</code> PrivacyEval-mini).</p>
+              </div>
+              <div class="audit-block audit-gap">
+                <span class="audit-block-label">✕ Strict Exclusions (Zero Time Spent)</span>
+                <p style="font-size:0.9rem;">Do not spend time on new online certificates (DataCamp/Coursera), frontend web dashboards, <code>Lean/Coq</code>, <code>JAX</code>, or generic LeetCode grinding.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7-Day Interactive Day Selector (Auto-Selects Today's Weekday) (#22) -->
+        <h2 style="font-size:1.2rem; margin-bottom:10px;">7-Day Technical Practice &amp; Documentation Reading Selector</h2>
+        <div id="sevenDaySelectorContainer"></div>
+
+        <details class="read-more-block" style="margin-bottom:18px;">
+          <summary>View Complete 7-Day Schedule Table</summary>
+          <div class="table-wrap" style="margin-top:8px;">
+            <table class="data-table" aria-label="7-Day Technical Practice and Documentation Reading Schedule">
+              <thead>
+                <tr>
+                  <th>Day &amp; Focus</th>
+                  <th>Official Documentation &amp; Primary Sources</th>
+                  <th>Practice Method &amp; Progression</th>
+                  <th>Measurable Daily Deliverable</th>
+                </tr>
+              </thead>
+              <tbody id="sevenDayRotationBody"></tbody>
+            </table>
+          </div>
+        </details>
+
+        <!-- 90-Second Oral AI Interview Prep Flashcard Deck (#30) -->
+        <h2 style="font-size:1.2rem; margin-bottom:10px;">90-Second Oral AI Interview Leitner Deck (Earth, ML &amp; Math/Stats)</h2>
+        <div class="grid-2" id="interviewFlashcardsContainer"></div>
+
+        <div class="section-QuickNav-footer">
+          <button type="button" class="btn btn-secondary" data-nav-target="daily">← Daily Plan</button>
+          <button type="button" class="btn btn-primary" data-nav-target="career">Career &amp; Profiles →</button>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 10: CAREER ROLES, PLATFORMS, PAID HOURS LOGGER & LIVE EMAIL FORM
+           ==================================================================== -->
+      <section id="sec-career" class="view-section" aria-labelledby="heading-career">
+        <div class="page-header">
+          <h1 id="heading-career" class="page-title">Career Roles, Platforms &amp; Outreach</h1>
+          <div class="page-header-controls">
+            <button type="button" class="icon-btn" data-copy-target="outreachEmailPre" data-copy-label="160-word PI Outreach Email">
+              Copy PI Outreach Email
+            </button>
+          </div>
+        </div>
+
+        <div class="section-tldr-bar">
+          <div class="tldr-text">
+            <strong>TL;DR:</strong> Log your Outlier/Turing paid hours toward the <span class="metric-chip">&ge;80 hr</span> W12 gate, filter the 8 AI Trainer roles by Wave, check off platform setup, and customize your live PI outreach email.
+            <div class="bn-explain-block">ক্যারিয়ার ও আউটরিচ: Wave অনুযায়ী AI Trainer রোল ফিল্টার করুন, Outlier/Turing-এর পেইড ঘণ্টা লগ করুন (≥80 ঘণ্টার লক্ষ্যমাত্রা), এবং ল্যাব প্রফেসরদের জন্য ১৬০ শব্দের ইমেইল তৈরি করুন।</div>
+          </div>
+          <span class="reading-time-chip">~3 min read</span>
+        </div>
+
+        <!-- Paid Hours Logger for Outlier / Turing (#Section 9) -->
+        <div class="card" id="paidHoursLoggerContainer" style="margin-bottom: 16px;"></div>
+
+        <!-- 3 Role Clusters Summary -->
+        <div class="grid-3" style="margin-bottom: 16px;">
+          <div class="card">
+            <span class="badge badge-orange" style="margin-bottom:6px;">CLUSTER 1 · WAVE 1</span>
+            <h2 style="font-size:1.12rem; margin-bottom:6px;">AI Evaluator, RLHF &amp; STEM Trainer</h2>
+            <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:8px;">
+              AI Evaluator, AI Response Evaluator, AI Data Quality Specialist, Data/Document Annotation Specialist, and STEM AI Trainer (Earth, Math/Stats, ML).
+            </p>
+            <p style="font-size:0.88rem;"><strong>Lead Proof:</strong> <code>verisci</code> (<code>GeoEval-BD</code> v1.0) with 24–30 <a href="https://inspect.aisi.org.uk/" target="_blank" rel="noopener noreferrer">Inspect AI</a> tasks, dual-pass verifiers, 6-category LLM Failure Taxonomy, <code>Cohen's kappa</code>, and logged paid hours.</p>
+          </div>
+          <div class="card">
+            <span class="badge badge-gold" style="margin-bottom:6px;">CLUSTER 2 · WAVE 1 PARALLEL</span>
+            <h2 style="font-size:1.12rem; margin-bottom:6px;">Technical/API Writer &amp; Academic RA</h2>
+            <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:8px;">
+              Research-Oriented Technical Writer, Developer/API Documentation Writer, Junior Documentation Engineer, and Remote Academic RA.
+            </p>
+            <p style="font-size:0.88rem;"><strong>Lead Proof:</strong> <code>meheran.dev/docs</code> Quarto hub, <a href="https://geopandas.org/en/stable/docs.html" target="_blank" rel="noopener noreferrer">Read the Docs</a> Python module site, <a href="https://spec.openapis.org/oas/v3.2.0.html" target="_blank" rel="noopener noreferrer">OpenAPI 3.1/3.2</a> + Swagger UI suite, Zenodo DOI literature review, and 2–3 merged OSS PRs.</p>
+          </div>
+          <div class="card">
+            <span class="badge badge-dark" style="margin-bottom:6px;">CLUSTER 3 · WAVE 2 (M3–M6)</span>
+            <h2 style="font-size:1.12rem; margin-bottom:6px;">Spatial Data Scientist &amp; ML Engineer</h2>
+            <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:8px;">
+              Geospatial Data Analyst, Data Scientist, Machine Learning Specialist, and Machine Learning Engineer.
+            </p>
+            <p style="font-size:0.88rem;"><strong>Lead Proof:</strong> <code>sar-flood-eval</code>, <code>spatial-leakage-s2</code>, <code>khulna-parks-mclp</code>, <code>ml-pitfalls-lab</code> (PyTorch 10-seed determinism), <code>khulna-uhi-shap</code> Model Card, and Kaggle dataset/notebook.</p>
+          </div>
+        </div>
+
+        <!-- 8 AI Trainer Job Postings: Wave Filter Chips + Collapsible Cards (#20) -->
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; margin-bottom:8px;">
+          <h2 style="font-size:1.18rem;">8 AI Trainer Domain Postings (Filter by Wave)</h2>
+          <div class="jump-chips-bar" style="margin-bottom:0;" role="tablist" aria-label="Filter AI Trainer Roles by Wave">
+            <button type="button" class="jump-chip active" style="min-height:38px;" data-role-wave-filter="ALL">All 8 Roles</button>
+            <button type="button" class="jump-chip" style="min-height:38px;" data-role-wave-filter="WAVE1">Wave 1 (Core)</button>
+            <button type="button" class="jump-chip" style="min-height:38px;" data-role-wave-filter="WAVE2">Wave 2 (M5–M6)</button>
+            <button type="button" class="jump-chip" style="min-height:38px;" data-role-wave-filter="WAVE3">Wave 3 (Mini-Packs)</button>
+          </div>
+        </div>
+        <div id="aiTrainerRoleCardsContainer" style="margin-bottom: 18px;"></div>
+        <div class="sr-only"><table><tbody id="aiTrainerRolesBody"></tbody></table></div>
+
+        <!-- 12-Platform Ecosystem: Filter Chips (All, Core, Selective, Skip) + Setup Done Checkboxes (#21) -->
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; margin-bottom:8px;">
+          <h2 style="font-size:1.18rem;">12-Platform Ecosystem &amp; Setup Checklist</h2>
+          <div class="jump-chips-bar" style="margin-bottom:0;" role="tablist" aria-label="Filter Platforms by Priority">
+            <button type="button" class="jump-chip active" style="min-height:38px;" data-platform-filter="ALL">All 12 Platforms</button>
+            <button type="button" class="jump-chip" style="min-height:38px;" data-platform-filter="CORE">Core (8)</button>
+            <button type="button" class="jump-chip" style="min-height:38px;" data-platform-filter="SELECTIVE">Selective (3)</button>
+            <button type="button" class="jump-chip" style="min-height:38px;" data-platform-filter="SKIP">Skip (1)</button>
+          </div>
+        </div>
+        <div class="grid-2" id="platformCardsContainer" style="margin-bottom: 18px;"></div>
+        <div class="sr-only"><table><tbody id="platformsTableBody"></tbody></table></div>
+
+        <!-- 4-Color CV Formula + Form-Based PI Outreach Email Builder (#Career & #Section 9) -->
+        <div class="grid-2">
+          <div class="card">
+            <span class="badge badge-orange" style="margin-bottom:6px;">4-PART CV BULLET FORMULA</span>
+            <h2 style="font-size:1.15rem; margin-bottom:8px;">4 Visually Distinct Components Per Bullet</h2>
+            <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:6px; margin-bottom:12px;">
+              <div style="padding:6px 8px; background:var(--accent-orange-soft); border-left:3px solid var(--accent-orange); border-radius:4px; font-size:0.82rem;">
+                <strong>1. Action Verb</strong> (Orange): Engineered, Authored, Validated
+              </div>
+              <div style="padding:6px 8px; background:var(--surface-gold-soft); border-left:3px solid var(--surface-gold); border-radius:4px; font-size:0.82rem;">
+                <strong>2. Mechanism</strong> (Gold): Inspect AI, Pyomo MIP, Diátaxis + Vale
+              </div>
+              <div style="padding:6px 8px; background:var(--status-pass-bg); border-left:3px solid var(--status-pass); border-radius:4px; font-size:0.82rem;">
+                <strong>3. Quantified Scope</strong> (Green): 28 tasks, 332.64 km², 100% pass
+              </div>
+              <div style="padding:6px 8px; background:var(--bg-secondary); border-left:3px solid var(--surface-dark); border-radius:4px; font-size:0.82rem;">
+                <strong>4. Direct Proof Link</strong> (Mono): [Zenodo DOI] | [GitHub] | [Live Docs]
+              </div>
+            </div>
+            <ul style="padding-left:18px; font-size:0.88rem; display:grid; gap:10px;">
+              <li><strong>AI Evaluation / ML Engineering:</strong><br><span style="color:var(--accent-orange); font-weight:700;">Engineered</span> <span style="background:var(--surface-gold-soft); padding:0 4px;"><code>verisci</code> (<code>GeoEval-BD</code>) in Inspect AI with dual-pass numeric verifiers</span> across <span style="color:var(--status-pass); font-weight:700;">28 geospatial/ML tasks (100% reference pass, 100% trap catch, 4 LLMs)</span> &mdash; <code>[Zenodo DOI] | [GitHub] | [HF Dataset]</code></li>
+              <li><strong>Technical Writing:</strong><br><span style="color:var(--accent-orange); font-weight:700;">Authored</span> <span style="background:var(--surface-gold-soft); padding:0 4px;">a Diátaxis developer portal on Read the Docs &amp; OpenAPI 3.1 reference</span> enforcing <span style="color:var(--status-pass); font-weight:700;">Google Style via Vale CI (12 pages, 100% doctest pass)</span> &mdash; <code>[Live Docs] | [OpenAPI Spec] | [Merged PRs]</code></li>
+              <li><strong>Academic Research Assistant:</strong><br><span style="color:var(--accent-orange); font-weight:700;">Developed</span> <span style="background:var(--surface-gold-soft); padding:0 4px;">a headless Sentinel-1 SAR &amp; ESA WorldCover flood pipeline</span> across <span style="color:var(--status-pass); font-weight:700;">four Chattogram districts (17,531.95 km², 332.64 km² impacted cropland) + 25-paper PRISMA matrix</span> &mdash; <code>[Zenodo DOI] | [OSF Protocol] | [Code]</code></li>
+            </ul>
+          </div>
+
+          <!-- Form-Based PI Outreach Email Generator with Live Preview & mailto: (#Section 9) -->
+          <div class="card-dark">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:8px;">
+              <span class="badge badge-gold">INTERACTIVE 160-WORD PI EMAIL BUILDER</span>
+              <div style="display:flex; gap:6px;">
+                <button type="button" class="icon-btn" style="min-height:38px; background:var(--surface-gold); color:#2A1A0E;" data-copy-target="outreachEmailPre" data-copy-label="160-word PI Outreach Email">
+                  Copy
+                </button>
+                <a href="mailto:?subject=Reproducible%20Spatial%20CV%20%26%20SAR%20Pipeline" id="outreachMailtoLink" class="icon-btn" style="min-height:38px; text-decoration:none;">
+                  mailto: ↗
+                </a>
+              </div>
+            </div>
+            <h2 style="font-size:1.12rem; color:var(--surface-gold); margin-bottom:8px;">Customize &amp; Preview Cold Outreach Email</h2>
+            <div class="grid-2" style="gap:8px; margin-bottom:10px;">
+              <input type="text" id="piLastNameInput" class="form-input" placeholder="Prof. Last Name (e.g. Rahman)" aria-label="Professor Last Name">
+              <input type="email" id="piEmailAddressInput" class="form-input" placeholder="PI Email (optional for mailto:)" aria-label="Professor Email Address">
+              <input type="text" id="piPaperTopicInput" class="form-input" placeholder="Paper Topic (e.g. urban flood SAR)" aria-label="Specific Paper Topic">
+              <input type="text" id="piMethodChoiceInput" class="form-input" placeholder="Method Choice (e.g. spatial block CV)" aria-label="Specific Methodological Choice">
+            </div>
+            <pre class="code-pre" id="outreachEmailPre" style="background:#140C06; padding:12px; border-radius:6px; white-space:pre-wrap;"></pre>
+          </div>
+        </div>
+
+        <div class="section-QuickNav-footer">
+          <button type="button" class="btn btn-secondary" data-nav-target="prep">&larr; Technical Prep</button>
+          <button type="button" class="btn btn-primary" data-nav-target="rubric">Progress &amp; 100-Pt QA &rarr;</button>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 11: PROGRESS TELEMETRY & ARTIFACT-SPECIFIC 100-PT RUBRIC (#34, #35, #37, #38)
+           ==================================================================== -->
+      <section id="sec-rubric" class="view-section" aria-labelledby="heading-rubric">
+        <div class="page-header">
+          <h1 id="heading-rubric" class="page-title">Progress Telemetry &amp; 100-Pt Rubric</h1>
+          <div class="page-header-controls">
+            <button type="button" class="icon-btn" id="downloadJsonBtn">Download JSON</button>
+            <button type="button" class="icon-btn" id="importJsonBtn">Import JSON</button>
+            <input type="file" id="importJsonInput" accept=".json,application/json" class="sr-only" aria-label="Import JSON state file">
+            <button type="button" class="icon-btn" id="exportProgressBtn">Export State JSON</button>
+            <button type="button" class="icon-btn" style="border-color:var(--status-fail); color:var(--status-fail);" id="resetProgressBtn">Reset</button>
+          </div>
+        </div>
+
+        <div class="section-tldr-bar">
+          <div class="tldr-text">
+            <strong>TL;DR:</strong> Every artifact starts as <strong>Not Scored</strong> until explicitly evaluated. Select an artifact, adjust the minus/plus steppers, inspect the Radar Chart &amp; 2 Weakest Criteria, and save its quality gate record.
+            <div class="bn-explain-block">১০০-পয়েন্ট রুব্রিক ও প্রোগ্রেস: প্রতিটি প্রজেক্ট বা আর্টিফ্যাক্ট আলাদাভাবে মূল্যায়ন করুন। মূল্যায়নের আগে স্কোর 'Not Scored' থাকবে এবং মূল্যায়নের পর সবচেয়ে দুর্বল ২টি দিক স্বয়ংক্রিয়ভাবে চিহ্নিত হবে।</div>
+          </div>
+          <span class="reading-time-chip">~2 min read</span>
+        </div>
+
+        <!-- Progress Bar Card -->
+        <div class="card" style="margin-bottom: 16px;">
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin-bottom:8px;">
+            <h2 style="font-size:1.1rem;">6-Month Permanent Milestone Telemetry (48 Verified Gates)</h2>
+            <span class="mono-label" style="color:var(--accent-orange);">24 Proof-Linked Weeks + 24 Monthly KPIs (Daily Checklist Reset Separately by Date)</span>
+          </div>
+          <div style="width:100%; height:10px; background:var(--bg-secondary); border:1px solid var(--border-medium); border-radius:var(--radius-pill); overflow:hidden;">
+            <div id="overviewProgressFill" style="height:100%; width:0%; background:linear-gradient(90deg, var(--accent-orange), var(--surface-gold)); transition:width 240ms ease;"></div>
+          </div>
+        </div>
+
+        <!-- Artifact Selector Bar (#35) -->
+        <div class="filter-toolbar" style="margin-bottom: 16px;">
+          <label for="rubricArtifactSelect" style="font-family:var(--font-heading); font-weight:700;">Target Artifact to Evaluate:</label>
+          <select id="rubricArtifactSelect" class="select-input" style="flex:1 1 260px;"></select>
+          <button type="button" class="btn btn-primary" id="saveRubricEvalBtn">Save Evaluation Snapshot</button>
+          <button type="button" class="icon-btn" id="loadBaselineRubricBtn">Load Sample Draft</button>
+        </div>
+
+        <div class="grid-2" style="align-items: start;">
+          <!-- Left: Live Score Readout, Radar Chart, 2 Weakest Criteria & History -->
+          <div>
+            <div class="card-dark" style="margin-bottom: 16px;">
+              <span class="badge badge-gold" style="margin-bottom:6px;">ARTIFACT QUALITY GATE AUDITOR</span>
+              <div class="display-title" id="rubricTotalScore" style="font-size:2.75rem; color:var(--surface-gold); margin:4px 0;">Not Scored</div>
+              <div style="margin-bottom:10px;">
+                <span id="rubricDecisionBand" class="badge badge-neutral">AWAITING EVALUATION</span>
+              </div>
+              <p id="rubricDecisionAdvice" style="font-size:0.92rem; color:#E8D5BC; margin-bottom:12px;">
+                Select minus/plus stepper scores on the right to evaluate this artifact against its quality gate.
+              </p>
+
+              <!-- Inline SVG Rubric Radar Chart (#Rubric & #23) -->
+              <div id="rubricRadarContainer" style="margin:10px 0;"></div>
+
+              <!-- Automatic 2 Weakest Criteria Diagnostic (#Rubric) -->
+              <div id="rubricWeakestContainer" style="border-top:1px solid rgba(244, 174, 82, 0.2); padding-top:10px; margin-top:10px;"></div>
+            </div>
+
+            <!-- Artifact Evaluation History Card (#35) -->
+            <div class="card" style="margin-bottom: 16px;">
+              <h2 style="font-size:1.1rem; margin-bottom:8px;">Artifact-Specific Evaluation History (&ge;80 / &ge;85 Gates)</h2>
+              <div id="rubricHistoryContainer"></div>
+            </div>
+
+            <div class="card">
+              <span class="badge badge-orange" style="margin-bottom:6px;">TRACK 6 · REALISTIC EXPECTATIONS</span>
+              <h2 style="font-size:1.12rem; margin-bottom:8px;">Honest Boundaries &amp; Opportunity Cost Rules</h2>
+              <ul style="padding-left:18px; font-size:0.9rem; display:grid; gap:8px;">
+                <li><strong>What This Portfolio Achieves:</strong> Places you in the top 5% of undergraduate RA, AI Evaluator, and Junior Technical Writer applicants by eliminating hiring risk before Day 1.</li>
+                <li><strong>What It Does Not Replace:</strong> A Zenodo DOI technical report is <em>not</em> a peer-reviewed journal article, and open-source PRs are <em>not</em> formal full-time employment.</li>
+                <li><strong>Compensation &amp; Queue Reality:</strong> Posted <span class="metric-chip">$60–120/hr</span> AI Trainer rates are ceilings paid only per accepted task; median mid-tier platform rates are ~$48–55/hr and empty queues are common.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right: 10 Interactive Criteria Minus/Plus Steppers (#31) -->
+          <div class="card">
+            <h2 style="font-size:1.15rem; margin-bottom:6px;">100-Point Portfolio Rubric Steppers (&minus; / +)</h2>
+            <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:8px;">Use the 44&times;44px minus/plus buttons for exact integer scoring on mobile screens.</p>
+            <div id="rubricSlidersContainer"></div>
+          </div>
+        </div>
+
+        <div class="section-QuickNav-footer">
+          <button type="button" class="btn btn-secondary" data-nav-target="career">&larr; Career &amp; Profiles</button>
+          <button type="button" class="btn btn-primary" data-nav-target="overview">Back to Overview &uarr;</button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ========================================================================
+       PERSISTENT MOBILE BOTTOM NAVIGATION BAR (App-Like Mobile UX)
+       ======================================================================== -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Primary Bottom Navigation">
+    <button type="button" class="bottom-tab-btn active" data-nav-target="overview">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      <span>Overview</span>
+    </button>
+    <button type="button" class="bottom-tab-btn" data-nav-target="daily">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+      <span>Daily</span>
+    </button>
+    <button type="button" class="bottom-tab-btn" data-nav-target="weekly">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <span>Weekly</span>
+    </button>
+    <button type="button" class="bottom-tab-btn" data-nav-target="projects">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+      <span>Projects</span>
+    </button>
+    <button type="button" class="bottom-tab-btn" id="bottomMoreMenuBtn" aria-label="Open All Views Drawer">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+      <span>All Views</span>
+    </button>
+  </nav>
+
+  <!-- Floating Back to Top Button (#17) -->
+  <button type="button" class="back-to-top-btn" id="backToTopBtn" aria-label="Scroll back to top">
+    &uarr; Top
+  </button>
+
+  <!-- Global Search Modal (#15) -->
+  <div class="modal-backdrop" id="globalSearchModal" role="dialog" aria-modal="true" aria-labelledby="searchModalHeading">
+    <div class="modal-sheet">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:10px;">
+        <h2 id="searchModalHeading" style="font-size:1.15rem;">Global Search (Projects, 24 Weeks &amp; Glossary)</h2>
+        <button type="button" class="icon-btn" id="closeSearchModalBtn">Close</button>
+      </div>
+      <input type="search" id="globalSearchInput" class="search-input" style="width:100%; margin-bottom:10px;" placeholder="Search e.g. SAR, MCLP, OpenAPI, W12, IoU, JOSS...">
+      <div id="globalSearchResults"></div>
+    </div>
+  </div>
+
+  <!-- Glossary Definition Bottom Sheet (#Section 2) -->
+  <div class="modal-backdrop" id="glossaryModal" role="dialog" aria-modal="true" aria-labelledby="glossaryModalTitle">
+    <div class="modal-sheet">
+      <div class="sheet-handle" aria-hidden="true"></div>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:8px;">
+        <h2 id="glossaryModalTitle" style="font-size:1.15rem; color:var(--accent-orange);">Technical Term</h2>
+        <button type="button" class="icon-btn" id="closeGlossaryModalBtn">Close</button>
+      </div>
+      <p id="glossaryModalDef" style="font-size:0.96rem; margin-bottom:8px;"></p>
+      <div id="glossaryModalUsage" class="nested-callout mono-label"></div>
+    </div>
+  </div>
+
+  <!-- Safe Reset / Import Confirmation Dialog (#37 & #38) -->
+  <div class="modal-backdrop" id="confirmModal" role="dialog" aria-modal="true" aria-labelledby="confirmModalTitle">
+    <div class="modal-sheet">
+      <h2 id="confirmModalTitle" style="font-size:1.18rem; margin-bottom:8px;">Confirm Action</h2>
+      <p id="confirmModalMessage" style="font-size:0.95rem; color:var(--text-secondary); margin-bottom:16px;"></p>
+      <div style="display:flex; justify-content:flex-end; gap:10px;">
+        <button type="button" class="btn btn-secondary" id="confirmModalCancelBtn">Cancel</button>
+        <button type="button" class="btn btn-primary" style="background:var(--status-fail);" id="confirmModalOkBtn">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Element -->
+  <div id="toastNotification" class="toast-notification" role="status" aria-live="polite"></div>
+
+  <!-- ========================================================================
+       CLEAN SITE FOOTER (#46: Developer Palette/Font Info Removed)
+       ======================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div>
+        <strong style="font-family:var(--font-heading); font-size:1rem; color:var(--surface-gold);">
+          6-Month Research &amp; Technical Profile Transformation Application
+        </strong>
+        <p style="font-size:0.84rem; color:#C5AA89; margin-top:4px;">
+          Md. Mokammel Morshed (Meheran) · KUET BURP 2K24 · SERC · Precision Agriculture Lab · Nov 15, 2026 – May 15, 2027
+        </p>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:8px;">
+        <button type="button" class="icon-btn" style="min-height:38px;" data-nav-target="daily">Daily Plan →</button>
+        <button type="button" class="icon-btn" style="min-height:38px;" data-nav-target="projects">Projects Hub →</button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
