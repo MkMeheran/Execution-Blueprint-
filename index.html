@@ -442,14 +442,14 @@
         <!-- KPI Strip -->
         <div class="kpi-strip" aria-label="Six-Month Target Metrics">
           <div class="kpi-card">
-            <div class="kpi-num">6 + 4</div>
-            <div class="kpi-label">Flagships &amp; Lanes</div>
-            <div class="kpi-sub">P0–P5 Repos + L1–L4 Lanes</div>
+            <div class="kpi-num">8 Repos</div>
+            <div class="kpi-label">Validation Repos</div>
+            <div class="kpi-sub">v4 P1–P9 Core Suite</div>
           </div>
           <div class="kpi-card">
-            <div class="kpi-num">24–30</div>
+            <div class="kpi-num">21 Tasks</div>
             <div class="kpi-label">verisci Tasks</div>
-            <div class="kpi-sub">Dual-pass pytest + Inspect AI</div>
+            <div class="kpi-sub">3 per project (P2–P8) in v1.0</div>
           </div>
           <div class="kpi-card">
             <div class="kpi-num">&ge; 80/100</div>
@@ -488,7 +488,7 @@
               </p>
             </details>
             <div class="key-takeaway" style="background:rgba(255,255,255,0.06); color:#FEF3E2;">
-              <strong>Key Takeaway:</strong> Combine domain authenticity (Bangladesh floods, UHI, park MCLP) with automated numeric verifiers.
+              <strong>Key Takeaway:</strong> Combine v4's 17 zero-to-one validation repos (P1–P9, L1–L3, O1–O5) with Mission PDF's Docs-as-Code (Quarto, Read the Docs, OpenAPI 3.1, Vale CI) and Open Science (ORCID, Zenodo, OSF) architecture.
             </div>
           </div>
 
@@ -666,7 +666,7 @@
                 <span class="mono-label" style="color:var(--text-muted);">Tap to query public GitHub API (cached 30m, never fakes verification).</span>
               </div>
               <div class="nested-callout" style="font-size:0.84rem;">
-                <strong>2-Week Scope-Cut Guardrail:</strong> If behind for 2 consecutive weeks, never cut verification quality—trim task counts in order: Earth 20&rarr;15 (&minus;12h), Math 12&rarr;8 (&minus;10h), ML 8&rarr;5 (&minus;8h), Report 8&rarr;4p (&minus;4h).
+                <strong>2-Week Scope-Cut Guardrail:</strong> v4 Scope-Cut Order (~194h build budget at 12h/wk): (1) 3&rarr;2 tasks per project (&minus;12h; v1.0 = 14 tasks), (2) Skip L1 Kaggle (&minus;8h), (3) L3 Report 8&rarr;4 pages (&minus;4h), (4) Drop P8 PyTorch part (&minus;6h). At 15h/wk (~255h), zero cuts needed + add O1, O2, O5, O3.
               </div>
             </div>
           </div>
@@ -777,44 +777,44 @@
           <div class="timeline-track">
             <details class="timeline-node" open>
               <summary style="cursor:pointer; font-family:var(--font-heading); font-weight:700; font-size:1.05rem;">
-                <span class="badge badge-orange">MONTH 1 · NOV 15 – DEC 15, 2026</span> Docs-as-Code Infrastructure, verisci v0.1 &amp; SAR Flood Validation
+                <span class="badge badge-orange">MONTH 1 · NOV 15 – DEC 15, 2026</span> v4 P1 (verisci v0.1), P2 (bd-rain-extremes) &amp; Mission Docs-as-Code Hub
               </summary>
-              <p style="font-size:0.92rem; margin-top:8px;">Deploy Quarto hub on <code>meheran.dev/docs</code> &amp; <code>/proof</code>, configure ORCID + Zotero BibTeX, launch public <code>verisci</code> repo (starting the 6-month JOSS clock), complete headless <code>sar-flood-eval</code> v2 with independent observation metrics (<span class="metric-chip">332.64 km²</span> cropland impact), and publish 6 Diátaxis guides + 4 paper dissections.</p>
+              <p style="font-size:0.92rem; margin-top:8px;">Launch public repo <code>verisci</code> (P1, tag v0.1, starting the 6-month JOSS clock) and <code>PROOF.md</code>; build P2 (<code>bd-rain-extremes</code>: CHIRPS vs. ERA5 UTC+6 vs. BMD rain gauges across 1991–2020); open Kaggle (L1), GitHub, ORCID &amp; Zotero BibTeX profiles; deploy Quarto portal on <code>meheran.dev/docs</code> with 6 Diátaxis guides (starting with Day 1 GeoPandas CRS/Topology) + 4 Three-Pass paper dissections.</p>
             </details>
 
             <details class="timeline-node">
               <summary style="cursor:pointer; font-family:var(--font-heading); font-weight:700; font-size:1.05rem;">
-                <span class="badge badge-orange">MONTH 2 · DEC 15, 2026 – JAN 15, 2027</span> Read the Docs Portal, Spatial Leakage, Rain Extremes &amp; Zenodo Review
+                <span class="badge badge-orange">MONTH 2 · DEC 15, 2026 – JAN 15, 2027</span> v4 P2 Tasks, P3 (CAMELS HBV Rainfall–Runoff), L2 (OSS PRs) &amp; Read the Docs
               </summary>
-              <p style="font-size:0.92rem; margin-top:8px;">Host multi-version Python documentation on Read the Docs (100% doctest pass), quantify Random vs. Spatial-Block CV leakage on Sentinel-2, validate ERA5/CHIRPS against BMD rain gauges, release <code>verisci v0.2</code> (10 tasks), archive a 2,500-word SAR literature review on Zenodo, and submit your 1st OSS PR.</p>
+              <p style="font-size:0.92rem; margin-top:8px;">Merge 3 P2 climate tasks into <code>verisci</code>; build P3 (<code>rainfall-runoff-camels</code>: 3-layer NumPy HBV conceptual model calibrated via SciPy differential_evolution vs. CAMELS observed streamflow &amp; SAC-SMA); submit 2 upstream Open-Source PRs + 5 reviews (L2); host multi-version Sphinx/numpydoc documentation on Read the Docs (100% doctest pass) and publish a 15-paper synthesis matrix + Zenodo literature review.</p>
             </details>
 
             <details class="timeline-node">
               <summary style="cursor:pointer; font-family:var(--font-heading); font-weight:700; font-size:1.05rem;">
-                <span class="badge badge-orange">MONTH 3 · JAN 15 – FEB 15, 2027</span> OpenAPI 3.1 Spec, Exact MIP vs. Heuristic MCLP &amp; Monte Carlo Validation
+                <span class="badge badge-orange">MONTH 3 · JAN 15 – FEB 15, 2027</span> v4 P3 Tasks, P4 (Sentinel-2 Spatial Leakage), P5 (Monte Carlo Sims) &amp; OpenAPI 3.1
               </summary>
-              <p style="font-size:0.92rem; margin-top:8px;">Replace ArcGIS Pro park selection with open-source <code>Pyomo</code>/<code>HiGHS</code> Exact MIP vs. Teitz-Bart optimality gap analysis, run <span class="metric-chip">10,000 rep</span> statistical simulations (<code>stat-validation-sims</code>), publish the OpenAPI 3.1 + Swagger UI suite, register the UAV Multispectral protocol on OSF, and audit Month 3 paid AI-training hours.</p>
+              <p style="font-size:0.92rem; margin-top:8px;">Merge 3 P3 hydrology tasks into <code>verisci</code>; complete P4 (<code>spatial-leakage-s2</code>: Random vs. Spatial-Block GroupKFold 0.5–5 km on Sentinel-2 + DEM); complete P5 (<code>stat-validation-sims</code>: <span class="metric-chip">10,000 rep</span> BCa bootstrap, Welch t-test, BH FDR &amp; optional stopping); publish the OpenAPI 3.1/3.2 + Swagger UI REST API documentation suite and register an OSF research protocol.</p>
             </details>
 
             <details class="timeline-node">
               <summary style="cursor:pointer; font-family:var(--font-heading); font-weight:700; font-size:1.05rem;">
-                <span class="badge badge-orange">MONTH 4 · FEB 15 – MAR 15, 2027</span> ML Pitfalls Lab, PyTorch Determinism, Multi-LLM Run &amp; verisci v1.0
+                <span class="badge badge-orange">MONTH 4 · FEB 15 – MAR 15, 2027</span> v4 P4/P5 Tasks, P6 (TSPLIB Exact vs. Heuristic), L1 (Kaggle) &amp; P8 Start (10h/wk)
               </summary>
-              <p style="font-size:0.92rem; margin-top:8px;">Execute 6 ML leakage experiments and 10-seed PyTorch determinism tests, benchmark GeoPandas vs. PostGIS vs. DuckDB Spatial joins, evaluate 3–4 LLMs across 24–28 <code>verisci</code> tasks, compute <code>Cohen's kappa</code> rubric reliability, build 1 Docker sandbox agent task, and release <code>verisci v1.0</code> with a Zenodo DOI &amp; Hugging Face Dataset Card.</p>
+              <p style="font-size:0.92rem; margin-top:8px;">Merge 6 P4 &amp; P5 tasks into <code>verisci</code>; build P6 (<code>tsp-validated</code>: NN, 2-opt, OR-Tools GLS &amp; Pyomo + HiGHS Exact MIP lazy subtour elimination on TSPLIB <code>eil51</code>, <code>berlin52</code>, <code>st70</code>, <code>eil76</code>, <code>kroA100</code>); publish L1 Kaggle Dataset (P2 station table) + notebook; start P8 (<code>ml-pitfalls-lab</code> 6 pitfalls &times; 20 repeats) and author 2 Comparative Technical Explainers (GeoPandas vs. PostGIS vs. DuckDB Spatial).</p>
             </details>
 
             <details class="timeline-node">
               <summary style="cursor:pointer; font-family:var(--font-heading); font-weight:700; font-size:1.05rem;">
-                <span class="badge badge-orange">MONTH 5 · MAR 15 – APR 15, 2027</span> Interpretable GeoAI (SHAP/ALE), PRISMA Scoping Review &amp; Wave 1 Apply
+                <span class="badge badge-orange">MONTH 5 · MAR 15 – APR 15, 2027</span> v4 P6 Tasks, P7 (Numerical &amp; Physics Suite), P8 Completion &amp; Earth/Math Apply
               </summary>
-              <p style="font-size:0.92rem; margin-top:8px;">Complete the Khulna Urban Heat Island <code>SHAP</code> vs. <code>ALE</code> case study &amp; Model Card, register a 3,000-word PRISMA Scoping Review &amp; Research Proposal on OSF, publish a 6–8 page human-written Technical Report on EarthArXiv/Zenodo, secure &ge;2 merged upstream OSS PRs + 5 public reviews, and launch Wave 1 applications.</p>
+              <p style="font-size:0.92rem; margin-top:8px;">Merge 3 P6 tasks into <code>verisci</code>; build P7 (<code>numerics-validated</code>: root-finding convergence order, Euler/RK4/Verlet slopes, harmonic oscillator energy drift, stiff backward Euler, 1D heat equation $r \le 1/2$ vs. Fourier series, Hilbert conditioning) + 3 P7 tasks; finish P8 Part 2 (10-seed PyTorch determinism vs. XGBoost); publish GeoAI SHAP/ALE Model Card + 3,000-word OSF PRISMA Scoping Review; apply to Earth &amp; Math/Stats roles (~18 tasks live).</p>
             </details>
 
             <details class="timeline-node">
               <summary style="cursor:pointer; font-family:var(--font-heading); font-weight:700; font-size:1.05rem;">
-                <span class="badge badge-orange">MONTH 6 · APR 15 – MAY 15, 2027</span> Wave 2 Hydrology/Physics, JOSS Submission Gate, 85+ Audit &amp; Outreach
+                <span class="badge badge-orange">MONTH 6 · APR 15 – MAY 15, 2027</span> v4 P8 Tasks, P9 (LLM Run, Agent Task &amp; v1.0 DOI), L3 Report, O5 JOSS &amp; Full Apply
               </summary>
-              <p style="font-size:0.92rem; margin-top:8px;">Add Khulna stormwater pipe sizing &amp; numerical physics conservation tasks (<code>verisci v1.1</code>), submit software paper to JOSS upon completing 6 months of public Git history, audit all portfolio artifacts to <span class="metric-chip">&ge;85/100</span> with 3-line Decision Context headers, and send tailored 160-word outreach emails with 1-page Evidence-Linked CVs.</p>
+              <p style="font-size:0.92rem; margin-top:8px;">Merge 3 P8 tasks (completing all <span class="metric-chip">21 Tasks</span> in <code>verisci</code>); execute P9 (run 3–4 LLMs via Inspect AI, 6-part failure taxonomy, Cohen's kappa, 1 Docker sandbox agent task, release <code>verisci v1.0</code> with Zenodo DOI &amp; Hugging Face Dataset Card); publish L3 (4–6 page Technical Report on EarthArXiv/Zenodo); audit all portfolio pieces to <span class="metric-chip">&ge;85/100</span>; submit to JOSS (O5) if 6-month history &amp; scope check pass, and apply to ML, Technical Writer &amp; RA roles.</p>
             </details>
           </div>
         </div>
@@ -833,13 +833,13 @@
           <h1 id="heading-projects" class="page-title">Projects &amp; File Structure Hub</h1>
           <div class="page-header-controls">
             <select id="projectCategorySelect" class="select-input" aria-label="Filter Projects by Domain Category">
-              <option value="ALL">All Projects (6 Core + Lanes)</option>
-              <option value="Core Benchmark Harness">P0: Benchmark Harness</option>
-              <option value="Geospatial & Earth">P1: Geospatial &amp; SAR</option>
-              <option value="Spatial ML & GeoAI">P2 &amp; P5: Spatial ML &amp; GeoAI</option>
-              <option value="Math, Stats & Optimization">P3: Math, Stats &amp; MCLP</option>
-              <option value="API & Docs Engineering">P4: OpenAPI 3.1 Suite</option>
-              <option value="Wave 2 & 3 Extensions">Wave 2/3 &amp; Proof Lanes</option>
+              <option value="ALL">All v4 Projects (P1–P9, L1–L3, O1–O5) + Mission TW/RA</option>
+              <option value="Core Benchmark Harness">v4 P1 &amp; P9: verisci Harness &amp; v1.0 Release</option>
+              <option value="Geospatial & Earth">v4 P2 &amp; P3: Climate (ERA5/CHIRPS) &amp; CAMELS HBV</option>
+              <option value="Spatial ML & GeoAI">v4 P4, P7 &amp; P8: Spatial CV, Numerics &amp; ML Pitfalls</option>
+              <option value="Math, Stats & Optimization">v4 P5 &amp; P6: Monte Carlo Sims &amp; TSPLIB Exact MIP</option>
+              <option value="API & Docs Engineering">Mission TW/RA: Docs-as-Code, Read the Docs &amp; OpenAPI 3.1</option>
+              <option value="Wave 2 & 3 Extensions">v4 Lanes (L1–L3) &amp; Optional Packs (O1–O5)</option>
             </select>
           </div>
         </div>
@@ -1286,7 +1286,7 @@
             <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:8px;">
               Geospatial Data Analyst, Data Scientist, Machine Learning Specialist, and Machine Learning Engineer.
             </p>
-            <p style="font-size:0.88rem;"><strong>Lead Proof:</strong> <code>sar-flood-eval</code>, <code>spatial-leakage-s2</code>, <code>khulna-parks-mclp</code>, <code>ml-pitfalls-lab</code> (PyTorch 10-seed determinism), <code>khulna-uhi-shap</code> Model Card, and Kaggle dataset/notebook.</p>
+            <p style="font-size:0.88rem;"><strong>Lead Proof:</strong> <code>bd-rain-extremes</code> (P2), <code>rainfall-runoff-camels</code> (P3), <code>spatial-leakage-s2</code> (P4), <code>stat-validation-sims</code> (P5), <code>tsp-validated</code> (P6), <code>numerics-validated</code> (P7), <code>ml-pitfalls-lab</code> (P8), and L1 Kaggle dataset/notebook.</p>
           </div>
         </div>
 

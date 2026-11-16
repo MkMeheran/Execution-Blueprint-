@@ -108,35 +108,35 @@ const PORTAL_DATA = {
   auditCards: [
     {
       id: "audit_1",
-      dimension: "1. Academic & Quantitative Foundation",
-      strength: "KUET BURP Undergraduate (2nd Yr 1st Term, Batch 2K24, Roll 2417012, CGPA 3.09); HSC GPA 5.0 with 544/600 in Physics, Chemistry & Math; Top ~3,000 national engineering admission rank; URP 2191 Statistics coursework.",
-      gap: "Without a Master's/PhD degree, exam grades alone do not pass $60–120/hr AI Trainer or international RA screening; currently lacks public simulation-validated statistical code and exact optimization proofs.",
-      target: "Public stat-validation-sims repo (10,000-rep BCa bootstrap, Welch t-test, BH FDR) + khulna-parks-mclp Exact MIP (Pyomo/HiGHS) vs. heuristic optimality gap proof.",
-      takeaway: "Convert raw mathematical aptitude into 10,000-rep Monte Carlo simulations and Exact MIP proofs."
+      dimension: "1. Earth & Environmental Sciences (P2, P3, P4 + O1)",
+      strength: "Strong foundation across climate, hydrology, and remote sensing: P2 (CHIRPS vs ERA5 UTC+6 vs BMD rain gauges, 1991–2020), P3 (CAMELS 3-layer HBV rainfall–runoff vs SAC-SMA), and P4 (Sentinel-2 spatial leakage).",
+      gap: "Bangladesh streamflow data is not openly published (requiring US CAMELS basins for P3), and ENACTS-BMD gridded rainfall blends station data so it cannot be used as independent ground truth.",
+      target: "3 standalone CI-green validation repos (bd-rain-extremes, rainfall-runoff-camels, spatial-leakage-s2) + 9 verisci Earth/Hydrology tasks + O1 Landsat vs MODIS LST.",
+      takeaway: "Validate every climate, hydrology, and remote sensing model against independent station gauges, CAMELS streamflow, or disjoint spatial blocks."
     },
     {
       id: "audit_2",
-      dimension: "2. Geospatial & Earth Science Execution",
-      strength: "SERC July 2026 Chattogram flood study (Sentinel-1 SAR + ESA WorldCover across 17,531.95 km², identifying 332.64 km² impacted cropland); Sonadanga 50m×50m MCDA (3,253 cells); Khulna Park MCLP; Greenland Slum survey (40 households); Precision Ag Lab UAV RGB/NIR (NDVI).",
-      gap: "Major steps of Khulna park analysis rely on proprietary ArcGIS Pro GUI, and flood maps lack independent observation accuracy (IoU, Precision, Recall) and threshold sensitivity curves.",
-      target: "4 headless, single-command open-source pipelines (GeoPandas, rasterio, xarray, OSMnx) validated against BMD station gauges, Copernicus EMS, and CAMELS hydrology benchmarks.",
-      takeaway: "Replace GUI workflows with headless CLI scripts validated against external station/satellite ground truth."
+      dimension: "2. Mathematics, Statistics & Optimization (P5, P6, P7)",
+      strength: "HSC 544/600 in Physics, Chemistry & Math and top ~3,000 engineering admission rank channeled directly into simulation-validated statistical inference, exact MIP optimization, and numerical methods.",
+      gap: "Without a graduate degree in mathematics, AI Trainer (Math & Stats) screening requires executable proof of numerical stability, Monte Carlo error bounds, and exact solver optimality gaps.",
+      target: "stat-validation-sims (10,000-rep BCa, Welch, BH FDR, optional stopping), tsp-validated (Pyomo/HiGHS Exact MIP vs TSPLIB optimums), and numerics-validated (7 numerical/physics modules) + 9 verisci tasks.",
+      takeaway: "Your core specialization answer for interviews: 'Probability, statistical inference, and numerical methods validated by simulation and exact solvers.'"
     },
     {
       id: "audit_3",
-      dimension: "3. AI Evaluation, ML & Data Science",
-      strength: "Passed Outlier AI onboarding (Project Aether); active in Turing Research Analyst (Advanced Math) assessment; Multimodal Agent Arena & voice/caption evaluation workflows; DataCamp Data Analyst certificate.",
-      gap: "High-tier ($60–120/hr) postings require ≥80 verified paid AI-training hours; lacks public repo proving spatial block CV leakage prevention or PyTorch seed determinism; certificates carry 0 weight.",
-      target: "verisci (GeoEval-BD v1.0) with 24–30 dual-pass tasks in Inspect AI, 3–4 LLM failure taxonomy, Cohen's kappa score, Docker sandbox agent task, Hugging Face Dataset, and logged paid platform hours.",
-      takeaway: "Prove evaluation rigor with dual-pass verifiers and steady logged paid platform hours."
+      dimension: "3. Machine Learning Engineering & AI Evaluation (P1, P4, P8, P9)",
+      strength: "Hands-on experience across Outlier AI and Turing evaluations combined with P1/P9 (verisci Inspect AI harness), P4 (Sentinel-2 block CV), and P8 (6 ML pitfalls × 20 repeats + PyTorch 10-seed determinism).",
+      gap: "Without a Kaggle competition medal, ML Engineering proof is focused specifically on data leakage diagnosis, cross-validation rigor, and reproducibility rather than leaderboard rank.",
+      target: "verisci v1.0 (21 dual-pass tasks, 3–4 LLM failure taxonomy, Cohen's kappa, Docker sandbox agent task, Zenodo DOI, Hugging Face Dataset) + ml-pitfalls-lab + L1 Kaggle dataset & notebook.",
+      takeaway: "Prove ML engineering rigor by catching pre-split scaling, spatial leakage, PR-AUC traps, and PyTorch seed variance automatically in CI."
     },
     {
       id: "audit_4",
-      dimension: "4. Technical Writing & Docs-as-Code",
-      strength: "Personal domains (meheran.dev, udyomx.org), GitHub (MkMeheran), Next.js, VPS, Docker, Git, and structured bilingual instructional writing ability.",
-      gap: "No multi-page library documentation on Read the Docs, no Diátaxis quadrant separation, no OpenAPI 3.1/3.2 specification, no automated Vale CI style linting, and zero merged upstream Open-Source Pull Requests.",
-      target: "Quarto portal at meheran.dev/docs, centralized verification hub at meheran.dev/proof, Read the Docs package portal, OpenAPI 3.1 + Swagger UI suite, and 2–3 merged OSS PRs in GeoPandas/OSMnx/xarray.",
-      takeaway: "Treat documentation like production code with Diátaxis structure, doctests, and Vale CI linting."
+      dimension: "4. Physical, Engineering, Life Sciences & Privacy/Safety (P3, P7, O2–O5)",
+      strength: "P7 (Euler vs Verlet energy drift, 1D heat PDE vs Fourier series) and P3 (CAMELS hydrology) provide solid entry proof for Physical and Engineering Sciences.",
+      gap: "Honest boundary (v4 Section 6): Proof in astronomy/chemistry/materials, production engineering design, Life Sciences (O3), and Data Privacy (O4, which also has a US-residency requirement on micro1) remains thin at 12 hrs/week.",
+      target: "Prioritize Wave 1 (Earth, Math/Stats, ML) + Lanes L1–L3 first; add O1 (LST), O2 (Hydraulics), O5 (JOSS submission of verisci), O3 (Ecology), and O4 (PrivacyEval-mini) when operating at 15 hrs/week.",
+      takeaway: "Follow v4's strict priority order: finish P1–P9 + L1–L3 (~194h build budget) before expanding into optional packs O1–O5."
     }
   ],
 
@@ -345,30 +345,30 @@ const PORTAL_DATA = {
 
   // Complete 24-Week Execution Schedule (Nov 16, 2026 - May 15, 2027)
   weeklySchedule: [
-    { id: "w1", week: "W1", month: "M1", startIso: "2026-11-16", endIso: "2026-11-22", dates: "Nov 16 – Nov 22, 2026", focus: "Environment (uv/conda, Git, pytest, Vale, Quarto); ORCID & Zotero setup; Day 1 GeoPandas Topology & CRS guide.", deliverable: "Live meheran.dev/docs & /proof; configured ORCID & public BibTeX repo; Day 1 Diataxis How-To Guide (>=80/100 rubric)." },
-    { id: "w2", week: "W2", month: "M1", startIso: "2026-11-23", endIso: "2026-11-29", dates: "Nov 23 – Nov 29, 2026", focus: "verisci (geoeval-bd) harness skeleton (Inspect AI task format, dual-pass pytest CI, Dockerfile) & 15 geospatial silent-failure cases.", deliverable: "Public repo verisci v0.1 tagged release (starts 6-month JOSS clock); 1 complete example task; 15 silent-failure cases with code." },
-    { id: "w3", week: "W3", month: "M1", startIso: "2026-11-30", endIso: "2026-12-06", dates: "Nov 30 – Dec 6, 2026", focus: "Project 1 (SAR Flood v2): Earth Engine/ASF pre/post Sentinel-1 scenes, speckle filtering, JRC permanent water mask & headless change detection.", deliverable: "Single-command reproducible sar-flood-eval pipeline + 2 critical paper dissections on Sentinel-1 SAR flood mapping." },
-    { id: "w4", week: "W4", month: "M1", startIso: "2026-12-07", endIso: "2026-12-13", dates: "Dec 7 – Dec 13, 2026", focus: "Project 1 completion: Ground-truth validation against Copernicus EMS/UNOSAT or 200 stratified points (IoU/Precision/Recall), Fixed dB vs Otsu sensitivity.", deliverable: "Complete sar-flood-eval repo (Confusion Matrix, 2 maps, Limitations), 3 verisci Earth tasks, 2 UAV NDVI paper reviews & M1 retro." },
-    { id: "w5", week: "W5", month: "M2", startIso: "2026-12-14", endIso: "2026-12-20", dates: "Dec 14 – Dec 20, 2026", focus: "Project 2A (Spatial Leakage Study): Sentinel-2 + DEM dataset prep, logistic/RF/XGBoost/LightGBM baselines & Random vs Spatial-Block GroupKFold.", deliverable: "spatial-leakage-s2 repo with block size (0.5, 1, 2, 5 km) vs Macro-F1 gap curve, bootstrap CIs & disjoint geometry assertion." },
-    { id: "w6", week: "W6", month: "M2", startIso: "2026-12-21", endIso: "2026-12-27", dates: "Dec 21 – Dec 27, 2026", focus: "Project 2B (Rain Extremes): ERA5 (Copernicus CDS) & CHIRPS download, UTC vs Bangladesh Time (UTC+6) aggregation, and BMD rain gauge validation.", deliverable: "bd-rain-extremes repo (Rx1day, Rx5day, CDD seasonal Bias/RMSE table) + 6 new verisci Earth/ML tasks (v0.2 release, 10 tasks total)." },
-    { id: "w7", week: "W7", month: "M2", startIso: "2026-12-28", endIso: "2027-01-03", dates: "Dec 28, 2026 – Jan 3, 2027", focus: "Software Documentation Architecture: numpydoc docstrings, doctest verification, README & Troubleshooting Matrix for bd-grid-suitability.", deliverable: "Hosted multi-version documentation site on Read the Docs (100% doctest pass) + 1 Kaggle optimization/tabular competition submission." },
-    { id: "w8", week: "W8", month: "M2", startIso: "2027-01-04", endIso: "2027-01-10", dates: "Jan 4 – Jan 10, 2027", focus: "15-paper Comparative Methodology Matrix & 2,500-word thematic literature review on SAR flood cropland impact in South Asian deltas.", deliverable: "First Zenodo DOI-archived thematic literature review + first minor documentation/docstring PR submitted to GeoPandas/OSGeo." },
-    { id: "w9", week: "W9", month: "M3", startIso: "2027-01-11", endIso: "2027-01-17", dates: "Jan 11 – Jan 17, 2027", focus: "Project 3A (Khulna Park MCLP): OSMnx walking network + WorldPop hex/ward demand aggregation; Pyomo + HiGHS Exact MIP vs Teitz-Bart heuristic.", deliverable: "khulna-parks-mclp headless open-source repo (zero ArcGIS dependency), 400m/800m sensitivity & Exact vs Heuristic Optimality Gap table." },
-    { id: "w10", week: "W10", month: "M3", startIso: "2027-01-18", endIso: "2027-01-24", dates: "Jan 18 – Jan 24, 2027", focus: "Project 3B (Statistical Method Validation by Simulation): Bootstrap Percentile vs BCa coverage, Student vs Welch t-test Type I error, Bonferroni vs BH, Optional Stopping.", deliverable: "stat-validation-sims repo (10,000 repetitions, fixed seeds, Monte Carlo error bounds, 4 plots) + 6 new verisci Math/Stats tasks (16 total)." },
-    { id: "w11", week: "W11", month: "M3", startIso: "2027-01-25", endIso: "2027-01-31", dates: "Jan 25 – Jan 31, 2027", focus: "Project 4 (OpenAPI 3.1/3.2 Suite): Bangladesh Administrative & Hazard Query REST API specification, interactive Swagger UI, auth & HTTP error catalog.", deliverable: "Live interactive API Reference page + pytest/curl endpoint verification suite validating with zero OpenAPI schema errors." },
-    { id: "w12", week: "W12", month: "M3", startIso: "2027-02-01", endIso: "2027-02-07", dates: "Feb 1 – Feb 7, 2027", focus: "UAV Multispectral (NDVI/NDRE) radiometric calibration & data hygiene protocol; Month 3 Gate Review (check paid AI-training hours & activate Plan B if needed).", deliverable: "OSF-registered research protocol & Zenodo code release + runnable docstring example PR submitted to OSMnx or GeoPandas." },
-    { id: "w13", week: "W13", month: "M4", startIso: "2027-02-08", endIso: "2027-02-14", dates: "Feb 8 – Feb 14, 2027", focus: "Project 5A (ML Pitfalls Lab & PyTorch Seed Study): 6 leaky vs honest ML pitfalls (20x repeat table) & 10-seed PyTorch determinism vs XGBoost study.", deliverable: "ml-pitfalls-lab repo + score inflation table + seed variance plot + 6 new verisci ML tasks (22 tasks total). (10-12h/wk SAT/IELTS pace)." },
-    { id: "w14", week: "W14", month: "M4", startIso: "2027-02-15", endIso: "2027-02-21", dates: "Feb 15 – Feb 21, 2027", focus: "Project 5B (Large-Scale Spatial Join Benchmark & Spatial Econometrics): GeoPandas vs PostGIS vs DuckDB Spatial benchmark; Moran's I & Spatial Regression.", deliverable: "2 deep-dive Diataxis Comparative Technical Analysis explainers + 2nd substantive open-source documentation/test PR submitted." },
-    { id: "w15", week: "W15", month: "M4", startIso: "2027-02-22", endIso: "2027-02-28", dates: "Feb 22 – Feb 28, 2027", focus: "Flagship verisci (GeoEval-BD) LLM Run: Execute all 24-28 tasks across 3-4 LLMs via Inspect AI, categorize failures into 6-part taxonomy, build 1 Docker Agent task.", deliverable: "Model evaluation logs in results/, 6-category Silent Failure Taxonomy table, and 1 Inspect Docker sandbox multi-step agent task." },
-    { id: "w16", week: "W16", month: "M4", startIso: "2027-03-01", endIso: "2027-03-07", dates: "Mar 1 – Mar 7, 2027", focus: "Rubric Reliability & v1.0 Release: 1-week self re-grade + peer grading on 10 tasks to compute Cohen's kappa; publish verisci v1.0 & Kaggle dataset.", deliverable: "verisci v1.0 GitHub Release + Zenodo DOI + Hugging Face Dataset Card + derived Bangladesh geospatial dataset & notebook on Kaggle." },
-    { id: "w17", week: "W17", month: "M5", startIso: "2027-03-08", endIso: "2027-03-14", dates: "Mar 8 – Mar 14, 2027", focus: "Project 6 (Interpretable GeoAI for Khulna UHI): Landsat/MODIS Land Surface Temperature modeling with SHAP & Accumulated Local Effects (ALE).", deliverable: "Reproducible geoai-uhi-shap repo + published ML Model Card + developer workflow guide on interpretable spatial ML." },
-    { id: "w18", week: "W18", month: "M5", startIso: "2027-03-15", endIso: "2027-03-21", dates: "Mar 15 – Mar 21, 2027", focus: "PRISMA-Aligned Scoping Literature Review & Research Proposal (3,000 words) on GeoAI & Remote Sensing for climate-resilient secondary Bangladeshi cities.", deliverable: "OSF-registered Research Proposal & Scoping Review with falsifiable hypotheses, threats to validity, and 25+ primary Crossref DOIs." },
-    { id: "w19", week: "W19", month: "M5", startIso: "2027-03-22", endIso: "2027-03-28", dates: "Mar 22 – Mar 28, 2027", focus: "Author 6-8 page standalone Technical Report on verisci (GeoEval-BD) benchmark design, ground-truth verifiers, and LLM failure taxonomy (100% human-written).", deliverable: "Published technical preprint on EarthArXiv or Zenodo + Google Scholar & ResearchGate profile activation." },
-    { id: "w20", week: "W20", month: "M5", startIso: "2027-03-29", endIso: "2027-04-04", dates: "Mar 29 – Apr 4, 2027", focus: "Open-Source PR follow-up (secure >=2 merged PRs), complete 5 substantive public reviews on external PRs/notebooks, record 10 mock AI interviews & apply to Wave 1.", deliverable: "Verified Open-Source PR & Review Log + Wave 1 applications submitted (Earth, Math/Stats, ML, Technical Writer, Academic RA)." },
-    { id: "w21", week: "W21", month: "M6", startIso: "2027-04-05", endIso: "2027-04-11", dates: "Apr 5 – Apr 11, 2027", focus: "Wave 2 Extension (Hydrology & Numerical Physics): Khulna waterlogging stormwater sizing (Manning's/Rational method) & Euler vs Verlet / 1D Heat Equation validation.", deliverable: "numerics-hydro-validated script & 3 new verisci Physical/Engineering tasks (v1.1 release, 25-30 tasks total)." },
-    { id: "w22", week: "W22", month: "M6", startIso: "2027-04-12", endIso: "2027-04-18", dates: "Apr 12 – Apr 18, 2027", focus: "JOSS Submission Gate: Verify >=6 months public history, steady commits, issues & releases on verisci; author paper.md (Statement of Need, State of the Field).", deliverable: "JOSS submission issue (or finalized co-authored working paper manuscript with KUET/SERC/Precision Agriculture mentors)." },
-    { id: "w23", week: "W23", month: "M6", startIso: "2027-04-19", endIso: "2027-04-25", dates: "Apr 19 – Apr 25, 2027", focus: "Portfolio Audit & Provenance Context: Score all artifacts against the 100-point rubric (prune/revise anything <85/100) & add 3-line Decision Context headers.", deliverable: "Finalized meheran.dev/docs & meheran.dev/proof Evidence Hub (3-click navigation to live docs, code, green CI, PRs, and DOIs)." },
-    { id: "w24", week: "W24", month: "M6", startIso: "2027-04-26", endIso: "2027-05-15", dates: "Apr 26 – May 15, 2027", focus: "Role-tailored 1-page Evidence-Linked CVs (AI Trainer, Technical Writer, Academic RA), 160-word PI outreach emails, interview follow-ups & 6-month retrospective.", deliverable: "Full application campaign across all target clusters + next 6-month co-authored peer-reviewed journal roadmap." }
+    { id: "w1", week: "W1", month: "M1", startIso: "2026-11-16", endIso: "2026-11-22", dates: "Nov 16 – Nov 22, 2026", focus: "v4 P1 (Harness + PROOF.md, ~12h): Initialize public repo verisci (starts 6-month JOSS clock), MIT/Apache-2.0 LICENSE, CITATION.cff, pyproject.toml, Inspect AI wrapper, Dockerfile, dual-pass pytest CI & 1 complete example task. Open GitHub & Kaggle (L1) profiles; submit Copernicus CDS request for ERA5 (P2).", deliverable: "Public repo verisci tag v0.1 with green dual-pass CI badge, PROOF.md, and active Kaggle/GitHub/ORCID profiles." },
+    { id: "w2", week: "W2", month: "M1", startIso: "2026-11-23", endIso: "2026-11-29", dates: "Nov 23 – Nov 29, 2026", focus: "v4 P2 Part 1 (bd-rain-extremes): Download CHIRPS daily (0.05°) & ERA5 hourly precipitation (0.25°, meters); verify BMD 35-station daily rain gauge dataset (or NOAA GHCN-Daily) for 1991–2020; extract grid values at station coordinates.", deliverable: "bd-rain-extremes data ingestion & station extraction module with license documentation in README.md." },
+    { id: "w3", week: "W3", month: "M1", startIso: "2026-11-30", endIso: "2026-12-06", dates: "Nov 30 – Dec 6, 2026", focus: "v4 P2 Part 2 (bd-rain-extremes): Convert ERA5 hourly accumulation to daily totals in Bangladesh Standard Time (UTC+6); compute ETCCDI indices (Rx1day, Rx5day, R95p, CDD with wet day >= 1 mm) and unit-test on synthetic series.", deliverable: "Verified ETCCDI index calculation module passing synthetic Rx5day and unit-conversion pytest checks." },
+    { id: "w4", week: "W4", month: "M1", startIso: "2026-12-07", endIso: "2026-12-13", dates: "Dec 7 – Dec 13, 2026", focus: "v4 P2 Completion (bd-rain-extremes): Compute seasonal (JJAS monsoon) bias, RMSE, and correlation against BMD rain gauges; generate 6 diagnostic figures and derived station comparison table (for L1 Kaggle).", deliverable: "Complete public P2 repo bd-rain-extremes (6 figures, derived station table, green CI) — pace benchmarked for remaining months." },
+    { id: "w5", week: "W5", month: "M2", startIso: "2026-12-14", endIso: "2026-12-20", dates: "Dec 14 – Dec 20, 2026", focus: "v4 P2 Benchmark Tasks (3 tasks into verisci): Author (1) ERA5 hourly-to-daily UTC+6 & unit conversion task, (2) Rx5day calculation task, and (3) CDD cross-year boundary dry-spell edge-case task with dual-pass verifiers.", deliverable: "3 verified P2 Earth tasks merged into verisci passing reference=PASS and buggy_solution=FAIL in CI." },
+    { id: "w6", week: "W6", month: "M2", startIso: "2026-12-21", endIso: "2026-12-27", dates: "Dec 21 – Dec 27, 2026", focus: "v4 P3 Part 1 (rainfall-runoff-camels, ~25h): Download CAMELS dataset (DOI: 10.5065/D6MW2F4D, Addor et al. 2017); select 8–10 diverse basins (humid, arid, snow-dominated); implement 3-layer HBV conceptual model from scratch in NumPy.", deliverable: "NumPy 3-layer HBV model (degree-day snow, soil moisture accounting, fast/slow reservoirs, routing) passing water-balance conservation test." },
+    { id: "w7", week: "W7", month: "M2", startIso: "2026-12-28", endIso: "2027-01-03", dates: "Dec 28, 2026 – Jan 3, 2027", focus: "v4 P3 Part 2 (rainfall-runoff-camels): Configure warm-up period, calibrate on first ~15 years via SciPy differential_evolution, validate on remaining years; compute NSE, KGE, bias, log-NSE vs mean flow, climatology & SAC-SMA output; plot equifinality envelope.", deliverable: "Complete public P3 repo rainfall-runoff-camels with hydrographs, basin metric table, equifinality plot & synthetic parameter identifiability test." },
+    { id: "w8", week: "W8", month: "M2", startIso: "2027-01-04", endIso: "2027-01-10", dates: "Jan 4 – Jan 10, 2027", focus: "v4 L2 (Open Source, ~8h): Submit 2 focused PRs (docs fix, test addition, or reproducible bug fix) to libraries used in P1–P3 (xarray, SciPy, scikit-learn, Pyomo, or rasterio) and begin logging 5 substantive external PR reviews.", deliverable: "2 upstream Open-Source Pull Requests submitted + public review log initialized in PROOF.md." },
+    { id: "w9", week: "W9", month: "M3", startIso: "2027-01-11", endIso: "2027-01-17", dates: "Jan 11 – Jan 17, 2027", focus: "v4 P3 Benchmark Tasks (3 tasks into verisci): Author (1) streamflow ft³/s + basin area to mm/day conversion task, (2) NSE vs KGE & baseline interpretation task, and (3) calibration/warm-up/validation split leakage task.", deliverable: "3 verified P3 Hydrology/Engineering tasks merged into verisci (6 project tasks + 1 starter = 7 tasks total)." },
+    { id: "w10", week: "W10", month: "M3", startIso: "2027-01-18", endIso: "2027-01-24", dates: "Jan 18 – Jan 24, 2027", focus: "v4 P4 (Spatial leakage study, Sentinel-2, ~21h): Extract Sentinel-2 L2A bands/NDVI/NDWI + Copernicus DEM slope + ESA WorldCover across a ~50×50 km coastal belt AOI; compare Random KFold vs Spatial-Block GroupKFold (0.5, 1, 2, 5 km) across Logistic, RF, XGBoost, LightGBM.", deliverable: "Public P4 repo spatial-leakage-s2 with block-size vs Macro-F1 decay curve, bootstrap CIs, cross-region shift table, 2-page writeup & disjoint geometry pytest." },
+    { id: "w11", week: "W11", month: "M3", startIso: "2027-01-25", endIso: "2027-01-31", dates: "Jan 25 – Jan 31, 2027", focus: "v4 P5 Part 1 (stat-validation-sims, ~17h): Implement vectorized 10,000-repetition NumPy simulations with fixed seeds and Monte Carlo error √(p(1-p)/R) for (a) Bootstrap Percentile vs custom BCa coverage (n=10, 30, 100) and (b) Student's vs Welch's t-test Type I error.", deliverable: "Bootstrap BCa vs Percentile and Student vs Welch simulation modules matching theoretical guarantees on normal large-n test cases." },
+    { id: "w12", week: "W12", month: "M3", startIso: "2027-02-01", endIso: "2027-02-07", dates: "Feb 1 – Feb 7, 2027", focus: "v4 P5 Part 2 (stat-validation-sims): Implement (c) Bonferroni vs Benjamini-Hochberg FDR under independent/correlated tests and (d) Optional Stopping sequential peeking false-positive inflation; generate 4 diagnostic figures.", deliverable: "Complete public P5 repo stat-validation-sims with 4 figures, README, and deterministic seed assertions." },
+    { id: "w13", week: "W13", month: "M4", startIso: "2027-02-08", endIso: "2027-02-14", dates: "Feb 8 – Feb 14, 2027", focus: "v4 P4 & P5 Benchmark Tasks (6 tasks into verisci, 10h/wk M4 pace): Add 3 P4 tasks (spatial vs random CV, geometry overlap, imbalanced metric) and 3 P5 tasks (coverage measurement, Student vs Welch, Bonferroni vs BH).", deliverable: "6 verified P4 & P5 tasks merged into verisci (12 project tasks total)." },
+    { id: "w14", week: "W14", month: "M4", startIso: "2027-02-15", endIso: "2027-02-21", dates: "Feb 15 – Feb 21, 2027", focus: "v4 P6 (TSP: heuristic vs exact vs TSPLIB optimum, ~17h): Implement EUC_2D integer rounding reader, custom Nearest Neighbour + 2-opt, OR-Tools Guided Local Search, and Exact MIP (Pyomo + HiGHS with lazy subtour elimination + LP/1-tree lower bound) on eil51, berlin52, st70, eil76, kroA100.", deliverable: "Public P6 repo tsp-validated with method comparison & optimality gap table, Hamiltonian cycle test, and Exact == Known Optimum assertion." },
+    { id: "w15", week: "W15", month: "M4", startIso: "2027-02-22", endIso: "2027-02-28", dates: "Feb 22 – Feb 28, 2027", focus: "v4 L1 (Kaggle Dataset + Notebook, ~8h): Verify CHIRPS, ERA5 & BMD data licenses; publish P2's derived station-level extreme rainfall comparison table as a Kaggle Dataset alongside a clean P2 or P3 analytical notebook.", deliverable: "Published Kaggle Dataset + reproducible notebook on Kaggle profile (shared with community for non-novice upvotes)." },
+    { id: "w16", week: "W16", month: "M4", startIso: "2027-03-01", endIso: "2027-03-07", dates: "Mar 1 – Mar 7, 2027", focus: "v4 P8 Part 1 (ml-pitfalls-lab, ~8h): Implement 6 'Honest vs Leaky' ML experiments repeated 20× each on license-clean scikit-learn/OpenML datasets (pre-split scaling, target leakage, train/test duplicates, time-series random split, Accuracy vs PR-AUC, test-set tuning).", deliverable: "ml-pitfalls-lab Part 1 complete with 20-repeat score-inflation interval table and disjoint index assertions." },
+    { id: "w17", week: "W17", month: "M5", startIso: "2027-03-08", endIso: "2027-03-14", dates: "Mar 8 – Mar 14, 2027", focus: "v4 P6 Benchmark Tasks (3 tasks into verisci): Author (1) TSPLIB EUC_2D integer rounding trap task, (2) subtour detection task, and (3) verifying optimality claims via lower bounds task.", deliverable: "3 verified P6 Optimization tasks merged into verisci (15 project tasks total)." },
+    { id: "w18", week: "W18", month: "M5", startIso: "2027-03-15", endIso: "2027-03-21", dates: "Mar 15 – Apr 21, 2027", focus: "v4 P7 Part 1 (numerics-validated, ~21h): Implement (1) root finding (bisection, secant, Newton) convergence order, (2) ODE solvers (Euler, RK4, velocity Verlet) log–log error slopes (1, 4, 2), and (3) harmonic oscillator energy drift (Euler vs Verlet).", deliverable: "numerics-validated root-finding & ODE modules passing ±0.2 convergence order and energy conservation assertions." },
+    { id: "w19", week: "W19", month: "M5", startIso: "2027-03-22", endIso: "2027-03-28", dates: "Mar 22 – Mar 28, 2027", focus: "v4 P7 Part 2 (numerics-validated): Implement (4) stiff ODE (explicit vs backward Euler), (5) 1D heat equation explicit finite difference (r <= 1/2) vs Fourier series analytic solution, (6) Hilbert matrix condition number error, and (7) solve_ivp comparison + 3 P7 tasks.", deliverable: "Complete public P7 repo numerics-validated with log–log plots + 3 P7 tasks merged into verisci (18 tasks total)." },
+    { id: "w20", week: "W20", month: "M5", startIso: "2027-03-29", endIso: "2027-04-04", dates: "Mar 29 – Apr 4, 2027", focus: "v4 P8 Part 2 (PyTorch 10-Seed Reproducibility, ~6h) & First Application Wave: Train small MLP/CNN across 10 seeds (deterministic=True vs False, learning-rate divergence vs XGBoost baseline); apply to Earth & Math/Stats roles with P1–P7 (~18 tasks) live.", deliverable: "Complete public P8 repo ml-pitfalls-lab with seed-variance plot + Earth & Math/Stats applications submitted." },
+    { id: "w21", week: "W21", month: "M6", startIso: "2027-04-05", endIso: "2027-04-11", dates: "Apr 5 – Apr 11, 2027", focus: "v4 P8 Benchmark Tasks (3 tasks into verisci, 10h/wk M6 pace): Author (1) pre-split scaling leakage task, (2) PR-AUC vs Accuracy trap task, and (3) PyTorch seed variance & determinism task; peer-test 3 tasks on a classmate.", deliverable: "All 21 benchmark tasks (7 projects × 3 tasks) complete in verisci and peer-checked for prompt clarity." },
+    { id: "w22", week: "W22", month: "M6", startIso: "2027-04-12", endIso: "2027-04-18", dates: "Apr 12 – Apr 18, 2027", focus: "v4 P9 Part 1 (LLM Run, Failure Taxonomy & Cohen's Kappa, ~14h): Run 3–4 LLMs across all 21 tasks via Inspect AI; classify errors into 6-part taxonomy; re-grade after 1 week + peer grade 10 tasks to compute Cohen's kappa; build 1 Docker sandbox agent task.", deliverable: "LLM run logs in results/, 6-category Failure Taxonomy table, Cohen's kappa score, and 1 Inspect Docker agent task." },
+    { id: "w23", week: "W23", month: "M6", startIso: "2027-04-19", endIso: "2027-04-25", dates: "Apr 19 – Apr 25, 2027", focus: "v4 P9 Part 2 (v1.0 Release) & L3 (Technical Report, ~8h): Tag verisci v1.0, mint Zenodo DOI, publish Hugging Face Dataset Card, update PROOF.md, and publish 4–6 page human-written Technical Report on EarthArXiv/Zenodo.", deliverable: "verisci v1.0 Zenodo DOI + Hugging Face Dataset Card + 4–6 page Technical Report preprint on EarthArXiv/Zenodo." },
+    { id: "w24", week: "W24", month: "M6", startIso: "2027-04-26", endIso: "2027-05-15", dates: "Apr 26 – May 15, 2027", focus: "v4 Final Application Wave & Optional O1–O5 Gate (at 15h/wk): Apply to ML Engineering & remaining roles with PROOF.md link; if 6-month steady history & scope check pass, submit verisci to JOSS (O5) and pursue O1/O2/O3/O4 as needed.", deliverable: "All 8 validation repos + 21-task verisci v1.0 (DOI) + 1 report + 2 OSS PRs + 1 Kaggle dataset live on PROOF.md; applications submitted." }
   ],
 
   // 6 Monthly Blueprints & Verification Checklists
@@ -377,102 +377,102 @@ const PORTAL_DATA = {
       code: "M1",
       month: "Month 1",
       period: "Nov 15 – Dec 15, 2026",
-      theme: "Docs-as-Code Infrastructure, verisci Harness v0.1 & SAR Flood Validation",
+      theme: "v4 P1 (verisci Harness v0.1) & P2 (Bangladesh Rain Extremes: CHIRPS vs ERA5 vs BMD)",
       hoursPerWeek: "12–15 hrs/wk",
-      primaryObjective: "Launch public repositories on Day 1 to start the 6-month JOSS history clock, deploy the Quarto documentation & proof hub on meheran.dev, establish the Inspect AI dual-pass testing harness, and upgrade the SERC Chattogram Sentinel-1 SAR flood study into a headless, ground-truth validated Python package.",
-      researchTargets: "Master the Three-Pass Reading Protocol, dissect 4 peer-reviewed papers (2 Sentinel-1 SAR flood mapping, 2 UAV multispectral NDVI), configure Zotero + Better BibTeX + ORCID, and log 25 geospatial silent failure modes.",
-      technicalTargets: "Master uv/conda lockfiles, pytest, GitHub Actions CI, Vale linter (Google Developer Documentation Style Guide), Inspect AI task/scorer API, shapely.make_valid(), and EPSG:4326 vs EPSG:32646/32645 projections.",
-      weeklyDeliverablesSummary: "W1: Portal + ORCID + Day 1 GeoPandas Guide | W2: verisci v0.1 + 15 failure cases | W3: Headless SAR Flood v2 pipeline | W4: Flood IoU/Precision/Recall validation + 3 verisci tasks.",
+      primaryObjective: "Start from zero old projects per v4: launch public repo verisci (P1, ~12h) on Day 1 to start the 6-month JOSS clock, open Kaggle (L1) & GitHub profiles, and build P2 (bd-rain-extremes, ~23h) validating CHIRPS & ERA5 against BMD station rain gauges (1991–2020).",
+      researchTargets: "Verify BMD 35-station daily rain gauge dataset (Mendeley Data / NOAA GHCN-Daily) licenses; study ETCCDI extreme indices (Rx1day, Rx5day, R95p, CDD) and why ENACTS-BMD cannot be treated as independent ground truth.",
+      technicalTargets: "Configure uv/conda, pytest, Inspect AI wrapper, Dockerfile, GitHub Actions dual-pass CI (reference=PASS, buggy=FAIL), PROOF.md, and Xarray/NetCDF ERA5 hourly UTC-to-BST (UTC+6) accumulation.",
+      weeklyDeliverablesSummary: "W1: verisci v0.1 + Kaggle/GitHub setup + CDS request | W2: CHIRPS/ERA5/BMD ingestion | W3: UTC+6 daily totals & ETCCDI indices | W4: Public P2 repo bd-rain-extremes (6 figures + derived table).",
       kpis: [
-        { id: "m1_k1", text: "verisci repo is public with MIT/Apache-2.0 LICENSE, CITATION.cff, Dockerfile, and green pytest + Vale CI badge." },
-        { id: "m1_k2", text: "sar-flood-eval runs end-to-end from a single CLI command and outputs Confusion Matrix, IoU, Precision, Recall, and Fixed dB vs Otsu sensitivity." },
-        { id: "m1_k3", text: "6 foundational Diataxis guides (4 How-To, 2 Tutorials) + 4 paper dissections published on meheran.dev/docs scoring >=80/100." },
-        { id: "m1_k4", text: "ORCID profile, public Zotero BibTeX repo, and Kaggle profile active; paid AI-training onboarding/hours tracking initiated." }
+        { id: "m1_k1", text: "P1: Public repo verisci live with MIT/Apache-2.0 LICENSE, CITATION.cff, PROOF.md, Dockerfile, green pytest CI badge, and tag v0.1." },
+        { id: "m1_k2", text: "P2: Public repo bd-rain-extremes validates CHIRPS (0.05°) & ERA5 (0.25°, UTC+6) against BMD rain gauges across 1991–2020 with 6 figures." },
+        { id: "m1_k3", text: "P2 Tests: ETCCDI index functions match exact known answers on synthetic time-series (Rx5day, CDD) and pass unit conversion tests." },
+        { id: "m1_k4", text: "Kaggle & GitHub profiles active; actual build speed measured on P2 to calibrate remaining months." }
       ]
     },
     {
       code: "M2",
       month: "Month 2",
       period: "Dec 15, 2026 – Jan 15, 2027",
-      theme: "Multi-Page Software Docs, Spatial Leakage, Climate Extremes & Literature Matrix",
+      theme: "v4 P2 Tasks, P3 (CAMELS Rainfall–Runoff HBV Model) & L2 (Open Source PRs)",
       hoursPerWeek: "12–15 hrs/wk",
-      primaryObjective: "Host a multi-version Python geospatial library documentation site on Read the Docs, empirically quantify spatial target leakage in remote sensing ML and satellite precipitation bias in Bangladesh, and publish a Zenodo DOI-archived literature review.",
-      researchTargets: "Formulate systematic Boolean queries in OpenAlex & Semantic Scholar; build a 15-paper Comparative Methodology Matrix; author a 2,500-word thematic literature review on SAR flood cropland impact in South Asian deltas.",
-      technicalTargets: "Master Sphinx/MkDocs, numpydoc API docstrings, pytest --doctest-modules, scikit-learn GroupKFold spatial block cross-validation, and xarray/NetCDF4 ERA5 (UTC to UTC+6) vs CHIRPS vs BMD rain gauge validation.",
-      weeklyDeliverablesSummary: "W5: Spatial Leakage repo & block-size curve | W6: Bangladesh Rain Extremes repo + verisci v0.2 (10 tasks) | W7: Read the Docs site + Kaggle submission | W8: Zenodo DOI Literature Review + 1st OSS PR.",
+      primaryObjective: "Convert P2 into 3 benchmark tasks in verisci, build P3 (rainfall-runoff-camels, ~25h) implementing a 3-layer HBV hydrological model from scratch in NumPy validated against CAMELS observed streamflow & SAC-SMA outputs, and submit 2 Open-Source PRs (L2, ~8h).",
+      researchTargets: "Study Addor et al. (2017, HESS 21, 5293, DOI: 10.5065/D6MW2F4D) CAMELS dataset across 8–10 humid, arid, and snow-dominated US catchments; analyze equifinality and NSE vs KGE baselines.",
+      technicalTargets: "Implement degree-day snow, soil moisture accounting, fast/slow reservoirs & routing in NumPy; calibrate with SciPy differential_evolution (15-yr calibration + warm-up vs validation split); submit 2 PRs to xarray/SciPy/scikit-learn/Pyomo/rasterio.",
+      weeklyDeliverablesSummary: "W5: 3 P2 tasks in verisci | W6: 3-layer NumPy HBV model & water balance test | W7: Public P3 repo rainfall-runoff-camels & equifinality plot | W8: L2 (2 OSS PRs submitted + reviews started).",
       kpis: [
-        { id: "m2_k1", text: "100% of numpydoc code examples in bd-grid-suitability pass automated doctest on Read the Docs." },
-        { id: "m2_k2", text: "spatial-leakage-s2 proves zero train/test geometry overlap via pytest assertion and plots Macro-F1 drop across 0.5–5 km blocks with bootstrap CIs." },
-        { id: "m2_k3", text: "2,500-word thematic literature review archived on Zenodo with a permanent DOI and zero single-paper summary paragraphs." },
-        { id: "m2_k4", text: "First minor documentation/docstring Pull Request submitted to an upstream Python geospatial repo (GeoPandas/OSGeo) + 1 Kaggle submission." }
+        { id: "m2_k1", text: "P2 Tasks: 3 verified climate tasks (ERA5 UTC+6 conversion, Rx5day, CDD boundary edge case) merged into verisci." },
+        { id: "m2_k2", text: "P3: Public repo rainfall-runoff-camels live with hydrographs, 8–10 basin NSE/KGE/log-NSE table vs SAC-SMA, and equifinality envelope." },
+        { id: "m2_k3", text: "P3 Tests: Passes water-balance conservation assertion and synthetic parameter recovery (identifiability) test." },
+        { id: "m2_k4", text: "L2: 2 focused documentation/test/bug-fix Pull Requests submitted to upstream libraries + PR review log active." }
       ]
     },
     {
       code: "M3",
       month: "Month 3",
       period: "Jan 15 – Feb 15, 2027",
-      theme: "OpenAPI 3.1 Specification, Exact vs. Heuristic Optimization & Statistical Simulation",
+      theme: "v4 P3 Tasks, P4 (Sentinel-2 Spatial Leakage) & P5 (Statistical Validation by Simulation)",
       hoursPerWeek: "12–15 hrs/wk",
-      primaryObjective: "Deliver an executable OpenAPI 3.1/3.2 specification with interactive Swagger UI, replace ArcGIS Pro park allocation workflows with Exact MIP optimization (Pyomo/HiGHS), validate statistical estimators via 10,000-rep Monte Carlo simulations, and register a formal research protocol on OSF.",
-      researchTargets: "Author formal Methodology & Data Provenance protocols for UAV multispectral (NDVI/NDRE) radiometric calibration and register on OSF; compare Church & ReVelle (1974) MCLP exact solutions against heuristic approximations.",
-      technicalTargets: "Master OpenAPI 3.1/3.2 YAML schemas, Swagger UI/Redocly, Pyomo/OR-Tools + HiGHS solver, TSPLIB exact subtour elimination, and vectorized NumPy/SciPy/SymPy statistical simulations.",
-      weeklyDeliverablesSummary: "W9: Khulna Park MCLP Exact vs Heuristic repo | W10: stat-validation-sims repo + 6 Math/Stats tasks (16 total) | W11: OpenAPI 3.1 + Swagger UI suite | W12: OSF UAV protocol + Month 3 Gate Review.",
+      primaryObjective: "Add P3's 3 tasks to verisci, complete P4 (spatial-leakage-s2, ~21h) quantifying Random vs Spatial-Block CV score inflation on Sentinel-2, and complete P5 (stat-validation-sims, ~17h) validating 4 statistical methods across 10,000 Monte Carlo repetitions.",
+      researchTargets: "Study Roberts et al. (2017, Ecography) on cross-validation for spatially structured data and Morris, White & Crowther (2019, Statistics in Medicine) on simulation studies for statistical methods.",
+      technicalTargets: "Master Spatial-Block GroupKFold (0.5, 1, 2, 5 km) with block bootstrap CIs & cross-region shift; implement vectorized NumPy BCa bootstrap, Welch's t-test, Benjamini-Hochberg FDR, and Optional Stopping simulations.",
+      weeklyDeliverablesSummary: "W9: 3 P3 tasks in verisci | W10: Public P4 repo spatial-leakage-s2 | W11: P5 Bootstrap BCa & Welch t-test sims | W12: Public P5 repo stat-validation-sims (4 figures).",
       kpis: [
-        { id: "m3_k1", text: "OpenAPI 3.1 YAML specification validates with zero schema errors and passes automated pytest/curl endpoint payload checks." },
-        { id: "m3_k2", text: "khulna-parks-mclp runs 100% in open-source Python (OSMnx, NetworkX, Pyomo/HiGHS) and quantifies the exact Optimality Gap % of Teitz-Bart." },
-        { id: "m3_k3", text: "stat-validation-sims matches theoretical 95% coverage and 5% Type I error within Monte Carlo error bounds across 10,000 repetitions." },
-        { id: "m3_k4", text: "Month 3 Gate Audit completed: evaluate accumulated paid AI-training hours and trigger Plan B (prioritizing benchmark & preprint for domain tracks) if needed." }
+        { id: "m3_k1", text: "P3 Tasks: 3 hydrological tasks (ft³/s to mm/day conversion, NSE vs KGE baseline, calibration split leakage) merged into verisci." },
+        { id: "m3_k2", text: "P4: Public repo spatial-leakage-s2 live with block-size decay curve, 2-page writeup, and zero train/test geometry overlap assertion." },
+        { id: "m3_k3", text: "P5: Public repo stat-validation-sims live with 4 simulation studies (10,000 reps, fixed seeds, Monte Carlo error √(p(1-p)/R) bounds)." },
+        { id: "m3_k4", text: "P5 Tests: Normal large-n empirical coverage and Type I error fall strictly within theoretical Monte Carlo error bounds." }
       ]
     },
     {
       code: "M4",
       month: "Month 4",
       period: "Feb 15 – Mar 15, 2027",
-      theme: "ML Pitfalls Lab, PyTorch Reproducibility, LLM Benchmark Run & verisci v1.0 Release",
-      hoursPerWeek: "10–12 hrs/wk (Digital SAT / IELTS window)",
-      primaryObjective: "Complete the ML Pitfalls & PyTorch 10-seed determinism laboratory, benchmark large-scale spatial joins (GeoPandas vs PostGIS vs DuckDB Spatial), run 3–4 LLMs across all 24–28 verisci tasks, compute Cohen's kappa rubric reliability, and release verisci v1.0 with a Zenodo DOI and Hugging Face Dataset Card.",
-      researchTargets: "Diagnose spatial autocorrelation (Global/Local Moran's I) and spatial lag/error regression models in PySAL; establish a 6-part Silent Failure Taxonomy for LLM-generated scientific code.",
-      technicalTargets: "Master PyTorch deterministic seeding, PostGIS & DuckDB Spatial SQL benchmarking, Inspect AI Docker sandbox agent evaluations, and Cohen's kappa inter-rater agreement calculation.",
-      weeklyDeliverablesSummary: "W13: ML Pitfalls + PyTorch Seed Study + 6 ML tasks (22 total) | W14: PostGIS/DuckDB Benchmark + 2nd OSS PR | W15: 3–4 LLM Inspect AI Run + Agent Task | W16: Cohen's kappa + verisci v1.0 DOI & HF Dataset.",
+      theme: "v4 P4/P5 Tasks, P6 (TSP Exact vs Heuristic on TSPLIB), L1 (Kaggle) & P8 Start",
+      hoursPerWeek: "10–12 hrs/wk (v4 M4 Exam/Application Pace)",
+      primaryObjective: "Merge 6 tasks from P4 & P5 into verisci, build P6 (tsp-validated, ~17h) comparing custom heuristics and OR-Tools against Exact MIP (Pyomo + HiGHS lazy subtour elimination) on TSPLIB instances, publish the L1 Kaggle Dataset + Notebook (~8h), and start P8 (ml-pitfalls-lab).",
+      researchTargets: "Verify TSPLIB EUC_2D integer rounding conventions and published exact optimums (eil51=426, berlin52=7542, st70=675, eil76=538, kroA100=21282); analyze LP relaxation and 1-tree lower bounds.",
+      technicalTargets: "Implement Nearest Neighbour + 2-opt, OR-Tools Guided Local Search, and Pyomo + HiGHS lazy subtour cut generation; run 20× repeated 'Honest vs Leaky' experiments across 6 ML pitfalls.",
+      weeklyDeliverablesSummary: "W13: 6 P4/P5 tasks in verisci | W14: Public P6 repo tsp-validated | W15: L1 Kaggle Dataset + Notebook published | W16: P8 Part 1 (6 ML pitfalls × 20 repeats table).",
       kpis: [
-        { id: "m4_k1", text: "verisci v1.0 (24–28 tasks) released on GitHub, archived on Zenodo with a permanent DOI, and published on Hugging Face Datasets." },
-        { id: "m4_k2", text: "Dual-pass CI confirms 100% reference solutions pass and 100% deliberate buggy solutions fail; Cohen's kappa computed across self re-grade and peer grade." },
-        { id: "m4_k3", text: "2 deep-dive Comparative Technical Analyses published with 1:1 variable parity between LaTeX equations and Python code." },
-        { id: "m4_k4", text: "Derived, license-clean Bangladesh geospatial dataset and analytical notebook published on Kaggle; 2nd Open-Source PR submitted." }
+        { id: "m4_k1", text: "P4 & P5 Tasks: 6 verified ML/Stats tasks merged into verisci (12 project tasks total)." },
+        { id: "m4_k2", text: "P6: Public repo tsp-validated matches exact TSPLIB optimums (eil51=426, berlin52=7542, st70=675) and validates Hamiltonian cycles." },
+        { id: "m4_k3", text: "L1: License-verified P2 derived station table published as a Kaggle Dataset alongside a clean P2/P3 analytical notebook." },
+        { id: "m4_k4", text: "P8 Part 1: 6 ML pitfalls score-inflation table completed with train/test index disjointness assertions." }
       ]
     },
     {
       code: "M5",
       month: "Month 5",
       period: "Mar 15 – Apr 15, 2027",
-      theme: "Interpretable GeoAI (SHAP/ALE), PRISMA Scoping Review, Preprint & Wave 1 Applications",
+      theme: "v4 P6 Tasks, P7 (Numerical Methods & Physics Suite), P8 Completion & Earth/Math Apply",
       hoursPerWeek: "12–15 hrs/wk",
-      primaryObjective: "Bridge interpretable machine learning (SHAP & ALE) with Khulna Urban Heat Island modeling, register a 3,000-word PRISMA-aligned Scoping Review & Research Proposal on OSF, publish a 6–8 page standalone Technical Report on verisci, secure >=2 merged OSS PRs, and submit Wave 1 role applications.",
-      researchTargets: "Formulate falsifiable hypotheses and statistical power/resolution justifications; synthesize 25+ primary peer-reviewed studies in a PRISMA scoping review; author a 100% human-written benchmark preprint.",
-      technicalTargets: "Master shap and Accumulated Local Effects (ALE) for correlated spatial predictors, Hugging Face Model Cards, and timed 90-minute practical debugging / 90-second oral interview drills.",
-      weeklyDeliverablesSummary: "W17: Khulna UHI SHAP/ALE study + Model Card | W18: 3,000-word OSF Scoping Review & Proposal | W19: 6–8 page verisci Preprint Report | W20: >=2 Merged PRs + 5 Reviews + 10 Mock Interviews + Wave 1 Apply.",
+      primaryObjective: "Merge P6's 3 tasks into verisci, build P7 (numerics-validated, ~21h) validating 7 numerical & physics modules against analytical solutions and conservation laws, finish P8 Part 2 (PyTorch 10-seed determinism), and apply to Earth & Math/Stats roles (~18 tasks ready).",
+      researchTargets: "Verify theoretical convergence orders (bisection=1, secant≈1.618, Newton=2, Euler=1, Verlet=2, RK4=4), symplectic energy conservation, and explicit 1D heat equation CFL stability (r = αΔt/Δx² <= 1/2).",
+      technicalTargets: "Implement root finding, ODE integrators, harmonic oscillator energy drift, stiff backward Euler, 1D heat PDE vs Fourier series, Hilbert matrix conditioning, and 10-seed PyTorch MLP/CNN determinism.",
+      weeklyDeliverablesSummary: "W17: 3 P6 tasks in verisci | W18: P7 root finding, ODE slopes & Verlet energy drift | W19: Public P7 repo numerics-validated + 3 P7 tasks | W20: Public P8 repo complete + Apply to Earth & Math/Stats.",
       kpis: [
-        { id: "m5_k1", text: "6–8 page Technical Report on verisci (GeoEval-BD) published on EarthArXiv or Zenodo and indexed on ORCID/Google Scholar." },
-        { id: "m5_k2", text: "3,000-word Research Proposal & PRISMA Scoping Review registered on OSF with 25+ verified Crossref DOIs." },
-        { id: "m5_k3", text: "At least 2 upstream Open-Source Pull Requests merged and 5 constructive technical PR/notebook reviews logged publicly." },
-        { id: "m5_k4", text: "10 recorded mock AI interviews completed and Wave 1 applications submitted (Earth, Math/Stats, ML, Technical Writer, Academic RA)." }
+        { id: "m5_k1", text: "P6 & P7 Tasks: 6 Optimization & Numerical Physics tasks merged into verisci (~18 tasks total)." },
+        { id: "m5_k2", text: "P7: Public repo numerics-validated passes ±0.2 convergence order assertions, energy drift checks, and heat equation stability tests." },
+        { id: "m5_k3", text: "P8: Public repo ml-pitfalls-lab complete with 10-seed PyTorch deterministic vs non-deterministic variance plot vs XGBoost." },
+        { id: "m5_k4", text: "First Application Wave: Submit applications for Earth & Environmental and Math & Statistics roles backed by P1–P7 repos." }
       ]
     },
     {
       code: "M6",
       month: "Month 6",
       period: "Apr 15 – May 15, 2027",
-      theme: "Wave 2 Hydrology/Physics Extension, JOSS Submission Gate, Portfolio Audit & Career Launch",
-      hoursPerWeek: "10–12 hrs/wk (Scholarship & Final Exam window)",
-      primaryObjective: "Add Wave 2 Physical & Water Resources validation tasks (Khulna stormwater sizing & numerical physics conservation laws), pass the 6-month JOSS submission gate, audit every portfolio piece to score >=85/100 with 3-line Decision Context headers, and execute full-scale outreach.",
-      researchTargets: "Prepare JOSS manuscript (paper.md) comparing verisci against GeoAnalystBench and Inspect Evals, or finalize co-authored journal manuscript with KUET faculty / SERC / Precision Agriculture Lab.",
-      technicalTargets: "Master Quarto manuscript/poster formats, automated link/DOI checkers, Manning's open-channel / Rational runoff equations, and symplectic Verlet vs Euler energy conservation verifiers.",
-      weeklyDeliverablesSummary: "W21: Khulna Waterlogging & Numerical Physics pack (v1.1) | W22: JOSS Submission Gate & paper.md | W23: 85+/100 Rubric Audit & Decision Context headers | W24: 3 Tailored CVs + PI Outreach Campaign.",
+      theme: "v4 P8 Tasks, P9 (LLM Run, Taxonomy, Agent Task & v1.0 DOI), L3 Report & Full Apply",
+      hoursPerWeek: "10–12 hrs/wk (or 15 hrs/wk with Optional O1–O5)",
+      primaryObjective: "Add P8's 3 tasks to complete all 21 tasks in verisci, execute P9 (~14h: 3–4 LLM run via Inspect AI, 6-part failure taxonomy, Cohen's kappa, 1 Docker sandbox agent task, v1.0 Zenodo DOI & Hugging Face release), publish L3 (4–6 page Technical Report, ~8h), and apply to ML & all remaining roles.",
+      researchTargets: "Analyze LLM failure modes across all 21 scientific tasks; compute intra-rater (1-week self re-grade) and inter-rater (10-task peer grade) Cohen's kappa; author 4–6 page Technical Report (L3).",
+      technicalTargets: "Run Inspect AI multi-model evaluation & Docker sandbox agent task; mint Zenodo DOI & Hugging Face Dataset Card for verisci v1.0; evaluate JOSS submission gate (O5, >=6 months public history).",
+      weeklyDeliverablesSummary: "W21: 3 P8 tasks (21 tasks total) & peer prompt check | W22: 3–4 LLM Inspect run, taxonomy, Cohen's kappa & Docker agent task | W23: verisci v1.0 DOI + L3 Report on EarthArXiv/Zenodo | W24: Full role applications + O5 JOSS gate.",
       kpis: [
-        { id: "m6_k1", text: "verisci repository completes >=6 months of steady public commit history, issues, and releases, qualifying for JOSS submission (v1.1 with 25–30 tasks)." },
-        { id: "m6_k2", text: "meheran.dev/proof and meheran.dev/docs curated to top 10–12 flagship artifacts (all scoring >=85/100) with 3-line Decision Context headers." },
-        { id: "m6_k3", text: "A cold reviewer can navigate from meheran.dev homepage to verified GitHub code, live docs, green CI, merged PRs, and Zenodo DOIs within 3 clicks." },
-        { id: "m6_k4", text: "Tailored 1-page Evidence-Linked CVs and <160-word outreach emails sent to target remote labs, Technical Writing teams, and AI Trainer platforms." }
+        { id: "m6_k1", text: "v4 Final Deliverable Count Met: 8 CI-green validation repos (P1–P8), 21-task verisci v1.0 suite (with Zenodo DOI & HF Dataset), 1 report (L3), 2 OSS PRs (L2), 1 Kaggle dataset (L1)." },
+        { id: "m6_k2", text: "P9 Quality Gates: 3 tasks peer-tested for prompt clarity, 10 tasks peer-graded for Cohen's kappa, and 1 Inspect Docker sandbox agent task verified." },
+        { id: "m6_k3", text: "L3: 4–6 page human-written Technical Report published on EarthArXiv or Zenodo and linked in PROOF.md." },
+        { id: "m6_k4", text: "Applications submitted to ML Engineering and remaining roles using PROOF.md; O5 JOSS submission triggered if 6-month history & scope check pass." }
       ]
     }
   ],
@@ -565,467 +565,498 @@ const PORTAL_DATA = {
   projects: [
     {
       id: "proj_p0",
-      code: "P0 · Flagship Benchmark",
-      title: "verisci (GeoEval-BD): Verifiable Scientific & Geospatial LLM Benchmark Harness",
+      code: "v4 P1 · Benchmark Harness (M1, ~12h)",
+      title: "P1: verisci — Verifiable Computational Science Benchmark Harness & PROOF.md",
       category: "Core Benchmark Harness",
-      months: "M1 – M6 (v0.1 in W2, v1.0 in M4, v1.1 & JOSS in M6)",
-      hours: "68 hrs total",
-      tracksServed: "AI Evaluator/Trainer (All 8 Domains) + Scientific Technical Writing + Research",
-      problem: "LLMs frequently generate geospatial, statistical, and scientific Python code that executes without syntax errors but produces silently wrong results—such as computing polygon area in decimal degrees (EPSG:4326), confusing UTM Zone 45N/46N across the 90E meridian in Bangladesh, ignoring raster NoData masks, omitting cos(latitude) weighting in NetCDF averages, or introducing spatial data leakage.",
-      novelty: "Existing benchmarks like GeoAnalystBench (50 tasks) rely heavily on workflow similarity and CodeBLEU. verisci introduces deterministic Output-Based Numeric Tolerance Verifiers, Dual-Pass CI Testing (every task must pass its reference solution AND fail a deliberate buggy trap solution), a 6-part Silent Failure Taxonomy across 3–4 LLMs, Cohen's kappa inter-rater reliability, and an Inspect AI Docker sandbox agent task.",
-      stack: ["Python >=3.10", "uv", "pytest", "Inspect AI", "Docker", "GitHub Actions", "Vale Linter", "Zenodo DOI", "Hugging Face"],
-      datasets: "24–30 license-clean micro-snapshots (<500 KB per task): HDX COD-AB / geoBoundaries (CC-BY-4.0), OpenStreetMap (ODbL), Sentinel-1/2 & Copernicus DEM clips, ERA5/CHIRPS subsets, TSPLIB instances, and synthetic statistical arrays.",
-      validationTruth: "Dual-Pass Automated Verifier (Reference Solution = PASS, Deliberate Buggy Trap Solution = FAIL) + Peer Solving Gate (3 tasks tested on a KUET peer) + Cohen's Kappa Rubric Agreement.",
+      months: "Month 1 (Nov 15 – Dec 15, 2026 · ~12 hrs)",
+      hours: "12 hrs",
+      tracksServed: "All 8 AI Trainer Roles + Technical Writing & Research Proof Hub",
+      problem: "Scientific, geospatial, and statistical tasks require a unified, deterministic evaluation harness where every task follows the exact same structure and where public repository history starts in Month 1 to satisfy the 6-month JOSS clock (for O5).",
+      novelty: "Creates the public repository verisci with an OSI-approved LICENSE (MIT or Apache-2.0), CITATION.cff, pyproject.toml, Dockerfile, Inspect AI task/scorer wrapper, and a dual-pass pytest CI gate asserting that every task's verifier passes the reference solution (solution.py) and fails a deliberate buggy solution (buggy_solution.py), accompanied by PROOF.md (Claim -> Link -> Verification Command).",
+      stack: ["Python >=3.10", "uv / conda", "pytest", "Inspect AI", "Docker", "GitHub Actions", "Vale Linter"],
+      datasets: "1 lightweight (<100 KB) license-clean starter snapshot in M1; scales to 21 verified snapshots across P2–P8 by M6.",
+      validationTruth: "Dual-Pass Continuous Integration (CI: reference solution = PASS, deliberate buggy trap solution = FAIL).",
       steps: [
-        "W2 (M1): Initialize public repo github.com/MkMeheran/verisci with MIT License, pyproject.toml, CITATION.cff, Dockerfile, Inspect AI wrapper, and 1 complete example task (v0.1).",
-        "M1–M3: Populate 15 Earth & Geospatial tasks (CRS/projection, raster alignment/NoData, SAR/optical indices, NetCDF ERA5/CHIRPS time-series, Moran's I & MCLP site selection) and 8 Math/Stats/Optimization tasks.",
-        "M4: Add 5 ML validation tasks (pre-split scaling, target leakage, spatial leakage, imbalanced PR-AUC, seed variance) + 1 Inspect Docker sandbox multi-step agent task.",
-        "M4 (W15–W16): Run 3–4 LLMs via Inspect AI, classify all errors into the Silent Failure Taxonomy, re-grade after 1 week + peer grade 10 tasks to compute Cohen's kappa, and publish v1.0 on Zenodo & Hugging Face.",
-        "M5–M6: Author 6–8 page Technical Report (L3), add Wave 2 Physical/Hydrology tasks (v1.1), and submit software paper to JOSS (L4)."
+        "Step 1: Initialize public repository github.com/MkMeheran/verisci on Day 1 (starts the 6-month JOSS history clock) with MIT/Apache-2.0 LICENSE, README.md, CITATION.cff, and pyproject.toml.",
+        "Step 2: Define the standardized 6-file task folder contract: prompt.md, data/, solution.py, verifier.py, rubric.md, and meta.yaml.",
+        "Step 3: Implement the Inspect AI wrapper (src/verisci/harness.py), Dockerfile, and GitHub Actions workflow (.github/workflows/ci.yml) running dual-pass pytest.",
+        "Step 4: Build 1 small end-to-end example task, verify green CI badge, create PROOF.md, tag release v0.1, and stop without over-engineering the harness."
       ],
       outputs: [
-        "1. Public GitHub Repository with green dual-pass pytest & Vale CI badges",
-        "2. 24–30 Executable Benchmark Tasks (prompt.md, data/, solution.py, buggy_solution.py, verifier.py, rubric.md, meta.yaml)",
-        "3. Multi-Model LLM Evaluation Log & 6-Category Silent Failure Taxonomy",
-        "4. Inspect AI Docker Sandbox Agent Evaluation Task",
-        "5. Permanent Zenodo DOI & Hugging Face Dataset Card",
-        "6. 6–8 Page Technical Preprint & JOSS Software Manuscript"
+        "1. Public GitHub repository verisci with green pytest CI badge and tag v0.1",
+        "2. Standardized Task Folder Template (prompt.md, data/, solution.py, verifier.py, rubric.md, meta.yaml)",
+        "3. Inspect AI @task and @scorer wrapper + Dockerfile",
+        "4. Dual-Pass CI test suite (tests/test_dual_pass.py)",
+        "5. PROOF.md (Centralized Claim -> Link -> Verification Command table)",
+        "6. 1 Complete end-to-end verified starter task"
       ],
-      takeaway: "Every benchmark task must pass its reference solution and fail a deliberate silent-failure trap in automated GitHub Actions CI.",
-      verifyCmd: "git clone https://github.com/MkMeheran/verisci.git && cd verisci && uv run pytest -v && uv run inspect eval src/verisci/harness.py",
+      takeaway: "Starts the 6-month JOSS clock on Day 1 and provides the shared testing harness for all 21 tasks generated by P2–P8.",
+      verifyCmd: "git clone https://github.com/MkMeheran/verisci.git && cd verisci && uv run pytest -v",
       asciiTree: `verisci/
-├── .github/
-│   └── workflows/
-│       └── ci.yml                  # Dual-pass pytest + doctest + Vale style linter
-├── docs/
-│   ├── index.qmd                   # Quarto benchmark overview & failure taxonomy
-│   └── schema_specification.md     # Diataxis Reference for task contributors
-├── results/
-│   ├── llm_runs_v1.jsonl           # Raw Inspect AI evaluation logs across 3-4 LLMs
-│   ├── failure_taxonomy.csv        # Categorized silent failures (CRS, NoData, Leakage)
-│   └── kappa_agreement.json        # Intra-rater & inter-rater Cohen's kappa metrics
-├── src/
-│   └── verisci/
-│       ├── __init__.py
-│       ├── harness.py              # Inspect AI @task, @scorer & Docker agent wrapper
-│       └── validators.py           # Numeric tolerance, CRS & geometry assertions
+├── .github/workflows/ci.yml        # Dual-pass pytest: reference=PASS, buggy=FAIL
+├── src/verisci/
+│   ├── __init__.py
+│   ├── harness.py                  # Inspect AI @task & @scorer wrapper
+│   └── validators.py               # Numeric tolerance (np.isclose) helpers
 ├── tasks/
-│   ├── earth_001_bd_crs_area/
-│   │   ├── data/
-│   │   │   └── khulna_unions_sample.geojson
-│   │   ├── prompt.md               # Unambiguous task specification
-│   │   ├── solution.py             # Reference implementation (must PASS verifier)
-│   │   ├── buggy_solution.py       # Deliberate EPSG:4326 area trap (must FAIL verifier)
-│   │   ├── verifier.py             # Output & methodological assertion grader
-│   │   ├── rubric.md               # Point deductions & diagnostic criteria
-│   │   └── meta.yaml               # Domain, difficulty, silent_failure_trap, license
-│   ├── math_001_bca_bootstrap/
-│   └── ml_001_spatial_block_cv/
-├── tests/
-│   └── test_dual_pass.py           # Parametrized CI test across all task folders
-├── CITATION.cff                    # Zenodo/ORCID citation metadata
-├── Dockerfile                      # Hermetic container for reproducible agent evals
-├── LICENSE                         # MIT License
-├── PROOF.md                        # Claim -> Artifact Link -> Verification Command
-├── pyproject.toml                  # Locked dependencies (uv / PEP 621)
-└── README.md                       # Quickstart, architecture & badge header`,
+│   └── example_001_starter/
+│       ├── data/sample.csv
+│       ├── prompt.md
+│       ├── solution.py             # Reference solution (must PASS verifier)
+│       ├── buggy_solution.py       # Deliberate trap (must FAIL verifier)
+│       ├── verifier.py
+│       ├── rubric.md
+│       └── meta.yaml
+├── tests/test_dual_pass.py
+├── CITATION.cff
+├── Dockerfile
+├── LICENSE                         # MIT or Apache-2.0
+├── PROOF.md                        # Claim -> Link -> Verification Command
+├── pyproject.toml
+└── README.md`,
       markdownTree: `- \`verisci/\`
-  - \`.github/workflows/ci.yml\` — Automated GitHub Actions workflow running dual-pass \`pytest\` and \`Vale\` prose linting
-  - \`docs/\`
-    - \`index.qmd\` — Quarto documentation portal & LLM failure taxonomy report
-    - \`schema_specification.md\` — Diátaxis Reference manual for task structure
-  - \`results/\`
-    - \`llm_runs_v1.jsonl\` — Inspect AI model evaluation logs
-    - \`failure_taxonomy.csv\` — Silent failure classification table
-    - \`kappa_agreement.json\` — Cohen's kappa inter-rater reliability report
-  - \`src/verisci/\`
-    - \`__init__.py\` — Package version & exports
-    - \`harness.py\` — Inspect AI \`@task\`, \`@scorer\`, and Docker sandbox agent wrapper
-    - \`validators.py\` — Shared numeric tolerance (\`np.isclose\`) and CRS assertion helpers
-  - \`tasks/\`
-    - \`earth_001_bd_crs_area/\` — Flagship geospatial CRS & topology task folder
-      - \`data/khulna_unions_sample.geojson\` — License-clean subnational boundary sample
-      - \`prompt.md\` — Unambiguous task prompt with explicit output schema
-      - \`solution.py\` — Verified reference solution (reprojects to \`EPSG:32646\` & repairs rings)
-      - \`buggy_solution.py\` — Deliberate trap computing area in \`EPSG:4326\` degrees
-      - \`verifier.py\` — Automated pass/fail grader checking values and CRS invariants
-      - \`rubric.md\` — Structured grading criteria for human/LLM-as-judge review
-      - \`meta.yaml\` — Task metadata, license (\`CC-BY-4.0\`), and trap taxonomy tag
-  - \`tests/test_dual_pass.py\` — Master \`pytest\` suite verifying every task passes \`solution.py\` and fails \`buggy_solution.py\`
-  - \`CITATION.cff\` — Archival citation metadata synced with Zenodo & ORCID
-  - \`Dockerfile\` — Reproducible runtime environment
-  - \`LICENSE\` — MIT License
-  - \`PROOF.md\` — Centralized verification table
-  - \`pyproject.toml\` — Project configuration and dependency lock specification
-  - \`README.md\` — Architecture overview, setup instructions, and verification badges`
+  - \`.github/workflows/ci.yml\` — Dual-pass \`pytest\` CI workflow
+  - \`src/verisci/harness.py\` — Inspect AI \`@task\` & \`@scorer\` wrapper
+  - \`tasks/example_001_starter/\` — \`prompt.md\`, \`data/\`, \`solution.py\`, \`buggy_solution.py\`, \`verifier.py\`, \`rubric.md\`, \`meta.yaml\`
+  - \`tests/test_dual_pass.py\` — Asserts reference passes and buggy solution fails
+  - \`CITATION.cff\`, \`Dockerfile\`, \`LICENSE\`, \`PROOF.md\`, \`pyproject.toml\`, \`README.md\``
     },
     {
       id: "proj_p1",
-      code: "P1 · Earth & Remote Sensing",
-      title: "Sentinel-1 SAR Flood Cropland Impact & Subnational Boundary Topology Suite",
+      code: "v4 P2 · Earth Climate (M1–M2, ~23h)",
+      title: "P2: Bangladesh Extreme Rainfall — CHIRPS vs. ERA5 vs. BMD Rain Gauge Validation (bd-rain-extremes)",
       category: "Geospatial & Earth",
-      months: "Month 1 (Nov 16 – Dec 13, 2026)",
-      hours: "16 hrs",
-      tracksServed: "Research Track + Earth & Environmental AI Trainer + Scientific Technical Writing",
-      problem: "Monsoon cloud cover renders optical sensors blind during Bangladesh floods, while standard Sentinel-1 SAR thresholding suffers from speckle noise, permanent water confusion, invalid digitized polygon rings (TopologyException), and severe area distortion when computed in geographic EPSG:4326 instead of planar UTM zones.",
-      novelty: "Upgrades your SERC Chattogram flood study (17,531.95 sq. km study area; 332.64 sq. km impacted cropland) into a 100% headless CLI pipeline that repairs invalid boundary geometries with shapely.make_valid(), masks permanent water via JRC Global Surface Water, evaluates Fixed dB vs. Otsu threshold sensitivity, and validates accuracy (IoU, Precision, Recall) against independent reference data.",
-      stack: ["Python", "GeoPandas >=1.0", "Shapely >=2.0", "Rasterio", "Google Earth Engine API", "Pytest", "Quarto"],
-      datasets: "Sentinel-1 GRD SAR (VV/VH), ESA WorldCover 10m v200, JRC Global Surface Water, HDX COD-AB / geoBoundaries Bangladesh administrative units, and Copernicus EMS / UNOSAT flood extent (or 200 stratified validation points).",
-      validationTruth: "Independent Observation Reference (Copernicus EMS / UNOSAT flood extent or 200 stratified high-resolution labeled points) + OGC Simple Feature validity assertions.",
+      months: "Months 1 – 2 (~23 hrs, includes 3 verisci tasks)",
+      hours: "23 hrs",
+      tracksServed: "Earth & Environmental + Research Track + Technical Writing + L1 Kaggle Source",
+      problem: "How accurately do CHIRPS (0.05° daily) and ERA5 (0.25° hourly accumulation in meters) capture extreme rainfall indices (Rx1day, Rx5day, R95p, CDD) across Bangladesh (1991–2020) when validated against station rain gauges, and which product performs better by region?",
+      novelty: "Validates CHIRPS and ERA5 (converted from meters to mm and shifted from UTC to Bangladesh Standard Time UTC+6) against 35 BMD daily station rain gauges (or NOAA GHCN-Daily), explicitly excluding ENACTS-BMD as independent truth because it blends station gauges, and produces 3 benchmark tasks for verisci.",
+      stack: ["Python", "xarray", "NetCDF4", "pandas", "NumPy", "Matplotlib", "pytest", "Quarto"],
+      datasets: "CHIRPS daily (UCSB Climate Hazards Center, 0.05°), ERA5 hourly precipitation (Copernicus CDS, 0.25°), and BMD 35-station daily rain gauge dataset (1991–2020, Mendeley Data / NOAA GHCN-Daily).",
+      validationTruth: "Independent Station Rain Gauge Observations (BMD / NOAA GHCN-Daily) + Synthetic Time-Series Unit Tests.",
       steps: [
-        "W1: Build automated boundary topology repair (.make_valid() vs .buffer(0)) and UTM Zone 45N/46N (EPSG:32645/32646) standardization module.",
-        "W3: Script automated Sentinel-1 pre/post flood scene ingestion, Lee/Refined Lee speckle filtering, and JRC permanent water masking.",
-        "W4: Compute Fixed dB (-15 dB to -18 dB) vs. automated Otsu thresholding sensitivity curve and Confusion Matrix (IoU, Precision, Recall, F1) against reference observations.",
-        "W4: Package 3 benchmark tasks into verisci and publish the Diataxis How-To Guide + Zenodo DOI release."
+        "Step 1–2: Submit Copernicus CDS ERA5 request in Week 1; verify BMD station dataset license/quality and extract CHIRPS & ERA5 values at station coordinates.",
+        "Step 3–4: Convert ERA5 hourly accumulation (meters) to daily totals (mm) respecting Bangladesh Standard Time (UTC+6); compute ETCCDI indices (Rx1day, Rx5day, R95p, CDD with wet day >= 1 mm).",
+        "Step 5–6: Calculate JJAS monsoon bias, RMSE, and correlation; map regional product performance across Bangladesh and export the derived station comparison table for L1 Kaggle.",
+        "3 Benchmark Tasks: Add to verisci: (1) ERA5 hourly-to-daily UTC+6 & unit conversion, (2) Rx5day calculation, and (3) CDD cross-year boundary dry-spell edge case."
       ],
       outputs: [
-        "1. Headless CLI repository (sar-flood-eval) with Makefile/snakemake workflow",
-        "2. Confusion Matrix, IoU/Precision/Recall table & Threshold Sensitivity Curve",
-        "3. 2 Publication-grade cartographic flood & cropland impact maps",
-        "4. 3 verisci Earth benchmark tasks (CRS, Topology, SAR Thresholding)",
-        "5. Day 1 Diataxis How-To Guide on GeoPandas Topology & CRS Standardization",
-        "6. Zenodo DOI-archived reproducible methodology report with Limitations section"
+        "1. Public validation repository: bd-rain-extremes",
+        "2. 6 Diagnostic regional & seasonal comparison figures",
+        "3. Derived station-level comparison table (input for L1 Kaggle Dataset)",
+        "4. Unit & synthetic time-series pytest suite (known Rx5day & unit conversion)",
+        "5. 3 Verified Earth tasks merged into verisci",
+        "6. Diátaxis Technical Explainer & Data Provenance README"
       ],
-      takeaway: "Transforms your 332.64 km² Chattogram cropland flood study into an observation-validated, headless open-source package.",
-      verifyCmd: "git clone https://github.com/MkMeheran/sar-flood-eval.git && cd sar-flood-eval && uv run pytest && uv run python src/run_pipeline.py --config config/chattogram_2026.yaml",
-      asciiTree: `sar-flood-eval/
+      takeaway: "Proves climate NetCDF/Xarray mastery by catching unit, accumulation, timezone (UTC+6), and point-vs-grid representativeness traps.",
+      verifyCmd: "git clone https://github.com/MkMeheran/bd-rain-extremes.git && cd bd-rain-extremes && uv run pytest && uv run python src/evaluate_extremes.py",
+      asciiTree: `bd-rain-extremes/
 ├── .github/workflows/ci.yml
-├── config/
-│   └── chattogram_2026.yaml        # AOI bounds, dates, CRS (EPSG:32646), dB thresholds
-├── data/
-│   ├── README.md                   # Data provenance, licenses & acquisition dates
-│   └── sample_tiles/               # Lightweight test GeoTIFF & boundary GeoJSON
-├── docs/
-│   ├── geopandas-topology-crs.md   # Day 1 Diataxis How-To Guide
-│   └── methodology_report.qmd      # Reproducible Quarto report with BibTeX
+├── data/README.md                  # CHIRPS, ERA5 & BMD license/provenance audit
+├── figures/                        # 6 regional bias, RMSE & JJAS correlation plots
 ├── outputs/
-│   ├── metrics_confusion_matrix.csv
-│   ├── threshold_sensitivity.png
-│   └── chattogram_cropland_flood_map.png
+│   └── station_etccdi_comparison.csv
 ├── src/
-│   ├── __init__.py
-│   ├── boundary_hygiene.py         # shapely.make_valid() & UTM 45N/46N reprojection
-│   ├── sar_preprocessing.py        # GEE/ASF fetch, speckle filter & JRC water mask
-│   ├── threshold_eval.py           # Fixed dB vs Otsu & IoU/Precision/Recall metrics
-│   └── run_pipeline.py             # Single-command headless CLI entrypoint
-├── tests/
-│   ├── test_topology_crs.py
-│   └── test_metrics_validation.py
-├── CITATION.cff
-├── environment.yml
-├── LICENSE
+│   ├── era5_utc6_daily.py          # Hourly meters (UTC) -> Daily mm (UTC+6)
+│   ├── etccdi_indices.py           # Rx1day, Rx5day, R95p, CDD (wet day >= 1mm)
+│   └── evaluate_extremes.py        # Station bias, RMSE, correlation by region
+├── tests/test_synthetic_etccdi.py
+├── pyproject.toml
 └── README.md`,
-      markdownTree: `- \`sar-flood-eval/\`
-  - \`.github/workflows/ci.yml\` — Automated unit tests and Vale linting
-  - \`config/chattogram_2026.yaml\` — Study area parameters, dates, and CRS (\`EPSG:32646\`)
-  - \`data/\`
-    - \`README.md\` — Exact dataset URLs, licenses (\`CC-BY-4.0\`), and SHA256 checksums
-    - \`sample_tiles/\` — Small Sentinel-1 SAR clip & union polygons for CI testing
-  - \`docs/\`
-    - \`geopandas-topology-crs.md\` — Day 1 Diátaxis How-To Guide
-    - \`methodology_report.qmd\` — Executable Quarto manuscript with \`references.bib\`
-  - \`outputs/\` — Generated \`metrics_confusion_matrix.csv\`, sensitivity plots, and maps
-  - \`src/\`
-    - \`boundary_hygiene.py\` — \`.make_valid()\` ring repair & UTM projection standardization
-    - \`sar_preprocessing.py\` — Speckle filtering & JRC permanent water masking
-    - \`threshold_eval.py\` — Fixed dB vs. Otsu sensitivity & \`IoU\`/\`Precision\`/\`Recall\`
-    - \`run_pipeline.py\` — End-to-end headless CLI runner
-  - \`tests/\` — \`pytest\` suite verifying geometry validity and metric bounds
-  - \`CITATION.cff\`, \`environment.yml\`, \`LICENSE\`, \`README.md\``
+      markdownTree: `- \`bd-rain-extremes/\`
+  - \`.github/workflows/ci.yml\` — Automated synthetic index & unit conversion tests
+  - \`data/README.md\` — Provenance & license verification for \`CHIRPS\`, \`ERA5\`, and \`BMD\`
+  - \`figures/\` — 6 diagnostic figures
+  - \`outputs/station_etccdi_comparison.csv\` — Derived table for \`L1\` Kaggle Dataset
+  - \`src/era5_utc6_daily.py\`, \`etccdi_indices.py\`, \`evaluate_extremes.py\`
+  - \`tests/test_synthetic_etccdi.py\``
     },
     {
       id: "proj_p2",
-      code: "P2 · Spatial ML & Climate",
-      title: "Spatial Target Leakage in Remote Sensing ML & Bangladesh Precipitation Extremes Validation",
-      category: "Spatial ML & GeoAI",
-      months: "Month 2 (Dec 14, 2026 – Jan 10, 2027)",
-      hours: "28 hrs",
-      tracksServed: "ML Engineering + Earth & Environmental + Math/Stats + Read the Docs Technical Writing",
-      problem: "(1) In spatial machine learning, standard random K-Fold cross-validation places spatially adjacent pixels in both train and test sets, inflating accuracy due to spatial autocorrelation. (2) Gridded satellite/reanalysis precipitation products (CHIRPS 0.05 deg and ERA5 0.25 deg hourly in UTC) exhibit systematic bias during Bangladesh monsoons when compared against BMD station rain gauges if UTC-to-BST (UTC+6) accumulation and wet-day thresholds (>=1 mm) are mishandled.",
-      novelty: "Quantifies the exact Macro-F1 and IoU drop across increasing spatial block sizes (0.5 km, 1 km, 2 km, 5 km) with bootstrap confidence intervals and out-of-region transfer (train on Khulna, test on Chattogram), paired with a 30-year ETCCDI extreme rainfall validation (Rx1day, Rx5day, R95p, CDD) and a multi-page Read the Docs documentation portal.",
-      stack: ["scikit-learn", "XGBoost", "LightGBM", "xarray", "NetCDF4", "PySAL", "Sphinx / Read the Docs", "numpydoc", "doctest"],
-      datasets: "Sentinel-2 L2A composite, Copernicus DEM, ESA WorldCover, CHIRPS v2.0 daily, ERA5 hourly precipitation (Copernicus CDS), and BMD / NOAA GHCN-Daily station records.",
-      validationTruth: "Disjoint Spatial Block Split (assert zero geometry intersection) + Ground-Station Rain Gauge Observations (BMD/GHCN).",
+      code: "v4 P3 · Hydrology & Engineering (M2–M3, ~25h)",
+      title: "P3: Conceptual Rainfall–Runoff Model on CAMELS — 3-Layer NumPy HBV vs. SAC-SMA (rainfall-runoff-camels)",
+      category: "Geospatial & Earth",
+      months: "Months 2 – 3 (~25 hrs, includes 3 verisci tasks)",
+      hours: "25 hrs",
+      tracksServed: "Earth & Environmental + Physical Sciences + Engineering Sciences + Read the Docs TW",
+      problem: "How well does a parsimonious 3-layer conceptual rainfall–runoff model written from scratch in NumPy capture observed daily streamflow across humid, arid, and snow-dominated catchments compared to the established SNOW-17 + SAC-SMA model in CAMELS?",
+      novelty: "Implements a 3-layer HBV-style model (degree-day snow, soil moisture accounting, fast & slow reservoirs, channel routing) in pure NumPy calibrated via SciPy differential_evolution across 8–10 diverse CAMELS basins (Addor et al. 2017, HESS 21, 5293; DOI: 10.5065/D6MW2F4D), evaluating NSE, KGE, bias, and log-NSE against mean flow, daily climatology, and SAC-SMA, and plotting the top-N parameter equifinality envelope.",
+      stack: ["Python", "NumPy", "SciPy (differential_evolution)", "pandas", "Sphinx / Read the Docs", "numpydoc", "pytest"],
+      datasets: "CAMELS US Catchment Attributes and Meteorology for Large-sample Studies (671 catchments, 1980–2014 daily forcing, observed streamflow & published SAC-SMA output; DOI: 10.5065/D6MW2F4D).",
+      validationTruth: "Observed Gauge Streamflow + Published CAMELS SAC-SMA Output + Water Balance & Synthetic Parameter Identifiability Tests.",
       steps: [
-        "W5: Extract stratified Sentinel-2 spectral indices (NDVI, NDWI) + DEM slope; compare Random KFold vs Spatial-Block GroupKFold (0.5–5 km) across Logistic, RF, XGBoost, and LightGBM.",
-        "W6: Align ERA5 hourly UTC data to Bangladesh Standard Time (UTC+6), compute ETCCDI indices (Rx1day, Rx5day, R95p, CDD), and benchmark against BMD station gauges across monsoon (JJAS) seasons.",
-        "W7: Document the reusable spatial grid & validation module using numpydoc docstrings and deploy multi-version docs on Read the Docs.",
-        "W8: Complete the 15-paper Comparative Methodology Matrix & 2,500-word thematic literature review on Zenodo."
+        "Step 1: Select 8–10 diverse CAMELS basins (humid, arid, snow-dominated) and convert discharge (ft³/s) + basin area into specific runoff (mm/day).",
+        "Step 2: Code the 3-layer HBV conceptual model in NumPy; configure a warm-up period, calibrate on the first ~15 years using SciPy differential_evolution, and validate on the remaining years.",
+        "Step 3–5: Compute NSE, KGE, bias, and log-NSE against mean flow (NSE=0), daily climatology, and CAMELS SAC-SMA output; plot the equifinality envelope across top N parameter sets.",
+        "3 Benchmark Tasks: Add to verisci: (1) discharge + area to mm/day unit conversion, (2) NSE vs KGE & baseline interpretation, and (3) calibration/warm-up/validation temporal split."
       ],
       outputs: [
-        "1. spatial-leakage-s2 & bd-rain-extremes repositories with green CI",
-        "2. Block-size vs. Macro-F1 decay curve (with bootstrap 95% CI) & Khulna-to-Chattogram shift table",
-        "3. CHIRPS vs. ERA5 vs. BMD Rain Gauge seasonal Bias/RMSE table & 6 diagnostic figures",
-        "4. Multi-page software documentation portal hosted on Read the Docs (100% doctest pass)",
-        "5. 6 verisci Earth/ML tasks (v0.2 release) + Zenodo DOI Literature Review",
-        "6. Derived station-comparison dataset published on Kaggle"
+        "1. Public validation repository: rainfall-runoff-camels",
+        "2. Multi-basin hydrographs & Top-N parameter equifinality envelope plots",
+        "3. 8–10 Basin comparative metric table (HBV vs Climatology vs SAC-SMA)",
+        "4. Water-balance conservation & synthetic parameter identifiability pytest suite",
+        "5. 3 Verified Hydrology/Engineering tasks merged into verisci",
+        "6. Sphinx + numpydoc API documentation hosted on Read the Docs"
       ],
-      takeaway: "Proves spatial ML leakage prevention and NetCDF timezone/latitude rigor while delivering a Read the Docs library site.",
-      verifyCmd: "git clone https://github.com/MkMeheran/spatial-leakage-s2.git && cd spatial-leakage-s2 && uv run pytest --doctest-modules && uv run python src/evaluate_blocks.py",
-      asciiTree: `spatial-climate-eval/
+      takeaway: "Provides high-rigor hydrology and engineering simulation proof validated against observed streamflow and SAC-SMA.",
+      verifyCmd: "git clone https://github.com/MkMeheran/rainfall-runoff-camels.git && cd rainfall-runoff-camels && uv run pytest && uv run python src/run_camels_eval.py",
+      asciiTree: `rainfall-runoff-camels/
 ├── .github/workflows/ci.yml
-├── docs/                           # Sphinx / Read the Docs configuration
-│   ├── conf.py
-│   ├── index.rst
-│   ├── api_reference.rst           # Auto-generated numpydoc reference
-│   └── troubleshooting.rst         # Symptom / Cause / Solution matrix
-├── notebooks/
-│   └── kaggle_bd_rain_extremes.ipynb
+├── docs/                           # Sphinx / Read the Docs numpydoc portal
+├── data/camels_sample_8basins/     # Forcing, basin area, observed flow & SAC-SMA
+├── outputs/
+│   ├── basin_metrics_nse_kge.csv
+│   └── hydrographs_equifinality.png
 ├── src/
-│   └── bd_spatial_eval/
-│       ├── __init__.py
-│       ├── block_cv.py             # Spatial-block GroupKFold & disjoint assertions
-│       ├── etccdi_indices.py       # Rx1day, Rx5day, R95p, CDD with UTC+6 alignment
-│       └── leakage_experiment.py   # RF/XGBoost/LightGBM + bootstrap CI runner
+│   ├── hbv_numpy.py                # 3-layer snow, soil, fast/slow reservoir & routing
+│   ├── calibrate_de.py             # SciPy differential_evolution with warm-up
+│   └── metrics_hydro.py            # NSE, KGE, log-NSE, climatology & mm/day conversion
 ├── tests/
-│   ├── test_disjoint_blocks.py     # Asserts zero train/test polygon intersection
-│   └── test_etccdi_synthetic.py    # Validates indices on synthetic known series
+│   ├── test_water_balance.py
+│   └── test_identifiability.py
 ├── .readthedocs.yaml
-├── CITATION.cff
 ├── pyproject.toml
 └── README.md`,
-      markdownTree: `- \`spatial-climate-eval/\`
-  - \`.github/workflows/ci.yml\` — Runs \`pytest\`, \`doctest\`, and Sphinx linkcheck
-  - \`docs/\` — Read the Docs documentation source (\`conf.py\`, \`index.rst\`, \`api_reference.rst\`, \`troubleshooting.rst\`)
-  - \`notebooks/kaggle_bd_rain_extremes.ipynb\` — Reproducible Kaggle analysis notebook
-  - \`src/bd_spatial_eval/\`
-    - \`block_cv.py\` — Spatial grid blocking & geometry disjoint assertions
-    - \`etccdi_indices.py\` — \`ERA5\` (\`UTC+6\`) & \`CHIRPS\` extreme rainfall calculators
-    - \`leakage_experiment.py\` — Multi-model spatial vs. random CV benchmark
-  - \`tests/\` — Unit tests for spatial disjointness and synthetic time-series accuracy
-  - \`.readthedocs.yaml\`, \`CITATION.cff\`, \`pyproject.toml\`, \`README.md\``
+      markdownTree: `- \`rainfall-runoff-camels/\`
+  - \`.github/workflows/ci.yml\` — Runs water-balance, identifiability, and \`doctest\` checks
+  - \`docs/\` — Multi-version Read the Docs documentation for the HBV Python package
+  - \`data/camels_sample_8basins/\` — 8–10 diverse CAMELS basins (\`DOI: 10.5065/D6MW2F4D\`)
+  - \`src/hbv_numpy.py\`, \`calibrate_de.py\`, \`metrics_hydro.py\`
+  - \`tests/test_water_balance.py\`, \`test_identifiability.py\``
     },
     {
       id: "proj_p3",
-      code: "P3 · Math, Stats & Optimization",
-      title: "Khulna Park MCLP Exact MIP vs. Heuristic & Monte Carlo Statistical Validation Suite",
-      category: "Math, Stats & Optimization",
-      months: "Month 3 (Jan 11 – Feb 7, 2027)",
-      hours: "31 hrs",
-      tracksServed: "Math & Stats AI Trainer + Earth/Urban Analytics RA + Scientific Technical Writing",
-      problem: "(1) Your earlier Khulna park accessibility study relied on ArcGIS Pro's GUI and the Teitz-Bart heuristic to select 10 new parks, which external reviewers cannot execute headlessly and which provides no proof of optimality. (2) Standard statistical tests (Student's t-test, naive percentile bootstrap, uncorrected p-values) fail silently under skewed distributions, unequal variances, or optional stopping.",
-      novelty: "Rebuilds the entire Khulna walking-network park allocation in open-source Python (OSMnx + NetworkX + WorldPop) and solves the exact Church & ReVelle (1974) Maximal Covering Location Problem (MCLP) via Mixed-Integer Programming (Pyomo + HiGHS) alongside TSPLIB instances (eil51, berlin52) to measure heuristic optimality gaps, paired with a 10,000-rep Monte Carlo simulation suite validating statistical methods against analytical ground truth.",
-      stack: ["Pyomo", "HiGHS Solver", "Google OR-Tools", "OSMnx", "NetworkX", "NumPy", "SciPy", "SymPy"],
-      datasets: "Khulna City Corporation OSM walking network (ODbL), WorldPop 100m population grid (CC-BY-4.0), TSPLIB benchmark instances (eil51=426, berlin52=7542, st70=675), and seeded Monte Carlo distributions.",
-      validationTruth: "Exact MIP Global Optimum (HiGHS / TSPLIB Known Optimum) + Closed-Form SymPy & Theoretical Statistical Guarantees (95% Coverage, 5% Type I Error).",
+      code: "v4 P4 · Spatial ML & Earth (M3–M4, ~21h)",
+      title: "P4: Spatial Leakage Study on Sentinel-2 — Random vs. Spatial-Block Cross-Validation (spatial-leakage-s2)",
+      category: "Spatial ML & GeoAI",
+      months: "Months 3 – 4 (~21 hrs, includes 3 verisci tasks)",
+      hours: "21 hrs",
+      tracksServed: "ML Engineering + Earth & Environmental + Research Track",
+      problem: "How much does random K-Fold cross-validation artificially inflate accuracy on spatially autocorrelated remote-sensing data, and how does Macro-F1 decay as spatial block size increases from 0.5 km to 5 km?",
+      novelty: "Samples stratified points across water, mangrove, cropland, and built-up classes on a ~50×50 km coastal belt AOI using Sentinel-2 L2A bands/indices (NDVI, NDWI), Copernicus DEM slope, and ESA WorldCover (10m, documenting noisy-label limitations), comparing Random KFold vs Spatial-Block GroupKFold (0.5, 1, 2, 5 km) with block bootstrap intervals and cross-region distribution shift across Logistic, RF, XGBoost, and LightGBM.",
+      stack: ["scikit-learn", "XGBoost", "LightGBM", "GeoPandas", "Rasterio", "NumPy", "pytest"],
+      datasets: "Sentinel-2 L2A (Earth Engine / Planetary Computer), ESA WorldCover 10m, and Copernicus DEM across a ~50×50 km mixed coastal AOI.",
+      validationTruth: "Disjoint Spatial Block Split (pytest assertion of zero train/test geometry overlap) + Fixed-Seed Determinism.",
       steps: [
-        "W9: Aggregate WorldPop demand points onto Khulna hex/ward centroids; compute 400m and 800m NetworkX walking coverage matrices.",
-        "W9: Formulate and solve MCLP Exact MIP in Pyomo + HiGHS for p = 5 to 20 parks; compare objective value, solve time, and Optimality Gap % against Teitz-Bart heuristic and validate TSP solver on TSPLIB.",
-        "W10: Implement 4 vectorized 10,000-repetition Monte Carlo simulations in stat-validation-sims: (a) Percentile vs BCa Bootstrap coverage on lognormal/heavy-tailed data, (b) Student's vs Welch's t-test Type I error under heteroscedasticity, (c) Bonferroni vs Benjamini-Hochberg FDR, and (d) Optional Stopping p-hacking inflation.",
-        "W10: Package 6 Math/Stats & Optimization benchmark tasks with SymPy/HiGHS verifiers into verisci."
+        "Step 1–2: Sample stratified random points by land-cover class; extract Sentinel-2 spectral bands, NDVI, NDWI, and Copernicus DEM slope.",
+        "Step 3–5: Train Logistic baseline, RandomForest, XGBoost, and LightGBM under Random KFold vs Spatial-Block GroupKFold (0.5, 1, 2, 5 km); compute Macro-F1 with block bootstrap intervals.",
+        "Step 6: Train in one area and test in a spatially separate area to show distribution shift; author a 2-page technical writeup.",
+        "3 Benchmark Tasks: Add to verisci: (1) justifying spatial vs random CV, (2) catching train/test geometry overlap, and (3) selecting proper metrics under class imbalance."
       ],
       outputs: [
-        "1. khulna-parks-mclp & stat-validation-sims repositories (100% open-source CLI)",
-        "2. Exact MIP vs. Heuristic Optimality Gap table & p=5..20 coverage trade-off curve",
-        "3. 4 Statistical Simulation diagnostic plots with Monte Carlo error bounds",
-        "4. 6 verisci Math/Stats & Optimization tasks (16 total tasks in suite)",
-        "5. Deep-dive Diataxis Explanation on Spatial Optimization & Statistical Validity",
-        "6. 5-minute oral specialization defense script for Math & Stats AI Trainer interviews"
+        "1. Public validation repository: spatial-leakage-s2",
+        "2. Block-size (0.5, 1, 2, 5 km) vs Macro-F1 score-gap curve with bootstrap CIs",
+        "3. Out-of-region distribution shift evaluation table",
+        "4. 2-Page technical writeup (including ESA WorldCover noisy-label analysis)",
+        "5. Pytest assertion confirming zero train/test block geometry overlap",
+        "6. 3 Verified Spatial ML tasks merged into verisci"
       ],
-      takeaway: "Eliminates ArcGIS Pro GUI dependency and proves graduate-level mathematical/statistical depth via Pyomo/HiGHS and 10,000-rep simulations.",
-      verifyCmd: "git clone https://github.com/MkMeheran/khulna-parks-mclp.git && cd khulna-parks-mclp && uv run pytest && uv run python src/solve_mclp.py --radii 400 800",
-      asciiTree: `khulna-mclp-stats/
+      takeaway: "Directly satisfies the 'diagnose spatial data leakage and invalid cross-validation' requirement in ML and Earth postings.",
+      verifyCmd: "git clone https://github.com/MkMeheran/spatial-leakage-s2.git && cd spatial-leakage-s2 && uv run pytest && uv run python src/run_block_cv.py",
+      asciiTree: `spatial-leakage-s2/
 ├── .github/workflows/ci.yml
-├── khulna_parks_mclp/
-│   ├── data/
-│   │   └── khulna_wards_demand.geojson
-│   ├── src/
-│   │   ├── network_matrix.py       # OSMnx walking graph & 400m/800m coverage matrix
-│   │   ├── exact_mip.py            # Pyomo + HiGHS Exact MCLP & TSPLIB solver
-│   │   └── heuristics.py           # Teitz-Bart vertex substitution & greedy baseline
-│   └── tests/
-│       └── test_optimality_gap.py  # Asserts Exact MIP >= Heuristic & TSPLIB optimum match
-├── stat_validation_sims/
-│   ├── src/
-│   │   ├── bootstrap_bca.py        # Percentile vs BCa coverage (n=10, 30, 100)
-│   │   ├── ttest_robustness.py     # Student vs Welch Type I error under unequal var
-│   │   ├── multiple_testing.py     # FWER (Bonferroni) vs FDR (Benjamini-Hochberg)
-│   │   └── optional_stopping.py    # Sequential peeking false-positive inflation
-│   └── tests/
-│       └── test_monte_carlo_bounds.py
-├── CITATION.cff
+├── data/coastal_aoi_sample.parquet
+├── outputs/
+│   ├── block_size_decay_curve.png
+│   └── spatial_leakage_writeup.md  # 2-page report + noisy label limitations
+├── src/
+│   ├── spatial_blocks.py           # 0.5, 1, 2, 5 km grid blocking & disjoint checks
+│   └── run_block_cv.py             # Logistic, RF, XGBoost, LightGBM + block bootstrap
+├── tests/test_disjoint_geometries.py
 ├── pyproject.toml
 └── README.md`,
-      markdownTree: `- \`khulna-mclp-stats/\`
-  - \`.github/workflows/ci.yml\` — Automated solver & Monte Carlo verification workflow
-  - \`khulna_parks_mclp/\`
-    - \`data/khulna_wards_demand.geojson\` — Aggregated demand nodes & existing parks
-    - \`src/network_matrix.py\` — \`OSMnx\` pedestrian distance matrix generator
-    - \`src/exact_mip.py\` — \`Pyomo\` + \`HiGHS\` Exact MCLP & \`TSPLIB\` subtour solver
-    - \`src/heuristics.py\` — Teitz-Bart & greedy heuristics for optimality gap comparison
-    - \`tests/test_optimality_gap.py\` — Verifies exact optimum >= heuristic objective
-  - \`stat_validation_sims/\`
-    - \`src/bootstrap_bca.py\`, \`ttest_robustness.py\`, \`multiple_testing.py\`, \`optional_stopping.py\`
-    - \`tests/test_monte_carlo_bounds.py\` — Asserts known-truth normal case falls within $\\sqrt{p(1-p)/R}$
-  - \`CITATION.cff\`, \`pyproject.toml\`, \`README.md\``
+      markdownTree: `- \`spatial-leakage-s2/\`
+  - \`.github/workflows/ci.yml\` — Automated geometry disjointness & fixed-seed CI
+  - \`outputs/block_size_decay_curve.png\` & 2-page \`spatial_leakage_writeup.md\`
+  - \`src/spatial_blocks.py\`, \`run_block_cv.py\`
+  - \`tests/test_disjoint_geometries.py\` — Asserts zero overlap between train and test blocks`
     },
     {
       id: "proj_p4",
-      code: "P4 · API & Docs Engineering",
-      title: "Bangladesh Administrative & Hazard Query REST API + OpenAPI 3.1/3.2 Suite",
-      category: "API & Docs Engineering",
-      months: "Month 3 (Jan 25 – Feb 7, 2027)",
-      hours: "16 hrs",
-      tracksServed: "Developer / API Documentation Writer + Documentation Engineer + Software TW",
-      problem: "Geospatial and environmental REST APIs often ship with incomplete parameter schemas, undocumented CRS defaults, and vague HTTP error codes, forcing developers to guess query formats and rate-limit behaviors.",
-      novelty: "Demonstrates complete Developer/API Technical Writing mastery by pairing a lightweight FastAPI/GeoJSON spatial query service with a strict OpenAPI 3.1/3.2 YAML specification, interactive Swagger UI/Redocly portal, runnable curl/Python quickstarts, an edge-case HTTP Error Catalog (400 Invalid BBox/CRS, 401 Unauthorized, 422 Unprocessable Geometry, 429 Rate Limit), and automated contract testing.",
-      stack: ["OpenAPI 3.1/3.2 YAML", "Swagger UI / Redocly", "FastAPI", "Pydantic", "Pytest", "curl", "Vale Linter"],
-      datasets: "Standardized Bangladesh administrative boundaries (Divisions, Districts, Upazilas) and pre-computed flood/heat hazard summary indices.",
-      validationTruth: "OpenAPI Schema Validator (zero spec errors) + Automated pytest/curl Contract Test Suite against live/mock server.",
+      code: "v4 P5 · Math & Stats Sims (M3–M4, ~17h)",
+      title: "P5: Statistical Method Validation by Simulation — 10,000-Rep Monte Carlo Suite (stat-validation-sims)",
+      category: "Math, Stats & Optimization",
+      months: "Months 3 – 4 (~17 hrs, includes 3 verisci tasks)",
+      hours: "17 hrs",
+      tracksServed: "Math & Statistics (Core Specialization) + Research Statistical Rigor",
+      problem: "Under what specific sample sizes, skewness, variance inequalities, and sequential peeking regimes do common statistical methods violate their nominal 95% coverage or 5% Type I error guarantees?",
+      novelty: "Implements 4 vectorized 10,000-repetition NumPy Monte Carlo simulation studies with explicit Monte Carlo error bounds √(p(1-p)/R) and fixed seeds (following Morris, White & Crowther 2019, Statistics in Medicine), coding BCa bootstrap from scratch and verifying it against scipy.stats.bootstrap.",
+      stack: ["Python", "NumPy (vectorized)", "SciPy (stats)", "Matplotlib", "pytest"],
+      datasets: "Seeded parametric distributions (normal, lognormal, heavy-tailed t/Pareto, and correlated multivariate normal arrays).",
+      validationTruth: "Theoretical Analytical Expectations (95% Coverage, 5% Type I Error within √(p(1-p)/R) on normal large-n cases).",
       steps: [
-        "W11: Design REST endpoints (/v1/boundaries, /v1/hazards/flood-summary, /v1/spatial/validate-crs) and author the complete openapi.yaml specification.",
-        "W11: Write Diataxis Authentication Guide, Rate-Limiting & Pagination Guide, and Troubleshooting Error Catalog (400, 401, 422, 429).",
-        "W12: Write automated pytest + httpx/curl verification tests that execute every documented code snippet and assert exact JSON schema compliance.",
-        "W12: Deploy interactive Swagger UI / Redocly reference page to meheran.dev/docs/api."
+        "Sim 1: Bootstrap Percentile vs custom BCa interval coverage across n = 10, 30, 100 on normal, lognormal, and heavy-tailed distributions.",
+        "Sim 2: Student's vs Welch's t-test Type I error under unequal variances and unequal sample sizes.",
+        "Sim 3: Multiple testing — Bonferroni (FWER) vs Benjamini–Hochberg (FDR) under independent and correlated tests.",
+        "Sim 4: Optional stopping — false-positive inflation from repeated sequential peeking; package 3 tasks into verisci."
       ],
       outputs: [
-        "1. Complete OpenAPI 3.1/3.2 YAML Specification (openapi.yaml)",
-        "2. Interactive Swagger UI & Redocly API Reference Portal",
-        "3. Developer Quickstart (Python requests & curl) + Authentication Guide",
-        "4. Comprehensive HTTP Status & Error Catalog with sample JSON error payloads",
-        "5. Automated API Contract Test Suite (test_api_contract.py)",
-        "6. OSF-registered UAV Multispectral (NDVI/NDRE) Data Hygiene Protocol"
+        "1. Public validation repository: stat-validation-sims",
+        "2. 4 Publication-grade Monte Carlo diagnostic figures with √(p(1-p)/R) error bands",
+        "3. Custom BCa bootstrap implementation verified against scipy.stats.bootstrap",
+        "4. Pytest suite asserting known-truth normal large-n coverage within MC error",
+        "5. 3 Verified Math & Statistics tasks merged into verisci",
+        "6. Core interview specialization proof: 'Probability & statistical inference validated by simulation'"
       ],
-      takeaway: "Qualifies you directly for Developer/API Documentation Writer roles via schema-validated OpenAPI 3.1 + contract tests.",
-      verifyCmd: "git clone https://github.com/MkMeheran/bd-geo-api-docs.git && cd bd-geo-api-docs && uv run pytest tests/test_api_contract.py && vale docs/",
-      asciiTree: `bd-geo-api-docs/
-├── .github/workflows/docs-ci.yml   # OpenAPI schema linter + pytest + Vale style check
-├── api_spec/
-│   └── openapi.yaml                # Complete OpenAPI 3.1.1 / 3.2.0 specification
-├── docs/
-│   ├── index.md                    # API Overview & Architecture
-│   ├── quickstart.md               # Diataxis Tutorial: First spatial query in 5 mins
-│   ├── authentication.md           # API keys, headers & rate-limit retry logic
-│   └── error_catalog.md            # 400, 401, 422, 429 troubleshooting reference
-├── mock_server/
-│   └── main.py                     # FastAPI server serving Bangladesh GeoJSON endpoints
-├── tests/
-│   └── test_api_contract.py        # Executes all documented curl/Python payloads
-├── .vale.ini                       # Google Developer Documentation Style Guide rules
+      takeaway: "Establishes your core Math & Stats specialization ('probability and statistical inference validated by simulation').",
+      verifyCmd: "git clone https://github.com/MkMeheran/stat-validation-sims.git && cd stat-validation-sims && uv run pytest && uv run python src/run_all_sims.py",
+      asciiTree: `stat-validation-sims/
+├── .github/workflows/ci.yml
+├── figures/                        # 4 diagnostic coverage & Type I error plots
+├── src/
+│   ├── bootstrap_bca.py            # Custom BCa vs Percentile (n=10, 30, 100)
+│   ├── welch_vs_student.py         # Unequal variance & sample size Type I error
+│   ├── bonferroni_vs_bh.py         # Independent & correlated multiple testing
+│   └── optional_stopping.py        # Sequential peeking false-positive inflation
+├── tests/test_mc_bounds.py         # Asserts normal large-n within sqrt(p(1-p)/R)
 ├── pyproject.toml
 └── README.md`,
-      markdownTree: `- \`bd-geo-api-docs/\`
-  - \`.github/workflows/docs-ci.yml\` — Validates \`openapi.yaml\`, runs endpoint tests, and checks prose with \`Vale\`
-  - \`api_spec/openapi.yaml\` — Executable OpenAPI 3.1/3.2 YAML specification
-  - \`docs/\`
-    - \`index.md\`, \`quickstart.md\`, \`authentication.md\`, \`error_catalog.md\`
-  - \`mock_server/main.py\` — Lightweight \`FastAPI\` service for reproducible contract testing
-  - \`tests/test_api_contract.py\` — Verifies every documented request/response payload
-  - \`.vale.ini\`, \`pyproject.toml\`, \`README.md\``
+      markdownTree: `- \`stat-validation-sims/\`
+  - \`.github/workflows/ci.yml\` — Automated Monte Carlo bound & seed determinism CI
+  - \`figures/\` — 4 diagnostic simulation figures
+  - \`src/bootstrap_bca.py\`, \`welch_vs_student.py\`, \`bonferroni_vs_bh.py\`, \`optional_stopping.py\`
+  - \`tests/test_mc_bounds.py\` — Asserts empirical coverage lies within $\sqrt{p(1-p)/R}$`
     },
     {
       id: "proj_p5",
-      code: "P5 · GeoAI, Pitfalls & Scoping Review",
-      title: "ML Pitfalls Lab, PyTorch Seed Determinism & Interpretable GeoAI (SHAP/ALE) for Khulna UHI",
-      category: "Spatial ML & GeoAI",
-      months: "Months 4 – 5 (Feb 8 – Apr 4, 2027)",
-      hours: "38 hrs",
-      tracksServed: "ML Engineer / Specialist + AI Technical Writer + Urban Climate Research Assistant",
-      problem: "Machine learning studies in urban planning routinely suffer from silent pipeline bugs (scaling before splitting, target leakage, accuracy traps on imbalanced classes, undocumented PyTorch seed variance) and rely on naive SHAP explanations that distort feature importance when spatial predictors (NDVI, NDBI, distance to water) are strongly correlated.",
-      novelty: "Combines a rigorous 6-pitfall ML experimental lab + 10-seed PyTorch determinism benchmark with an empirical Khulna Urban Heat Island (Landsat/MODIS LST) case study comparing SHAP against Accumulated Local Effects (ALE) and Spatial Lag/Error Regression, accompanied by a 3,000-word PRISMA Scoping Review on OSF and a Hugging Face Model Card.",
-      stack: ["PyTorch", "scikit-learn", "XGBoost", "SHAP", "PySAL (esda, spreg)", "PostGIS", "DuckDB Spatial", "Quarto"],
-      datasets: "Landsat 8/9 Collection 2 Surface Temperature, MODIS LST, Sentinel-2 NDVI/NDBI for Khulna City Corporation, plus OpenML/scikit-learn tabular benchmarks.",
-      validationTruth: "Index Disjoint Assertions + Bitwise Seed Reproducibility + Spatial Regression (Moran's I residual test) + 25-Paper PRISMA Literature Matrix.",
+      code: "v4 P6 · Optimization & TSPLIB (M4–M5, ~17h)",
+      title: "P6: TSP Heuristic vs. Exact MIP vs. Published Optimum on TSPLIB (tsp-validated)",
+      category: "Math, Stats & Optimization",
+      months: "Months 4 – 5 (~17 hrs, includes 3 verisci tasks)",
+      hours: "17 hrs",
+      tracksServed: "Math & Statistics + Operations Research & Optimization",
+      problem: "How far do standard Traveling Salesperson Problem (TSP) heuristics deviate from published TSPLIB exact optimums, and can your exact Mixed-Integer Programming solver recover the exact published optimum?",
+      novelty: "Implements the strict TSPLIB EUC_2D nearest-integer distance rounding convention, custom Nearest Neighbour (NN) and NN + 2-opt heuristics, Google OR-Tools Guided Local Search, LP relaxation / 1-tree lower bounds, and an Exact MIP solver in Pyomo + HiGHS using degree constraints and iterative lazy subtour elimination across eil51 (426), berlin52 (7542), st70 (675), eil76 (538), and kroA100 (21282).",
+      stack: ["Python", "Pyomo", "HiGHS Solver", "Google OR-Tools", "NumPy", "pytest"],
+      datasets: "Official TSPLIB benchmark instances: eil51 (opt=426), berlin52 (opt=7542), st70 (opt=675), eil76 (opt=538), and kroA100 (opt=21282).",
+      validationTruth: "Published TSPLIB Exact Optimums (426, 7542, 675, 538, 21282) + Hamiltonian Cycle Validity Assertions.",
       steps: [
-        "W13: Implement 6 paired 'Leaky vs Honest' ML experiments (20x repetitions) and 10-seed PyTorch CNN/MLP determinism experiments (deterministic=True vs False).",
-        "W14: Benchmark large-scale vector spatial joins across GeoPandas, PostGIS, and DuckDB Spatial using pytest-benchmark.",
-        "W17: Model Khulna Urban Heat Island drivers using Spatial Regression and XGBoost; compare SHAP vs. ALE feature attributions under collinearity and publish a formal Model Card.",
-        "W18–W19: Register the 3,000-word PRISMA Scoping Review & Research Proposal on OSF and publish the 6–8 page verisci Technical Report on EarthArXiv/Zenodo."
+        "Step 1–2: Build TSPLIB parser enforcing EUC_2D nearest-integer distance rounding; implement Nearest Neighbour and NN + 2-opt from scratch.",
+        "Step 3–4: Run OR-Tools Guided Local Search; implement Exact MIP in Pyomo + HiGHS with degree constraints + lazy subtour elimination on eil51, berlin52, and st70 (with time limits on larger instances).",
+        "Step 5–6: Compute LP relaxation / 1-tree lower bounds and generate the comparative table (instance, known optimum, tour length per method, gap %, runtime).",
+        "3 Benchmark Tasks: Add to verisci: (1) TSPLIB EUC_2D rounding convention, (2) subtour detection, and (3) verifying optimality claims via lower bounds."
       ],
       outputs: [
-        "1. ml-pitfalls-lab & khulna-uhi-shap repositories with green CI",
-        "2. 6-Pitfall Score Inflation Table & 10-Seed PyTorch Variance Plot",
-        "3. GeoPandas vs. PostGIS vs. DuckDB Spatial performance benchmark report",
-        "4. Khulna UHI SHAP vs. ALE Case Study + Hugging Face Model Card",
-        "5. 3,000-word PRISMA Scoping Review & Research Proposal registered on OSF",
-        "6. 6 verisci ML tasks + 6–8 page Benchmark Preprint on EarthArXiv/Zenodo"
+        "1. Public validation repository: tsp-validated",
+        "2. Comparative Optimality Gap % & Runtime Table across 5 TSPLIB instances",
+        "3. Lazy Subtour Elimination Exact MIP Solver (Pyomo + HiGHS)",
+        "4. Pytest suite asserting Hamiltonian cycle validity and Exact == Known Optimum",
+        "5. 3 Verified Optimization tasks merged into verisci"
       ],
-      takeaway: "Demonstrates end-to-end ML engineering and interpretable GeoAI depth with PyTorch determinism, SHAP vs. ALE, and an OSF scoping review.",
-      verifyCmd: "git clone https://github.com/MkMeheran/ml-pitfalls-lab.git && cd ml-pitfalls-lab && uv run pytest && uv run python src/run_seed_study.py --seeds 10",
-      asciiTree: `geoai-uhi-repro/
+      takeaway: "Demonstrates exact mathematical programming (Pyomo + HiGHS lazy cuts) and combinatorial optimization against known TSPLIB truth.",
+      verifyCmd: "git clone https://github.com/MkMeheran/tsp-validated.git && cd tsp-validated && uv run pytest && uv run python src/solve_tsplib.py",
+      asciiTree: `tsp-validated/
 ├── .github/workflows/ci.yml
-├── ml_pitfalls_lab/
-│   ├── src/
-│   │   ├── six_pitfalls.py         # Pre-split scaling, target leakage, PR-AUC, tuning leak
-│   │   └── pytorch_determinism.py  # 10-seed MLP/CNN variance & deterministic toggle
-│   └── tests/
-│       └── test_no_leakage.py
-├── khulna_uhi_geoai/
-│   ├── docs/
-│   │   ├── MODEL_CARD.md           # Hugging Face standard Model Card
-│   │   └── prisma_scoping_review.qmd
-│   ├── src/
-│   │   ├── spatial_econometrics.py # PySAL Moran's I, Spatial Lag & Error models
-│   │   └── shap_vs_ale.py          # SHAP & Accumulated Local Effects under collinearity
-│   └── benchmarks/
-│       └── bench_spatial_joins.py  # GeoPandas vs PostGIS vs DuckDB Spatial
-├── CITATION.cff
+├── data/tsplib/                    # eil51, berlin52, st70, eil76, kroA100
+├── outputs/tsplib_gap_table.csv
+├── src/
+│   ├── tsplib_euc2d.py             # Nearest-integer EUC_2D distance rounding
+│   ├── heuristics_2opt.py          # Custom NN + 2-opt & OR-Tools GLS wrapper
+│   └── exact_pyomo_highs.py        # Degree constraints + lazy subtour cuts + LB
+├── tests/test_tsplib_opt.py        # Valid Hamiltonian cycle & Exact == Optimum
 ├── pyproject.toml
 └── README.md`,
-      markdownTree: `- \`geoai-uhi-repro/\`
-  - \`.github/workflows/ci.yml\` — Automated ML leakage assertions & Vale prose checks
-  - \`ml_pitfalls_lab/\`
-    - \`src/six_pitfalls.py\` — 20-repeat inflation experiments across 6 classic ML traps
-    - \`src/pytorch_determinism.py\` — 10-seed PyTorch reproducibility vs. XGBoost baseline
-    - \`tests/test_no_leakage.py\` — Index disjointness & deterministic seed assertions
-  - \`khulna_uhi_geoai/\`
-    - \`docs/MODEL_CARD.md\` & \`prisma_scoping_review.qmd\` (25+ primary Crossref DOIs)
-    - \`src/spatial_econometrics.py\` — \`PySAL\` Global/Local Moran's I & spatial regression
-    - \`src/shap_vs_ale.py\` — Interpretable GeoAI comparing \`SHAP\` and \`ALE\` on Khulna LST
-    - \`benchmarks/bench_spatial_joins.py\` — \`GeoPandas\` vs. \`PostGIS\` vs. \`DuckDB Spatial\`
-  - \`CITATION.cff\`, \`pyproject.toml\`, \`README.md\``
+      markdownTree: `- \`tsp-validated/\`
+  - \`.github/workflows/ci.yml\` — Runs Hamiltonian cycle & exact optimum verification
+  - \`data/tsplib/\` — \`eil51\` (426), \`berlin52\` (7542), \`st70\` (675), \`eil76\` (538), \`kroA100\` (21282)
+  - \`src/tsplib_euc2d.py\`, \`heuristics_2opt.py\`, \`exact_pyomo_highs.py\`
+  - \`tests/test_tsplib_opt.py\` — Asserts exact tour length matches published optimum`
+    },
+    {
+      id: "proj_p7_num",
+      code: "v4 P7 · Numerical & Physics (M5, ~21h)",
+      title: "P7: Numerical Methods & Physics Validation Suite (numerics-validated)",
+      category: "Math, Stats & Optimization",
+      months: "Month 5 (~21 hrs, includes 3 verisci tasks)",
+      hours: "21 hrs",
+      tracksServed: "Math & Statistics + Physical Sciences",
+      problem: "Do custom numerical implementations of root-finding, ODE integrators, harmonic oscillators, stiff equations, 1D heat PDEs, and ill-conditioned linear systems obey theoretical convergence orders and physical conservation laws?",
+      novelty: "Implements and validates 7 core numerical/physics modules from scratch against analytical solutions, symplectic energy conservation, CFL stability limits (r = αΔt/Δx² <= 1/2), and scipy.integrate.solve_ivp.",
+      stack: ["Python", "NumPy", "SciPy (integrate, linalg)", "Matplotlib", "pytest"],
+      datasets: "Analytical benchmark equations, harmonic oscillator phase space, Fourier heat series, and Hilbert matrices.",
+      validationTruth: "Theoretical Convergence Orders (±0.2 tolerance on log–log slopes: 1, 4, 2) + Analytical Fourier Series & Energy Conservation.",
+      steps: [
+        "Modules 1–3: Implement root finding (bisection, secant, Newton) convergence order; ODE solvers (Euler, RK4, velocity Verlet) log–log error slopes (expected 1, 4, 2); and harmonic oscillator energy drift (Euler vs Verlet).",
+        "Modules 4–7: Implement stiff ODE (explicit instability vs backward Euler stability); 1D heat equation explicit finite difference (r <= 1/2) vs Fourier series analytic solution; Hilbert matrix condition number error; and solve_ivp comparison.",
+        "3 Benchmark Tasks: Add to verisci: (1) convergence order measurement, (2) Euler vs Verlet energy drift, and (3) 1D heat equation stability limit."
+      ],
+      outputs: [
+        "1. Public validation repository: numerics-validated",
+        "2. Log–log step-size vs error convergence plots & symplectic energy drift curves",
+        "3. 1D Heat PDE vs Analytical Fourier Series stability report",
+        "4. Pytest suite asserting empirical orders within ±0.2 of theoretical values",
+        "5. 3 Verified Numerical/Physics tasks merged into verisci"
+      ],
+      takeaway: "Covers both Math & Stats (numerical analysis/conditioning) and Physical Sciences (conservation laws & PDE stability).",
+      verifyCmd: "git clone https://github.com/MkMeheran/numerics-validated.git && cd numerics-validated && uv run pytest && uv run python src/run_numerics_suite.py",
+      asciiTree: `numerics-validated/
+├── .github/workflows/ci.yml
+├── figures/                        # Log-log convergence slopes & energy drift plots
+├── src/
+│   ├── root_finding.py             # Bisection, Secant, Newton convergence order
+│   ├── ode_integrators.py          # Euler (1), RK4 (4), Velocity Verlet (2) & stiff
+│   ├── heat_1d_fourier.py          # Explicit FD (r <= 0.5) vs Fourier analytic
+│   └── hilbert_conditioning.py     # Hilbert matrix condition number error
+├── tests/test_orders_energy.py     # Asserts order within +-0.2 & energy conservation
+├── pyproject.toml
+└── README.md`,
+      markdownTree: `- \`numerics-validated/\`
+  - \`.github/workflows/ci.yml\` — Automated convergence order and PDE stability CI
+  - \`src/root_finding.py\`, \`ode_integrators.py\`, \`heat_1d_fourier.py\`, \`hilbert_conditioning.py\`
+  - \`tests/test_orders_energy.py\` — Asserts measured order within $\pm 0.2$ of theoretical order`
+    },
+    {
+      id: "proj_p8_ml",
+      code: "v4 P8 · ML Pitfalls & PyTorch (M4–M6, ~20h)",
+      title: "P8: ML Pitfalls Lab (6 Traps × 20 Repeats) + PyTorch 10-Seed Reproducibility (ml-pitfalls-lab)",
+      category: "Spatial ML & GeoAI",
+      months: "Months 4 – 6 (~20 hrs, includes 3 verisci tasks)",
+      hours: "20 hrs",
+      tracksServed: "ML Engineering + Data Science + AI Evaluation",
+      problem: "How much do 6 pervasive ML pipeline bugs inflate validation metrics across repeated trials, and how much variance occurs across 10 random seeds in PyTorch when deterministic flags or learning rates are misconfigured?",
+      novelty: "Pairs a 20-repetition 'Honest vs Leaky' experimental lab across 6 classic ML pitfalls on license-clean scikit-learn/OpenML tabular datasets with a 10-seed PyTorch MLP/CNN reproducibility and learning-rate divergence study benchmarked against XGBoost.",
+      stack: ["PyTorch", "scikit-learn", "XGBoost", "OpenML", "NumPy", "pytest"],
+      datasets: "2–3 public, license-verified tabular datasets from scikit-learn / OpenML.",
+      validationTruth: "Train/Test Index Disjointness Assertions + Bitwise Identical Output Under Fixed PyTorch Seeds.",
+      steps: [
+        "Part 1 (~8h): Run 20 repetitions of 6 'Honest vs Leaky' pairs: (1) scaling/feature selection before split, (2) target leakage, (3) train/test duplicates, (4) random split on time-series, (5) Accuracy vs PR-AUC on imbalanced data, (6) hyperparameter tuning on test set.",
+        "Part 2 (~6h): Train a small MLP or CNN across 10 seeds in PyTorch comparing deterministic setting ON vs OFF, learning-rate divergence, and side-by-side comparison with an XGBoost baseline.",
+        "3 Benchmark Tasks (~6h): Add to verisci: (1) pre-split scaling leakage, (2) PR-AUC vs Accuracy on imbalanced data, and (3) PyTorch seed variance & determinism."
+      ],
+      outputs: [
+        "1. Public validation repository: ml-pitfalls-lab",
+        "2. 6-Pitfall Score Inflation Table with 20-repeat confidence intervals",
+        "3. 10-Seed PyTorch Variance & Determinism Plot vs XGBoost baseline",
+        "4. Pytest suite asserting zero train/test index overlap and deterministic seed match",
+        "5. 3 Verified ML Engineering tasks merged into verisci (completing all 21 tasks)"
+      ],
+      takeaway: "Gives concrete, experimental proof of catching every major ML validation flaw tested in ML Engineering interviews.",
+      verifyCmd: "git clone https://github.com/MkMeheran/ml-pitfalls-lab.git && cd ml-pitfalls-lab && uv run pytest && uv run python src/run_pitfalls.py",
+      asciiTree: `ml-pitfalls-lab/
+├── .github/workflows/ci.yml
+├── outputs/
+│   ├── six_pitfalls_20x_table.csv
+│   └── pytorch_10seed_variance.png
+├── src/
+│   ├── six_pitfalls.py             # 6 leaky vs honest pairs × 20 repetitions
+│   └── pytorch_determinism.py      # 10-seed MLP/CNN deterministic toggle vs XGBoost
+├── tests/test_no_leakage.py        # Disjoint train/test indices & seed determinism
+├── pyproject.toml
+└── README.md`,
+      markdownTree: `- \`ml-pitfalls-lab/\`
+  - \`.github/workflows/ci.yml\` — Automated index disjointness & PyTorch seed CI
+  - \`outputs/six_pitfalls_20x_table.csv\` & \`pytorch_10seed_variance.png\`
+  - \`src/six_pitfalls.py\`, \`pytorch_determinism.py\`
+  - \`tests/test_no_leakage.py\``
+    },
+    {
+      id: "proj_tw_mission",
+      code: "Mission PDF · Technical Writing & Research Suite",
+      title: "Docs-as-Code Portal (meheran.dev/docs), Read the Docs Python Library, OpenAPI 3.1/3.2 Suite & PRISMA Scoping Review",
+      category: "API & Docs Engineering",
+      months: "M1 – M6 (Integrated across daily 90–120m Atomic Commit Workflow)",
+      hours: "Integrated with 3h/wk Reading & Writing Routine",
+      tracksServed: "Junior/Software TW + Developer/API Documentation Writer + Documentation Engineer + Scientific TW + Academic RA",
+      problem: "Over 80% of 2026 technical writing and computational RA postings reject static blog posts and unverified AI summaries, filtering strictly for Docs-as-Code (Git, Quarto/Sphinx, Vale CI linting), Diátaxis quadrant separation, executable OpenAPI 3.1 schemas, accepted open-source PRs, and Zotero/Crossref DOI-backed literature matrices.",
+      novelty: "Implements the complete 29-page Mission PDF architecture alongside your v4 repositories: (1) Quarto/MkDocs central hub at meheran.dev/docs with 3-line Decision Context headers, (2) Multi-version Sphinx + numpydoc Python library documentation on Read the Docs (100% doctest pass), (3) OpenAPI 3.1/3.2 YAML specification + interactive Swagger UI & HTTP 400/401/422/429 error catalog, (4) GeoPandas vs PostGIS vs DuckDB Spatial join benchmark explainer, and (5) 15–25 paper OpenAlex/Zotero Comparative Methodology Matrix + PRISMA Scoping Review on Zenodo/OSF.",
+      stack: ["Quarto", "Sphinx / Read the Docs", "numpydoc", "doctest", "OpenAPI 3.1/3.2", "Swagger UI", "Vale (Google Style)", "Zotero + Better BibTeX", "Zenodo / OSF / ORCID"],
+      datasets: "Bangladesh administrative boundary topologies (EPSG:4326 vs EPSG:32646/32645 for Day 1 Guide), PostGIS/DuckDB vector join benchmarks, and 25+ Crossref DOI peer-reviewed studies.",
+      validationTruth: "Zero Vale Style Errors + 100% pytest --doctest-modules Pass + Zero OpenAPI Schema Errors + >=80/100 (M1–M5) & >=85/100 (M6) Rubric Gate.",
+      steps: [
+        "M1: Deploy Quarto/MkDocs portal on meheran.dev/docs, configure ORCID + public Zotero BibTeX repo, and publish Day 1 GeoPandas Topology & CRS How-To Guide (.make_valid() vs .buffer(0), UTM 45N/46N) + 5 Diátaxis guides & 4 Three-Pass paper reviews.",
+        "M2: Document your reusable Python spatial/climate module with numpydoc docstrings on Read the Docs (100% doctest pass) and publish a 15-paper synthesis matrix + 2,500-word thematic literature review on Zenodo.",
+        "M3: Author an executable OpenAPI 3.1/3.2 REST API specification with interactive Swagger UI, authentication/rate-limit guide, and HTTP error catalog; register a formal research protocol on OSF.",
+        "M4–M6: Publish 2 Comparative Technical Analyses (GeoPandas vs PostGIS vs DuckDB Spatial; Spatial vs Random CV), Interpretable ML (SHAP/ALE) Model Card, 3,000-word OSF PRISMA Scoping Review, and curate top 10–12 artifacts scoring >=85/100."
+      ],
+      outputs: [
+        "1. Live Docs-as-Code Hub at meheran.dev/docs & Verification Table at meheran.dev/proof",
+        "2. Day 1 GeoPandas Topology & CRS How-To Guide + 5 Foundational Diátaxis Guides",
+        "3. Hosted Multi-Version Python Package Documentation on Read the Docs (100% doctest)",
+        "4. OpenAPI 3.1/3.2 YAML Specification + Interactive Swagger UI & Error Catalog",
+        "5. GeoPandas vs. PostGIS vs. DuckDB Spatial Benchmark Explainer & SHAP/ALE Model Card",
+        "6. 25-Paper Zotero/Crossref Methodology Matrix & OSF/Zenodo PRISMA Scoping Review"
+      ],
+      takeaway: "Fulfils 100% of the 29-page Mission PDF requirements for Technical Writing and Academic RA roles while sharing the exact same Git/CI/DOI infrastructure as v4.",
+      verifyCmd: "vale docs/ && uv run pytest --doctest-modules && quarto render docs/",
+      asciiTree: `meheran-docs-and-research-hub/
+├── .github/workflows/docs-ci.yml   # Vale (Google Style) + doctest + OpenAPI schema check
+├── .vale.ini                       # Enforces active voice & zero throat-clearing
+├── api_reference/
+│   └── openapi.yaml                # OpenAPI 3.1/3.2 spec + 400/401/422/429 error catalog
+├── docs/
+│   ├── tutorials/                  # Diataxis Learning-oriented lessons
+│   ├── how-to/
+│   │   └── geopandas-crs-topology.qmd # Day 1 Assignment (.make_valid & EPSG:32646)
+│   ├── explanations/
+│   │   └── spatial-joins-duckdb-postgis.qmd
+│   └── research/
+│       ├── methodology_matrix_25papers.qmd
+│       └── prisma_scoping_review.qmd
+├── references.bib                  # Auto-exported from Zotero + Better BibTeX (Crossref DOIs)
+├── _quarto.yml
+├── .readthedocs.yaml
+└── CITATION.cff`,
+      markdownTree: `- \`meheran-docs-and-research-hub/\`
+  - \`.github/workflows/docs-ci.yml\` — Runs \`Vale\`, \`pytest --doctest-modules\`, and OpenAPI validation
+  - \`.vale.ini\` — Google Developer Documentation Style Guide enforcement
+  - \`api_reference/openapi.yaml\` — Executable OpenAPI 3.1/3.2 specification + Swagger UI
+  - \`docs/how-to/geopandas-crs-topology.qmd\` — Day 1 GeoPandas Topology & CRS How-To Guide
+  - \`docs/explanations/spatial-joins-duckdb-postgis.qmd\` — \`GeoPandas\` vs \`PostGIS\` vs \`DuckDB Spatial\`
+  - \`docs/research/\` — 25-paper Zotero methodology matrix & OSF/Zenodo PRISMA scoping review
+  - \`references.bib\`, \`_quarto.yml\`, \`.readthedocs.yaml\`, \`CITATION.cff\``
     },
     {
       id: "proj_ext",
-      code: "Wave 2/3 & Lanes · B1, B2, L1–L4",
-      title: "Hydrology/Water Resources, Numerical Physics, Open-Source PRs & JOSS Publication",
+      code: "v4 Lanes L1–L3 & Optional O1–O5",
+      title: "Mandatory Proof Lanes (L1 Kaggle, L2 OSS PRs, L3 Report) & Optional 15h/wk Packs (O1–O5)",
       category: "Wave 2 & 3 Extensions",
-      months: "Months 3 – 6 (Mar – May 2027)",
-      hours: "35 hrs (Core Lanes L1–L4) + Optional Wave 2/3 Packs",
-      tracksServed: "Physical Sciences + Engineering Sciences + Life Sciences + Data Privacy/Safety + OSS Collaboration",
-      problem: "Expanding eligibility beyond Wave 1 (Earth, ML, Math/Stats) to Wave 2 (Physical & Engineering Sciences) and Wave 3 (Life Sciences & AI Safety/Privacy) without fragmenting focus or violating weekly hour budgets.",
-      novelty: "Uses the unifying niche of 'Environmental Transport, Hydrology & Conservation Laws' to cover Physical Sciences (Euler vs. Velocity Verlet energy drift, 1D Heat/Wave PDE vs. Fourier analytic solution) and Engineering Sciences (Manning's open-channel normal depth, Rational peak runoff, and Khulna waterlogging stormwater pipe sizing) while executing structured Kaggle, Open-Source PR, Preprint, and JOSS lanes.",
-      stack: ["SciPy (solve_ivp)", "NumPy", "Pint (unit checking)", "Inspect AI", "Git / GitHub PR Workflow", "JOSS paper.md"],
-      datasets: "CAMELS hydrology benchmark (Addor et al. 2017, DOI: 10.5065/D6MW2F4D), Khulna IDF rainfall intensity curves, textbook hydraulic worked examples, and synthetic PII records for PrivacyEval-mini.",
-      validationTruth: "Exact Analytic PDE/ODE Solutions & Conservation Laws + Textbook Hydraulic Worked Examples + Upstream Maintainer Review.",
+      months: "M1 – M6 (24 hrs for L1–L3; Optional 68 hrs for O1–O5 at 15 hrs/wk)",
+      hours: "24 hrs Core Lanes (L1–L3) + Optional O1–O5",
+      tracksServed: "External Verification (Kaggle, OSS Maintainers, EarthArXiv/Zenodo, JOSS) + Engineering/Life/Privacy",
+      problem: "Self-published repositories alone occupy Tier 4–5 of the Proof Ladder; external third-party validation (Kaggle community votes, upstream open-source maintainers, preprint readers, and JOSS peer reviewers) is required to reach Tiers 1–3.",
+      novelty: "Separates mandatory, budget-fitted lanes (L1 Kaggle Dataset + Notebook 8h, L2 2 OSS PRs + 5 Reviews 8h, L3 4–6 page Technical Report 8h) from optional 15 hr/wk extensions ordered strictly as O1 (Landsat vs MODIS LST, 20h) -> O2 (Hydraulics 5-task pack, 12h) -> O5 (JOSS submission of verisci, 8h) -> O3 (Ecology 6-task pack, 10h) -> O4 (PrivacyEval-mini 10 scenarios, 18h).",
+      stack: ["Kaggle API", "Git / GitHub PRs", "Quarto / LaTeX", "Inspect AI", "JOSS paper.md"],
+      datasets: "P2 derived BMD/CHIRPS/ERA5 station table (L1), Landsat 8/9 C2 L2 vs MODIS LST (O1), textbook hydraulic worked examples (O2), analytical ODE ecology models (O3), and 10 synthetic privacy scenarios (O4).",
+      validationTruth: "Kaggle System & Upvotes (L1) + Upstream Maintainer Merge (L2) + MODIS LST Product (O1) + Textbook Worked Examples (O2) + Analytic ODEs (O3) + JOSS Editor/Reviewer (O5).",
       steps: [
-        "L1 (Kaggle, M1–M4, ~14h): Publish derived Bangladesh rain extremes or Khulna park accessibility dataset + clean notebook on Kaggle; submit to 1 medal-eligible competition.",
-        "L2 (Open Source, M2–M5, ~10h): Submit 2–3 targeted documentation/test/bugfix PRs to GeoPandas, OSMnx, xarray, rasterio, PySAL, or Inspect Evals + log 5 substantive public PR reviews.",
-        "L3 & L4 (Preprint & JOSS, M5–M6, ~18h): Publish 6–8 page verisci Technical Report on EarthArXiv/Zenodo (M5) and submit software paper to JOSS once 6-month public repo history completes (M6).",
-        "B1 & B2 (Physical & Water Resources Mini-Packs, M5–M6, ~27h): Implement harmonic oscillator Euler vs. Verlet energy drift, 1D heat equation stability (r <= 0.5), and Khulna stormwater drainage sizing script.",
-        "C1 & C2 (Optional Wave 3 Ecology & PrivacyEval-mini, M6): Lotka-Volterra conservation / species-distribution leakage (C1) and 10 synthetic GDPR/CCPA data-minimization agent scenarios (C2)."
+        "L1 (M1, M4, ~8h): Open Kaggle profile in M1; in M4 publish P2's license-verified station comparison table as a Kaggle Dataset + clean P2/P3 analytical notebook.",
+        "L2 (M2, ~8h): Submit 2 small documentation, test, or reproducible bug-fix PRs to xarray, SciPy, scikit-learn, Pyomo, or rasterio + log 5 substantive PR reviews.",
+        "L3 (M6, ~8h): Write a 4–6 page human-authored Technical Report summarizing the verifiable benchmark design, 7 validation studies (P2–P8), LLM failure taxonomy, and limitations; publish on EarthArXiv or Zenodo.",
+        "O1 & O2 (Optional at 15h/wk): O1 Landsat 8/9 (30m) vs MODIS (1km) LST comparison (~20h); O2 Hydraulics 5-task pack (Manning's normal depth, rational method peak runoff, stormwater pipe sizing, ~12h).",
+        "O5, O3 & O4 (Optional at 15h/wk): O5 JOSS submission (~8h, requires >=6 months public history on verisci); O3 Ecology 6-task pack (~10h); O4 PrivacyEval-mini 10 synthetic scenarios (~18h)."
       ],
       outputs: [
-        "1. 2–3 Merged Upstream Open-Source Pull Requests + 5 Public Technical Reviews",
-        "2. Published Kaggle Dataset & Reproducible Analytical Notebook",
-        "3. Khulna Stormwater Sizing & Numerical Physics Validation Scripts (B1 & B2)",
-        "4. 10 Synthetic Privacy/Safety Agent Scenarios (PrivacyEval-mini, if Wave 3 pursued)",
-        "5. 6–8 Page EarthArXiv/Zenodo Technical Report (L3)",
-        "6. JOSS Submission Issue & Complete meheran.dev/proof Hub (L4)"
+        "1. L1: Published Kaggle Dataset + Analytical Notebook",
+        "2. L2: 2 Upstream Open-Source PRs + 5 Substantive PR Reviews",
+        "3. L3: 4–6 Page Technical Report on EarthArXiv or Zenodo",
+        "4. O1 & O2 (Optional): Landsat vs MODIS LST study & 5-task Hydraulics pack",
+        "5. O3 & O4 (Optional): 6-task Ecology pack & 10-scenario PrivacyEval-mini",
+        "6. O5 (Optional): JOSS software paper submission for verisci"
       ],
-      takeaway: "Extends your core geospatial/ML portfolio into Wave 2 hydrology/physics and external peer-reviewed validation (OSS PRs & JOSS).",
-      verifyCmd: "uv run pytest tests/test_physics_conservation.py tests/test_hydraulics_manning.py",
-      asciiTree: `extensions-and-lanes/
-├── b1_numerical_physics/
-│   ├── oscillator_verlet.py        # Euler vs Velocity Verlet energy drift verifier
-│   ├── heat_pde_fourier.py         # 1D explicit finite difference (r<=0.5) vs Fourier
-│   └── unit_checks_pint.py         # Dimensional analysis verification with Pint
-├── b2_water_resources_khulna/
-│   ├── manning_channel.py          # Normal depth solver validated on textbook cases
-│   ├── rational_runoff.py          # Time of concentration & peak discharge
-│   └── khulna_stormwater_sizing.py # Pipe diameter sizing with explicit IDF assumptions
-├── c2_privacy_eval_mini/
-│   └── synthetic_pii_scenarios.jsonl
-├── joss_paper/
-│   ├── paper.md                    # JOSS Statement of Need & State of the Field
-│   └── paper.bib                   # Crossref DOI verified bibliography
-└── oss_contributions_log.md        # Links to upstream Issues, PR Diffs & Reviews`,
-      markdownTree: `- \`extensions-and-lanes/\`
-  - \`b1_numerical_physics/\` — \`oscillator_verlet.py\`, \`heat_pde_fourier.py\`, \`unit_checks_pint.py\`
-  - \`b2_water_resources_khulna/\` — \`manning_channel.py\`, \`rational_runoff.py\`, \`khulna_stormwater_sizing.py\`
-  - \`c2_privacy_eval_mini/synthetic_pii_scenarios.jsonl\` — 10 synthetic GDPR/CCPA agent evaluation scenarios
-  - \`joss_paper/\` — \`paper.md\` and \`paper.bib\` for Journal of Open Source Software submission
-  - \`oss_contributions_log.md\` — Verified log of upstream PRs and maintainer sign-offs`
+      takeaway: "At 12 hrs/wk (~194h build budget), complete P1–P9 + L1–L3; at 15 hrs/wk (~255h capacity), add O1 -> O2 -> O5 -> O3 -> O4.",
+      verifyCmd: "uv run pytest && git log --oneline -n 5",
+      asciiTree: `v4-lanes-and-optional-packs/
+├── l1_kaggle_release/
+│   ├── dataset-metadata.json       # P2 station_etccdi_comparison.csv metadata
+│   └── bd_rain_extremes_analysis.ipynb
+├── l2_oss_contributions/
+│   └── PROOF_OSS_LINKS.md          # 2 PR links (xarray/SciPy/sklearn/Pyomo/rasterio) + 5 reviews
+├── l3_technical_report/
+│   └── verisci_benchmark_report.qmd # 4-6 page human-written report (EarthArXiv/Zenodo)
+├── o1_landsat_vs_modis_lst/        # Optional (20h): 30m vs 1km LST bias & RMSE
+├── o2_hydraulics_minipack/         # Optional (12h): 5 tasks (Manning, Rational, pipe sizing)
+├── o3_ecology_minipack/            # Optional (10h): 6 tasks (Lotka-Volterra, Shannon, Hardy-Weinberg)
+├── o4_privacy_eval_mini/           # Optional (18h): 10 synthetic scenarios + human labels
+└── o5_joss_submission/             # Optional (8h): paper.md & paper.bib for verisci`,
+      markdownTree: `- \`v4-lanes-and-optional-packs/\`
+  - \`l1_kaggle_release/\` — \`P2\` derived station dataset & clean notebook (\`~8h\`)
+  - \`l2_oss_contributions/\` — 2 upstream PRs + 5 substantive PR reviews (\`~8h\`)
+  - \`l3_technical_report/\` — 4–6 page human-written report on EarthArXiv/Zenodo (\`~8h\`)
+  - \`o1_landsat_vs_modis_lst/\` — Optional (\`~20h\`): Landsat 8/9 (30m) vs MODIS (1km) LST
+  - \`o2_hydraulics_minipack/\` — Optional (\`~12h\`): 5 textbook-validated water resources tasks
+  - \`o3_ecology_minipack/\` — Optional (\`~10h\`): 6 analytical ODE & diversity ecology tasks
+  - \`o4_privacy_eval_mini/\` — Optional (\`~18h\`): 10 synthetic GDPR/CCPA agent scenarios
+  - \`o5_joss_submission/\` — Optional (\`~8h\`): \`paper.md\` for \`verisci\` JOSS submission`
     }
   ],
 
@@ -1137,7 +1168,7 @@ const PORTAL_DATA = {
       coreWork: "Author computational earth-science tasks; evaluate model code, geospatial analysis & forecasts; catch CRS, spatial/temporal, uncertainty, and reproducibility flaws.",
       mandatory: "Strong Python; deep expertise in an earth/environmental specialization; hands-on geospatial/remote sensing/statistics; paid AI-training hours (for gated postings).",
       preferred: "Benchmark/rubric creation; peer submission review; xarray, GeoPandas, GDAL, rasterio, NetCDF; validation against ground observations.",
-      publicProof: "verisci Earth Pack (15–20 tasks, DOI), sar-flood-eval v2 (IoU/Precision/Recall vs observation), bd-rain-extremes, ORCID, and >=1 geospatial OSS PR."
+      publicProof: "v4 P2 (bd-rain-extremes: CHIRPS vs ERA5 vs BMD gauges), P3 (rainfall-runoff-camels: 3-layer HBV vs SAC-SMA), P4 (spatial-leakage-s2) + O1 (Landsat vs MODIS LST), 9 Earth tasks in verisci v1.0 (DOI), and L2 OSS PRs."
     },
     {
       id: "role_ml",
@@ -1159,7 +1190,7 @@ const PORTAL_DATA = {
       coreWork: "Evaluate mathematical proofs, statistical inference, and optimization code; detect numerical instability, p-hacking, and invalid statistical test selection.",
       mandatory: "Strong Python; deep expertise in a mathematics/statistics specialization (Probability & Simulation-Validated Statistical Inference).",
       preferred: "SymPy, Pyomo, OR-Tools, SciPy; simulation & optimization benchmarks.",
-      publicProof: "stat-validation-sims (10,000-rep BCa bootstrap, Welch t-test, BH FDR), khulna-parks-mclp (Exact MIP vs Heuristic optimality gap), and 8–12 verisci Math/Stats tasks."
+      publicProof: "v4 P5 (stat-validation-sims: 10,000-rep BCa bootstrap, Welch t-test, BH FDR, optional stopping), P6 (tsp-validated: Pyomo/HiGHS Exact MIP vs TSPLIB optimums), P7 (numerics-validated), and 9 Math/Stats tasks in verisci v1.0."
     },
     {
       id: "role_phys",
@@ -1170,7 +1201,7 @@ const PORTAL_DATA = {
       coreWork: "Evaluate physics/chemistry/materials simulations; verify numerical PDE/ODE solvers against analytic solutions and physical conservation laws.",
       mandatory: "Python; physical science specialization (focused on Environmental Transport, Diffusion & Numerical PDEs).",
       preferred: "SymPy, SciPy, Astropy, Pint; detecting physically impossible results (energy drift, CFL violation).",
-      publicProof: "Wave 2 Numerical Physics Pack (B1: Euler vs Velocity Verlet energy drift, 1D Heat/Wave equation vs Fourier series, Pint dimensional checks)."
+      publicProof: "v4 P7 (numerics-validated: Euler vs Velocity Verlet energy drift, 1D heat equation r<=0.5 vs Fourier series, ODE slopes) + P3 (CAMELS hydrology) + 3 Physical tasks in verisci."
     },
     {
       id: "role_eng",
@@ -1181,7 +1212,7 @@ const PORTAL_DATA = {
       coreWork: "Evaluate engineering simulations and design calculations against textbook formulas and solver APIs.",
       mandatory: "Python scripting, CLI solver workflows, civil/water-resources engineering fundamentals.",
       preferred: "Validation against worked engineering examples; explicit assumption documentation.",
-      publicProof: "Wave 2 Water Resources Pack (B2: Manning's open-channel normal depth, Rational peak runoff, and Khulna waterlogging stormwater pipe sizing script)."
+      publicProof: "v4 P3 (rainfall-runoff-camels) + Optional O2 Hydraulics Mini-Pack (5 textbook-validated tasks: Manning's normal depth, rational method peak runoff, time of concentration, stormwater pipe sizing)."
     },
     {
       id: "role_life",
@@ -1221,7 +1252,7 @@ const PORTAL_DATA = {
   // 12-Platform Ecosystem Architecture (with group: CORE, SELECTIVE, SKIP)
   platforms: [
     { id: "plat_1", group: "CORE", name: "Personal Hub (meheran.dev/proof & /docs)", priority: "Core (Day 1)", tier: "Central Canonical Hub", url: "https://meheran.dev/", strategy: "Deploy Quarto or Material for MkDocs via GitHub Pages. /proof hosts the single Claim -> Artifact Link -> Verify Command table; /docs organizes your top 10–12 artifacts into 5 evidence categories with 3-line Decision Context headers.", audience: "All Technical Recruiters, AI Trainer Platforms & Academic PIs" },
-    { id: "plat_2", group: "CORE", name: "GitHub (github.com/MkMeheran)", priority: "Core (Day 1)", tier: "Tier 1–3 Backbone", url: "https://github.com/MkMeheran", strategy: "Pin 4 flagship repos (verisci, sar-flood-eval, spatial-leakage-s2, khulna-parks-mclp). Include MIT/Apache-2.0 LICENSE, uv.lock, Dockerfile, CITATION.cff, and green pytest + Vale CI badges. Commit >=3 days/week to satisfy the 6-month JOSS clock.", audience: "Software/ML Engineers, Open-Source Maintainers & JOSS Editors" },
+    { id: "plat_2", group: "CORE", name: "GitHub (github.com/MkMeheran)", priority: "Core (Day 1)", tier: "Tier 1–3 Backbone", url: "https://github.com/MkMeheran", strategy: "Pin flagship v4 repos (verisci, bd-rain-extremes, rainfall-runoff-camels, spatial-leakage-s2, stat-validation-sims, tsp-validated, numerics-validated, ml-pitfalls-lab). Include MIT/Apache-2.0 LICENSE, uv.lock, Dockerfile, CITATION.cff, and green pytest + Vale CI badges. Commit >=3 days/week to satisfy the 6-month JOSS clock.", audience: "Software/ML Engineers, Open-Source Maintainers & JOSS Editors" },
     { id: "plat_3", group: "CORE", name: "ORCID (orcid.org)", priority: "Core (Week 1)", tier: "Persistent Scholarly PID", url: "https://orcid.org/", strategy: "Link KUET BURP education and SERC research service. Enable automatic synchronization with Zenodo and OSF so every DOI release populates your ORCID record automatically.", audience: "University Professors, Lab Directors & Scholarship Committees" },
     { id: "plat_4", group: "CORE", name: "Zenodo (CERN / OpenAIRE)", priority: "Core (Months 1–6)", tier: "Tier 2 Permanent DOI Archive", url: "https://zenodo.org/records/7716153/files/Open%20Science%20Guide%201.0.pdf?download=1", strategy: "Connect GitHub-Zenodo webhook. Mint permanent versioned and concept DOIs for verisci v1.0, sar-flood-eval, the 2,500-word SAR Literature Review, and the 6–8 page Technical Report.", audience: "Academic PIs & Scientific Technical Writing Hiring Managers" },
     { id: "plat_5", group: "CORE", name: "OSF (Open Science Framework)", priority: "Core (Months 2–5)", tier: "Tier 2 Preregistration & Protocols", url: "https://grsgroup.org/researcher-resources", strategy: "Register timestamped study protocols, data dictionaries, the UAV Multispectral (NDVI) calibration workflow, and the Month 5 GeoAI Research Proposal & Scoping Review.", audience: "Open-Science Labs & Graduate Admissions Reviewers" },
@@ -1276,15 +1307,15 @@ const PORTAL_DATA = {
 
   // Evaluatable Artifacts for Artifact-Specific Rubric History (#34 & #35)
   evaluatableArtifacts: [
-    { id: "art_day1", name: "Day 1: GeoPandas Topology & CRS How-To Guide", gate: 80, month: "M1" },
-    { id: "art_p0", name: "P0: verisci (GeoEval-BD v1.0) Benchmark Suite", gate: 85, month: "M4/M6" },
-    { id: "art_p1", name: "P1: sar-flood-eval v2 Reproducible Package", gate: 85, month: "M1/M6" },
-    { id: "art_p2", name: "P2: spatial-leakage-s2 & Read the Docs Portal", gate: 85, month: "M2/M6" },
-    { id: "art_p3", name: "P3: khulna-parks-mclp & stat-validation-sims", gate: 85, month: "M3/M6" },
-    { id: "art_p4", name: "P4: bd-geo-api-docs OpenAPI 3.1/3.2 Suite", gate: 80, month: "M3" },
-    { id: "art_p5", name: "P5: geoai-uhi-shap & OSF PRISMA Scoping Review", gate: 85, month: "M5/M6" },
-    { id: "art_l3", name: "L3: 6–8 Page Benchmark Preprint Report", gate: 85, month: "M5" },
-    { id: "art_l4", name: "L4: JOSS Software Manuscript (paper.md)", gate: 85, month: "M6" }
+    { id: "art_day1", name: "P1: verisci Harness v0.1 & PROOF.md (M1)", gate: 80, month: "M1" },
+    { id: "art_p0", name: "P2: bd-rain-extremes (CHIRPS vs ERA5 vs BMD, M1–M2)", gate: 85, month: "M1–M2" },
+    { id: "art_p1", name: "P3: rainfall-runoff-camels (3-Layer HBV vs SAC-SMA, M2–M3)", gate: 85, month: "M2–M3" },
+    { id: "art_p2", name: "P4: spatial-leakage-s2 (Sentinel-2 Block CV, M3–M4)", gate: 85, month: "M3–M4" },
+    { id: "art_p3", name: "P5: stat-validation-sims (10,000-Rep Monte Carlo, M3–M4)", gate: 85, month: "M3–M4" },
+    { id: "art_p4", name: "P6: tsp-validated (Exact MIP vs Heuristic on TSPLIB, M4–M5)", gate: 85, month: "M4–M5" },
+    { id: "art_p5", name: "P7: numerics-validated (7 Numerical & Physics Modules, M5)", gate: 85, month: "M5" },
+    { id: "art_l3", name: "P8: ml-pitfalls-lab (6 Pitfalls 20x + PyTorch 10-Seed, M4–M6)", gate: 85, month: "M4–M6" },
+    { id: "art_l4", name: "P9 & L3: verisci v1.0 (21 Tasks, DOI) + 4–6p Technical Report (M6)", gate: 85, month: "M6" }
   ],
 
   // 100-Point Portfolio Quality Rubric Criteria
